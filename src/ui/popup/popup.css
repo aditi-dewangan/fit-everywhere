@@ -1,0 +1,16 @@
+/* Placeholder styling only. The final design replaces this file. */
+body { width: 340px; margin: 0; padding: 12px; font: 14px/1.4 system-ui, sans-serif; color: #222; background: #fff; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+h1 { font-size: 16px; margin: 0; }
+h2 { font-size: 14px; margin: 0 0 8px; }
+p { margin: 0 0 8px; }
+.size { font-size: 18px; }
+.muted { color: #666; font-size: 12px; }
+.notice { background: #fff6d6; padding: 6px 8px; }
+.error { color: #b00020; min-height: 1em; }
+.row { display: flex; gap: 6px; flex-wrap: wrap; }
+label { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+input, select { width: 150px; }
+fieldset { border: 1px solid #ddd; margin: 0 0 8px; padding: 6px 8px; }
+button.link { background: none; border: none; color: #0645ad; padding: 0; cursor: pointer; text-decoration: underline; }
+button.danger { color: #b00020; }
