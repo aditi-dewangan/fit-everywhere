@@ -1,0 +1,4 @@
+node_modules/
+dist/
+fit-everywhere.zip
+.DS_Store

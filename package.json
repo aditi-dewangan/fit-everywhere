@@ -1,0 +1,27 @@
+{
+  "name": "fit-everywhere",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc --noEmit && vite build && vite build --config vite.content.config.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "zip": "npm run build && rm -f fit-everywhere.zip && cd dist && zip -qr ../fit-everywhere.zip ."
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "description": "Chrome extension that recommends the best size for women's clothing across brands.",
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "@types/node": "^26.6.6",
+    "jsdom": "^29.1.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.1.0"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "private": true,
+  "type": "module"
+}

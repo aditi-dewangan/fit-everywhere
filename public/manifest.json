@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Fit Everywhere",
+  "version": "0.1.0",
+  "description": "Recommends the best size for women's clothing on supported brand sites. Your measurements never leave your device.",
+  "action": {
+    "default_title": "Fit Everywhere",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "activeTab", "scripting"]
+}
