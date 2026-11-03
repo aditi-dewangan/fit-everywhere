@@ -1,0 +1,15 @@
+{
+  "brandId": "sample",
+  "brandName": "Sample Brand (not real data)",
+  "sourceUrl": "https://example.com/sample-size-chart",
+  "collectedOn": "2026-11-03",
+  "isSample": true,
+  "notes": "SAMPLE DATA. Made-up numbers from the spec's worked example, used only for tests. Not a real brand and never shown to users.",
+  "charts": {
+    "dresses": [
+      { "size": "S", "bust": { "min": 33.5, "max": 34.5 }, "waist": { "min": 26.5, "max": 27.5 }, "hips": { "min": 36.5, "max": 37.5 } },
+      { "size": "M", "bust": { "min": 35.5, "max": 36.5 }, "waist": { "min": 28.5, "max": 29.5 }, "hips": { "min": 38.5, "max": 39.5 } },
+      { "size": "L", "bust": { "min": 37.5, "max": 38.5 }, "waist": { "min": 30.5, "max": 31.5 }, "hips": { "min": 40.5, "max": 41.5 } }
+    ]
+  }
+}
