@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The current build covers the engine, the data pipeline, and a placeholder popup. **No real brands are supported yet**, so every site shows "doesn't work on this site" until the first brand charts and adapters land.
+The current build covers the engine, the data pipeline, and a placeholder popup. Size charts are in for **Hollister, H&M, and PacSun**, but the brand adapters (which detect products on each site) aren't built yet, so every site still shows "doesn't work on this site."
 
 | Spec step | Status |
 | --- | --- |
@@ -31,8 +31,14 @@ The current build covers the engine, the data pipeline, and a placeholder popup.
 | 3. Recommendation engine with tests | ✅ Done, both worked examples pass |
 | 4. Labeled sample chart | ✅ Done (`src/data/charts/sample.json`, test-only) |
 | 5. Profile storage, content script, messaging | ✅ Done |
-| 6. Brand adapters from saved fixtures | ⏳ Waiting on the brand list and published size charts |
+| 6. Brand adapters from saved fixtures | ⏳ Charts done (Hollister, H&M, PacSun); adapters waiting on saved product pages |
 | 7. Placeholder popup covering every state | ✅ Done |
+
+| Brand | Tops | Dresses | Jeans | Chart source |
+| --- | --- | --- | --- | --- |
+| Hollister | ✅ XS–L (bust only) | — no chart | ✅ 0–11 | [hollisterco.com size charts](https://www.hollisterco.com/hol/faq/sizecharts.html) |
+| H&M | ✅ XXS–4XL | ✅ XXS–4XL | ✅ US 0–30 | [H&M US size guide](https://www2.hm.com/en_us/customer-service/sizeguide/ladies.html) (archived Jun 2023) |
+| PacSun | ✅ XS–L | — no chart | ✅ 23–32 | [PacSun jeans](https://www.pacsun.com/sizechart-womens-jeans.html) / [tops](https://www.pacsun.com/sizechart-womens-tops.html) charts (archived) |
 
 ## How it works
 

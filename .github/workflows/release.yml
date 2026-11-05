@@ -4,6 +4,8 @@ name: Release
 on:
   push:
     tags: ['v*']
+  # Re-run for an existing tag from the Actions tab if a tag push was missed.
+  workflow_dispatch:
 
 permissions:
   contents: write
