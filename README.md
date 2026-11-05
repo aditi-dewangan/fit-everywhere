@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The extension gives real recommendations on **Hollister**, **H&M**, and **PacSun** product pages. A few clothing types still need a saved product page before their adapter is tested (see the last column below).
+The extension gives real recommendations on **Hollister**, **H&M**, and **PacSun** product pages. Every brand and clothing type below is tested against a saved product page.
 
 | Spec step | Status |
 | --- | --- |
@@ -31,16 +31,16 @@ The extension gives real recommendations on **Hollister**, **H&M**, and **PacSun
 | 3. Recommendation engine with tests | ✅ Done, both worked examples pass |
 | 4. Labeled sample chart | ✅ Done (`src/data/charts/sample.json`, test-only) |
 | 5. Profile storage, content script, messaging | ✅ Done |
-| 6. Brand adapters from saved fixtures | ✅ All three brands; a few clothing types still need a saved page |
+| 6. Brand adapters from saved fixtures | ✅ Done for all three brands |
 | 7. Placeholder popup covering every state | ✅ Done |
 
 Chart coverage by brand (✅ = chart in; the last column shows which product-page types have a saved fixture and tested adapter):
 
 | Brand | Tops | Dresses | Jeans | Chart source | Adapter tested on |
 | --- | --- | --- | --- | --- | --- |
-| Hollister | ✅ XS–L (bust only) | — no chart | ✅ 0–11 | [hollisterco.com size charts](https://www.hollisterco.com/hol/faq/sizecharts.html) | jeans (tops page still needed) |
-| H&M | ✅ XXS–4XL | ✅ XXS–4XL | ✅ US 0–30 | [H&M US size guide](https://www2.hm.com/en_us/customer-service/sizeguide/ladies.html) (archived Jun 2023) | tops, jeans (dresses page still needed) |
-| PacSun | ✅ XS–L | — no chart | ✅ 23–34 | [PacSun jeans](https://www.pacsun.com/sizechart-womens-jeans.html) / [tops](https://www.pacsun.com/sizechart-womens-tops.html) charts (archived) | jeans (tops page still needed) |
+| Hollister | ✅ XS–L (bust only) | — no chart | ✅ 0–11 | [hollisterco.com size charts](https://www.hollisterco.com/hol/faq/sizecharts.html) | tops, jeans |
+| H&M | ✅ XXS–4XL | ✅ XXS–4XL | ✅ US 0–30 | [H&M US size guide](https://www2.hm.com/en_us/customer-service/sizeguide/ladies.html) (archived Jun 2023) | tops, dresses, jeans |
+| PacSun | ✅ XS–L | — no chart | ✅ 23–34 | [PacSun jeans](https://www.pacsun.com/sizechart-womens-jeans.html) / [tops](https://www.pacsun.com/sizechart-womens-tops.html) charts (archived) | tops, jeans |
 
 ## How it works
 

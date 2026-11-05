@@ -16,6 +16,15 @@ describe('PacSun adapter', () => {
     });
   });
 
+  it("reads a women's top from a partner brand's URL", () => {
+    const { url, doc } = loadFixture('pacsun/tops.html');
+    expect(extractProductContext(url, doc, [pacsun])).toMatchObject({
+      category: 'tops',
+      productName: 'Leila Ruffled Button Babydoll Tank Top',
+      cut: 'regular',
+    });
+  });
+
   it('ignores category and search pages', () => {
     const { doc } = loadFixture('pacsun/jeans.html');
     expect(pacsun.isProductPage(new URL('https://www.pacsun.com/womens/jeans/'), doc)).toBe(false);

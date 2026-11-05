@@ -8,9 +8,9 @@ import { extractProductContext } from './index';
 import { loadFixture } from './test-fixtures';
 import { adapters } from './index';
 
-// Fixtures we couldn't get from the Wayback Machine yet. Save these from a
-// browser (see fixtures/README.md) and remove them from this list.
-const MISSING_FIXTURES = ['hm/dresses.html', 'pacsun/tops.html', 'hollister/tops.html'];
+// Fixtures not saved yet. Save these from a browser (see fixtures/README.md)
+// and remove them from this list.
+const MISSING_FIXTURES: string[] = [];
 
 describe.each(adapters.map((a) => [a.brandId, a] as const))('%s adapter', (brandId, adapter) => {
   it('has a size chart', () => {

@@ -17,6 +17,15 @@ describe('Hollister adapter', () => {
     });
   });
 
+  it("reads a women's top filed under Sweaters & Cardigans", () => {
+    const { url, doc } = loadFixture('hollister/tops.html');
+    expect(extractProductContext(url, doc, [hollister])).toMatchObject({
+      category: 'tops',
+      productName: 'Crochet-Style Halter Top',
+      cut: 'regular',
+    });
+  });
+
   it('finds breadcrumbs nested inside the WebPage node', () => {
     const { doc } = loadFixture('hollister/jeans.html');
     expect(jsonLdBreadcrumbs(doc)[0]).toBe("Women's");
