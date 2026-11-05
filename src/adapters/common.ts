@@ -13,7 +13,9 @@ export function readJsonLd(doc: Document): JsonLdNode[] {
     if (!value || typeof value !== 'object') return;
     const node = value as JsonLdNode;
     nodes.push(node);
+    // Some sites nest breadcrumbs inside a WebPage node.
     if (node['@graph']) visit(node['@graph']);
+    if (node.breadcrumb) visit(node.breadcrumb);
   };
   for (const script of doc.querySelectorAll('script[type="application/ld+json"]')) {
     try {

@@ -1,13 +1,14 @@
 import type { ProductContext } from '../types';
 import { defaultDescription, detectCut } from './common';
 import { hm } from './hm';
+import { hollister } from './hollister';
 import { pacsun } from './pacsun';
 import type { BrandAdapter } from './types';
 
 export type { BrandAdapter } from './types';
 
 // One adapter per supported brand. Each needs a chart in src/data/charts and fixtures in fixtures/<brandId>/.
-export const adapters: BrandAdapter[] = [hm, pacsun];
+export const adapters: BrandAdapter[] = [hm, pacsun, hollister];
 
 export function findAdapter(hostname: string, list: readonly BrandAdapter[] = adapters): BrandAdapter | null {
   const host = hostname.toLowerCase().replace(/^www\./, '');
