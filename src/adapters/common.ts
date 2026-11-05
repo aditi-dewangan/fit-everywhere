@@ -88,7 +88,7 @@ export function defaultCategory(url: URL, doc: Document, productName: string | n
 
 const CUT_KEYWORDS: [Cut, RegExp][] = [
   ['oversized', /\b(oversized?|over-sized)\b/i],
-  ['relaxed', /\b(relaxed|loose|baggy|boyfriend)\b/i],
+  ['relaxed', /\b(relaxed|loose|baggy|boyfriend|dad)\b/i],
   ['slim', /\b(slim|skinny)\b/i],
 ];
 
