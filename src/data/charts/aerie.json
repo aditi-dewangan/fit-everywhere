@@ -1,0 +1,18 @@
+{
+  "brandId": "aerie",
+  "brandName": "Aerie",
+  "sourceUrl": "https://www.ae.com/us/en/p/aerie/tops/sweaters-cardigans/aerie-ribbed-cardigan/9492_4173_572",
+  "collectedOn": "2026-11-06",
+  "notes": "Copied from the Size Details dialog (U.S. tab) on the page above. The chart lists alpha sizes once per numeric size (XS = 0 and 2), merged here into one range per alpha size. Aerie is sold on ae.com, and its bust numbers differ from American Eagle's from size L up. Only tops have been collected; Aerie dresses and bottoms are not covered yet.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 31, "max": 31 } },
+      { "size": "XS", "bust": { "min": 32, "max": 33 } },
+      { "size": "S", "bust": { "min": 34, "max": 35 } },
+      { "size": "M", "bust": { "min": 36, "max": 37 } },
+      { "size": "L", "bust": { "min": 38.5, "max": 39 } },
+      { "size": "XL", "bust": { "min": 40.5, "max": 42.5 } },
+      { "size": "XXL", "bust": { "min": 44.5, "max": 44.5 } }
+    ]
+  }
+}

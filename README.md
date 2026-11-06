@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The extension gives real recommendations on **Hollister**, **H&M**, and **PacSun** product pages. Every brand and clothing type below is tested against a saved product page.
+The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, and **Old Navy** product pages. Every brand and clothing type below is tested against a saved product page.
 
 | Spec step | Status |
 | --- | --- |
@@ -31,7 +31,7 @@ The extension gives real recommendations on **Hollister**, **H&M**, and **PacSun
 | 3. Recommendation engine with tests | ✅ Done, both worked examples pass |
 | 4. Labeled sample chart | ✅ Done (`src/data/charts/sample.json`, test-only) |
 | 5. Profile storage, content script, messaging | ✅ Done |
-| 6. Brand adapters from saved fixtures | ✅ Done for all three brands |
+| 6. Brand adapters from saved fixtures | ✅ Done for every brand below |
 | 7. Popup covering every state | ✅ Done, final design |
 
 Chart coverage by brand (✅ = chart in; the last column shows which product-page types have a saved fixture and tested adapter):
@@ -41,6 +41,13 @@ Chart coverage by brand (✅ = chart in; the last column shows which product-pag
 | Hollister | ✅ XS–L (bust only) | — no chart | ✅ 0–11 | [hollisterco.com size charts](https://www.hollisterco.com/hol/faq/sizecharts.html) | tops, jeans |
 | H&M | ✅ XXS–4XL | ✅ XXS–4XL | ✅ US 0–30 | [H&M US size guide](https://www2.hm.com/en_us/customer-service/sizeguide/ladies.html) (archived Jun 2023) | tops, dresses, jeans |
 | PacSun | ✅ XS–L | — no chart | ✅ 23–34 | [PacSun jeans](https://www.pacsun.com/sizechart-womens-jeans.html) / [tops](https://www.pacsun.com/sizechart-womens-tops.html) charts (archived) | tops, jeans |
+| Abercrombie & Fitch | ✅ XXS–XXXL (bust only) | ✅ XXS–XXXL | ✅ 23–37 | Size Guide on [abercrombie.com](https://www.abercrombie.com/shop/us/p/high-rise-wide-leg-jean-63893393) product pages | tops, dresses, jeans |
+| American Eagle | ✅ XXS–XXL (bust only) | ✅ XXS–XXL | ✅ 000–22 | Size Details on [ae.com](https://www.ae.com/us/en/p/women/jeans/flare-bootcut-jeans/ae-super-high-waisted-flare-jean/1436_5865_927) product pages | tops, dresses, jeans |
+| Aerie | ✅ XXS–XXL (bust only) | — not collected | — not collected | Size Details on [ae.com](https://www.ae.com/us/en/p/aerie/tops/sweaters-cardigans/aerie-ribbed-cardigan/9492_4173_572) product pages | tops |
+| Gap | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 000/23–22/36 | Size Guide on [gap.com](https://www.gap.com/browse/product.do?pid=1185296002) product pages | tops, dresses, jeans |
+| Old Navy | ✅ XXS–4X | ✅ XXS–4X (no hips) | ✅ 000–30 | Size Guide on [oldnavy.gap.com](https://oldnavy.gap.com/browse/product.do?pid=734873002) product pages | tops, dresses, jeans |
+
+Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating.
 
 ## How it works
 
