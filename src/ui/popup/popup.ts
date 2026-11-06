@@ -1,17 +1,21 @@
-// Placeholder popup. It exercises every state in the spec so the full flow can
-// be tested; the final design from Anya and Heesu replaces this file and
-// popup.css, and only needs the functions imported below.
+// Popup UI, following the design from Anya and Heesu (Canva, "Fit Everywhere -
+// Project Sprints", page 2). It renders every state in state.ts and only needs
+// the functions imported below.
 
+import '@fontsource-variable/inter';
+import '@fontsource-variable/space-grotesk';
 import './popup.css';
 import { findAdapterForUrl } from '../../adapters';
 import { getChart, supportedCharts } from '../../data';
 import { CATEGORY_WEIGHTS } from '../../engine/config';
 import { FIT_LABEL_TEXT, isProfileComplete, recommend } from '../../engine';
+import { NOTE_FITS } from '../../engine/explanation';
 import { getActiveTab, getProductContext } from '../../extension/messages';
 import { clearProfile, getProfile, saveProfile } from '../../extension/storage';
 import { CATEGORIES, DIMENSIONS, PREFERRED_FITS } from '../../types';
-import type { Category, FitProfile, ProductContext, RecommendResponse } from '../../types';
+import type { Category, FitLabel, FitProfile, PreferredFit, ProductContext, RecommendResponse } from '../../types';
 import { popupStateFor } from './state';
+import type { PopupState } from './state';
 
 interface PageInfo {
   profile: FitProfile | null;
@@ -32,8 +36,12 @@ async function load() {
   render();
 }
 
+function currentProduct(): ProductContext | null {
+  return page.product && chosenCategory ? { ...page.product, category: chosenCategory } : page.product;
+}
+
 function currentResponse(): RecommendResponse {
-  const product = page.product && chosenCategory ? { ...page.product, category: chosenCategory } : page.product;
+  const product = currentProduct();
   return recommend({
     profile: page.profile,
     product,
@@ -48,13 +56,13 @@ function render() {
   const body = (() => {
     switch (state) {
       case 'setup_needed':
-        return profileForm(page.profile ? 'Edit your fit profile' : 'Set up your fit profile');
+        return profileForm();
       case 'fix_profile':
-        return [fixProfileMessage(response), profileForm('Update your fit profile')];
+        return [fixProfileMessage(response), profileForm()];
       case 'unsupported_site':
         return unsupportedSite();
       case 'choose_category':
-        return chooseCategory('What kind of item is this?');
+        return chooseCategory();
       case 'unsupported_item':
         return unsupportedItem();
       case 'result':
@@ -64,12 +72,18 @@ function render() {
   app.replaceChildren(header(state), ...[body].flat().filter((n): n is HTMLElement => n !== null));
 }
 
-function header(state: string) {
-  const actions: Node[] = [];
-  if (page.profile && !editingProfile && state !== 'setup_needed') {
-    actions.push(button('Edit profile', () => ((editingProfile = true), render()), 'link'));
-  }
-  return h('header', { 'data-state': state }, [h('h1', {}, ['Fit Everywhere']), ...actions]);
+function header(state: PopupState) {
+  const profile = page.profile;
+  const showEdit = profile && !editingProfile && state !== 'setup_needed' && state !== 'fix_profile';
+  return h('header', { 'data-state': state }, [
+    h('h1', { class: 'wordmark' }, ['Fit Everywhere']),
+    showEdit
+      ? button(`Profile: ${capitalize(profile.preferredFit)} fit`, () => ((editingProfile = true), render()), 'profile-link', {
+          'aria-label': 'Edit profile',
+          title: 'Edit profile',
+        })
+      : null,
+  ]);
 }
 
 // ---- States ----
@@ -77,52 +91,118 @@ function header(state: string) {
 function result(response: RecommendResponse) {
   if (!response.ok) return [];
   const r = response.result;
-  const chart = page.product ? getChart(page.product.brandId) : null;
+  const product = currentProduct()!;
+  const chart = getChart(product.brandId);
+  const rows = chart?.charts[product.category!] ?? [];
+  const sizeIndex = (size?: string) => rows.findIndex((row) => row.size === size);
+
+  const notes: HTMLElement[] = [];
+  for (const dim of DIMENSIONS) {
+    const note = r.dimensionNotes[dim];
+    // "Hips fit well", not "Hips fits well".
+    const text = dim === 'hips' && note === NOTE_FITS ? 'fit well' : note;
+    if (note) notes.push(noteItem(note === NOTE_FITS ? 'ok' : 'warn', `${capitalize(dim)} ${text}`));
+  }
+  if (r.dimensionNotes.length) notes.push(noteItem('warn', `Length ${r.dimensionNotes.length} for your height`));
+  if (r.alternateSize) {
+    const why = sizeIndex(r.alternateSize) > sizeIndex(r.recommendedSize) ? 'if you want more room' : 'if you want a closer fit';
+    notes.push(noteItem('info', `${r.alternateSize} is also a close match ${why}`));
+  }
+
   return h('section', { class: 'result' }, [
-    page.product?.productName ? h('p', { class: 'muted' }, [page.product.productName]) : null,
-    h('p', { class: 'size' }, ['Recommended size: ', h('strong', {}, [r.recommendedSize])]),
-    h('p', {}, [`Fit: ${FIT_LABEL_TEXT[r.fitLabel]}`]),
-    h('p', {}, [r.explanation]),
-    r.alternateSize ? h('p', {}, [`Between sizes: ${r.recommendedSize} or ${r.alternateSize}.`]) : null,
+    detected(product),
+    h('p', { class: 'eyebrow' }, ['Recommended size']),
+    h('div', { class: 'size-row' }, [
+      h('span', { class: 'size-value' }, [r.recommendedSize]),
+      h('span', { class: 'pill', 'data-label': r.fitLabel }, [capitalize(FIT_LABEL_TEXT[r.fitLabel])]),
+    ]),
+    fitScale(r.fitLabel),
+    notes.length ? h('ul', { class: 'notes' }, notes) : null,
+    r.profileSource === 'owned_item'
+      ? h('p', { class: 'muted' }, ['Based on an item you own. Adding your measurements gives a more accurate result.'])
+      : null,
+    chart
+      ? h('a', { class: 'button secondary', href: chart.sourceUrl, target: '_blank', rel: 'noopener noreferrer' }, ['See size chart'])
+      : null,
     chart ? h('p', { class: 'muted' }, [`Based on ${chart.brandName}'s size chart.`]) : null,
-    chart?.notes ? h('p', { class: 'muted' }, [chart.notes]) : null,
-    chosenCategory ? button('Change clothing type', () => ((chosenCategory = null), render()), 'link') : null,
   ]);
+}
+
+function detected(product: ProductContext) {
+  const parts: (Node | string)[] = ['Detected: '];
+  if (product.productName) parts.push(h('strong', {}, [product.productName]), ' · ');
+  parts.push(product.category ? capitalize(product.category) : 'Clothing type unknown');
+  if (chosenCategory) parts.push(' ', button('Change', () => ((chosenCategory = null), render()), 'link'));
+  return h('p', { class: 'detected' }, parts);
+}
+
+// Where the marker sits on the "Runs small → Oversized" bar for each label.
+const SCALE_POSITION: Record<FitLabel, number> = { small: 8, true_to_size: 50, slightly_oversized: 70, oversized: 92 };
+
+function fitScale(label: FitLabel) {
+  return h('div', { class: 'scale', role: 'img', 'aria-label': `Fit: ${FIT_LABEL_TEXT[label]}` }, [
+    h('div', { class: 'scale-labels', 'aria-hidden': 'true' }, [h('span', {}, ['Runs small']), h('span', {}, ['True to size']), h('span', {}, ['Oversized'])]),
+    h('div', { class: 'scale-track', 'aria-hidden': 'true' }, [h('span', { class: 'scale-marker', style: `left: ${SCALE_POSITION[label]}%` })]),
+  ]);
+}
+
+const ICONS = {
+  ok: '<svg viewBox="0 0 20 20" width="18" height="18"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  warn: '<svg viewBox="0 0 20 20" width="18" height="18"><path d="M10 3L2 17h16L10 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 8v4.5M10 14.6v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  info: '<svg viewBox="0 0 20 20" width="18" height="18"><circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 9v5M10 6.2v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+};
+
+function noteItem(kind: keyof typeof ICONS, text: string) {
+  const icon = h('span', { class: 'note-icon', 'aria-hidden': 'true' });
+  icon.innerHTML = ICONS[kind];
+  return h('li', { class: `note ${kind}` }, [icon, h('span', {}, [text])]);
 }
 
 function unsupportedSite() {
   if (page.onSupportedSite) {
-    return h('section', {}, [h('p', {}, ['Open a product page on this site to get a size.'])]);
+    return h('section', { class: 'message' }, [
+      h('h2', {}, ['Open a product page']),
+      h('p', {}, ['Open a product page on this site to get a size.']),
+    ]);
   }
-  return h('section', {}, [
-    h('p', {}, ["Fit Everywhere doesn't work on this site."]),
+  return h('section', { class: 'message' }, [
+    h('h2', {}, ['Not available here']),
+    h('p', {}, ["Fit Everywhere doesn't work on this site yet."]),
     supportedCharts.length
       ? h('div', {}, [
-          h('p', {}, ['Supported brands:']),
-          h('ul', {}, supportedCharts.map((c) => h('li', {}, [c.brandName]))),
+          h('p', { class: 'eyebrow' }, ['Works on']),
+          h('ul', { class: 'chips' }, supportedCharts.map((c) => h('li', {}, [c.brandName]))),
         ])
       : h('p', { class: 'muted' }, ['No brands are supported yet.']),
   ]);
 }
 
-function chooseCategory(prompt: string) {
-  return h('section', {}, [
-    h('p', {}, [prompt]),
-    h(
-      'div',
-      { class: 'row' },
-      CATEGORIES.map((c) => button(capitalize(c), () => ((chosenCategory = c), render()))),
-    ),
+function categoryButtons() {
+  return h(
+    'div',
+    { class: 'segmented' },
+    CATEGORIES.map((c) => button(capitalize(c), () => ((chosenCategory = c), render()))),
+  );
+}
+
+function chooseCategory() {
+  const product = page.product;
+  return h('section', { class: 'message' }, [
+    product?.productName ? h('p', { class: 'detected' }, ['Detected: ', h('strong', {}, [product.productName])]) : null,
+    h('h2', {}, ['What kind of item is this?']),
+    categoryButtons(),
   ]);
 }
 
 function unsupportedItem() {
   const chart = page.product ? getChart(page.product.brandId) : null;
   const available = chart ? CATEGORIES.filter((c) => chart.charts[c]) : [];
-  return h('section', {}, [
+  return h('section', { class: 'message' }, [
+    h('h2', {}, ['No size chart for this item']),
     h('p', {}, [`We don't have ${chart?.brandName ?? 'this brand'}'s size chart for this item.`]),
-    available.length ? h('p', {}, [`Open a product from: ${available.join(', ')}.`]) : null,
-    chooseCategory('Wrong clothing type? Pick another:'),
+    available.length ? h('p', {}, [`${chart!.brandName} has charts for ${joinList(available)}.`]) : null,
+    h('p', { class: 'muted' }, ['Wrong clothing type? Pick another:']),
+    categoryButtons(),
   ]);
 }
 
@@ -131,44 +211,44 @@ function fixProfileMessage(response: RecommendResponse) {
   const category = chosenCategory ?? page.product?.category;
   if (response.error === 'NO_USABLE_MEASUREMENTS' && category) {
     const needed = DIMENSIONS.filter((d) => CATEGORY_WEIGHTS[category][d] > 0);
-    return h('p', { class: 'notice' }, [`Sizing ${category} uses ${needed.join(' and ')}. Add at least one to get a size.`]);
+    return h('p', { class: 'notice', role: 'status' }, [`Sizing ${category} uses ${needed.join(' and ')}. Add at least one to get a size.`]);
   }
-  return h('p', { class: 'notice' }, [
+  return h('p', { class: 'notice', role: 'status' }, [
     "We couldn't find your owned item's size in that brand's chart. Pick it again or add measurements.",
   ]);
 }
 
 // ---- Profile form ----
 
-function profileForm(title: string) {
+function profileForm() {
   const existing = page.profile;
   const m = existing?.measurements ?? {};
   const owned = existing?.ownedItem;
   const error = h('p', { class: 'error', role: 'alert' }, []);
 
-  const fit = h(
-    'select',
-    { name: 'preferredFit' },
-    PREFERRED_FITS.map((f) => option(f, capitalize(f), (existing?.preferredFit ?? 'regular') === f)),
-  ) as HTMLSelectElement;
+  // Only the visible mode is saved: measurements, or an owned item (plus height).
+  let mode: 'measurements' | 'owned' =
+    existing && !DIMENSIONS.some((d) => m[d] !== undefined) && owned ? 'owned' : 'measurements';
+  let preferredFit: PreferredFit = existing?.preferredFit ?? 'regular';
 
-  const numberInput = (name: string, value?: number) =>
-    h('input', { type: 'number', name, min: '1', step: '0.25', inputmode: 'decimal', value: value?.toString() ?? '' }) as HTMLInputElement;
+  const numberInput = (name: string, value?: number, placeholder = '') =>
+    h('input', { type: 'number', name, id: name, min: '1', step: '0.25', inputmode: 'decimal', placeholder, value: value?.toString() ?? '' }) as HTMLInputElement;
   const inputs = {
     bust: numberInput('bust', m.bust),
     waist: numberInput('waist', m.waist),
     hips: numberInput('hips', m.hips),
-    height: numberInput('height', m.height),
+    height: numberInput('height', m.height, 'Optional'),
   };
+  const ownedHeight = numberInput('ownedHeight', m.height, 'Optional');
 
   // Owned item pickers only offer supported brands and the sizes in their charts.
-  const brandSelect = h('select', { name: 'ownedBrand' }, [
-    option('', 'None'),
+  const brandSelect = h('select', { name: 'ownedBrand', id: 'ownedBrand' }, [
+    option('', 'Choose a brand'),
     ...supportedCharts.map((c) => option(c.brandId, c.brandName, owned?.brandId === c.brandId)),
   ]) as HTMLSelectElement;
-  const categorySelect = h('select', { name: 'ownedCategory' }, []) as HTMLSelectElement;
-  const sizeSelect = h('select', { name: 'ownedSize' }, []) as HTMLSelectElement;
-  const productInput = h('input', { type: 'text', name: 'ownedName', placeholder: 'e.g. 501 jeans', value: owned?.productName ?? '' }) as HTMLInputElement;
+  const categorySelect = h('select', { name: 'ownedCategory', id: 'ownedCategory' }, []) as HTMLSelectElement;
+  const sizeSelect = h('select', { name: 'ownedSize', id: 'ownedSize' }, []) as HTMLSelectElement;
+  const productInput = h('input', { type: 'text', name: 'ownedName', id: 'ownedName', placeholder: 'e.g. 90s straight jeans', value: owned?.productName ?? '' }) as HTMLInputElement;
 
   const fillCategories = () => {
     const chart = getChart(brandSelect.value);
@@ -184,18 +264,50 @@ function profileForm(title: string) {
   categorySelect.addEventListener('change', fillSizes);
   fillCategories();
 
+  const measurementSection = h('div', { class: 'grid' }, [
+    field('Bust (in)', inputs.bust),
+    field('Waist (in)', inputs.waist),
+    field('Hips (in)', inputs.hips),
+    field('Height (in)', inputs.height),
+  ]);
+  const ownedSection = h('div', { class: 'grid' }, [
+    h('p', { class: 'muted span-2' }, ['Pick something you own from a supported brand that fits you well.']),
+    field('Brand', brandSelect),
+    field('Type', categorySelect),
+    field('Size', sizeSelect),
+    field('Height (in)', ownedHeight),
+    field('Item name (optional)', productInput, 'span-2'),
+  ]);
+
+  const fitButtons = PREFERRED_FITS.map((f) =>
+    button(capitalize(f), () => {
+      preferredFit = f;
+      syncFit();
+    }, undefined, { role: 'radio', 'data-fit': f }),
+  );
+  const syncFit = () => fitButtons.forEach((b) => b.setAttribute('aria-checked', String(b.dataset.fit === preferredFit)));
+  syncFit();
+
+  const modeToggle = button('', () => {
+    mode = mode === 'measurements' ? 'owned' : 'measurements';
+    syncMode();
+  }, 'link');
+  const syncMode = () => {
+    measurementSection.hidden = mode !== 'measurements';
+    ownedSection.hidden = mode !== 'owned';
+    modeToggle.textContent = mode === 'measurements' ? 'Or add an item you own instead' : 'Use my measurements instead';
+    error.textContent = '';
+  };
+  syncMode();
+
   const save = async () => {
+    const values = mode === 'measurements' ? Object.entries(inputs) : [['height', ownedHeight] as const];
     const measurements = Object.fromEntries(
-      Object.entries(inputs)
-        .map(([k, input]) => [k, input.valueAsNumber] as const)
-        .filter(([, v]) => Number.isFinite(v) && v > 0),
+      values.map(([k, input]) => [k, input.valueAsNumber] as const).filter(([, v]) => Number.isFinite(v) && v > 0),
     );
-    const profile: FitProfile = {
-      preferredFit: fit.value as FitProfile['preferredFit'],
-      updatedAt: new Date().toISOString(),
-    };
+    const profile: FitProfile = { preferredFit, updatedAt: new Date().toISOString() };
     if (Object.keys(measurements).length) profile.measurements = measurements;
-    if (brandSelect.value && sizeSelect.value) {
+    if (mode === 'owned' && brandSelect.value && sizeSelect.value) {
       profile.ownedItem = {
         brandId: brandSelect.value,
         category: categorySelect.value as Category,
@@ -204,7 +316,8 @@ function profileForm(title: string) {
       };
     }
     if (!isProfileComplete(profile, supportedCharts.map((c) => c.brandId))) {
-      error.textContent = 'Add at least one of bust, waist, or hips, or pick an item you own.';
+      error.textContent =
+        mode === 'measurements' ? 'Add at least one of bust, waist, or hips.' : 'Pick a brand, type, and size for your item.';
       return;
     }
     await saveProfile(profile);
@@ -222,27 +335,21 @@ function profileForm(title: string) {
   };
 
   return h('form', { class: 'profile', onsubmit: (e: Event) => (e.preventDefault(), void save()) }, [
-    h('h2', {}, [title]),
-    field('Preferred fit', fit),
-    h('fieldset', {}, [
-      h('legend', {}, ['Your measurements (inches)']),
-      field('Bust', inputs.bust),
-      field('Waist', inputs.waist),
-      field('Hips', inputs.hips),
-      field('Height (optional)', inputs.height),
+    h('h2', {}, [existing ? 'Your fit profile' : 'Create your fit profile']),
+    h('p', { class: 'subtitle' }, ['Takes about a minute. You can edit it anytime.']),
+    measurementSection,
+    ownedSection,
+    h('div', { class: 'field' }, [
+      h('span', { class: 'label', id: 'fit-label' }, ['Preferred fit']),
+      h('div', { class: 'segmented', role: 'radiogroup', 'aria-labelledby': 'fit-label' }, fitButtons),
     ]),
-    h('fieldset', {}, [
-      h('legend', {}, ['Or: an item you own that fits well']),
-      supportedCharts.length
-        ? h('div', {}, [field('Brand', brandSelect), field('Type', categorySelect), field('Size', sizeSelect), field('Item name (optional)', productInput)])
-        : h('p', { class: 'muted' }, ['Available once brands are added.']),
-    ]),
-    h('p', { class: 'muted' }, ['Your profile stays on this device.']),
+    modeToggle,
     error,
-    h('div', { class: 'row' }, [
-      h('button', { type: 'submit' }, ['Save profile']),
-      editingProfile ? button('Cancel', () => ((editingProfile = false), render())) : null,
-      existing ? button('Delete profile', () => void remove(), 'danger') : null,
+    h('button', { type: 'submit', class: 'button primary' }, ['Save my profile']),
+    h('div', { class: 'form-footer' }, [
+      h('span', { class: 'muted' }, ['Your profile stays on this device.']),
+      editingProfile ? button('Cancel', () => ((editingProfile = false), render()), 'link') : null,
+      existing ? button('Delete profile', () => void remove(), 'link danger') : null,
     ]),
   ]);
 }
@@ -251,7 +358,7 @@ function profileForm(title: string) {
 
 type Child = Node | string | null | undefined;
 
-function h(tag: string, props: Record<string, unknown>, children: Child[] = []): HTMLElement {
+function h(tag: string, props: Record<string, unknown> = {}, children: Child[] = []): HTMLElement {
   const el = document.createElement(tag);
   for (const [key, value] of Object.entries(props)) {
     if (key.startsWith('on') && typeof value === 'function') el.addEventListener(key.slice(2), value as EventListener);
@@ -262,8 +369,8 @@ function h(tag: string, props: Record<string, unknown>, children: Child[] = []):
   return el;
 }
 
-function button(label: string, onClick: () => void, variant?: string) {
-  return h('button', { type: 'button', onclick: onClick, ...(variant ? { class: variant } : {}) }, [label]);
+function button(label: string, onClick: () => void, variant?: string, attrs: Record<string, string> = {}) {
+  return h('button', { type: 'button', onclick: onClick, ...(variant ? { class: variant } : {}), ...attrs }, [label]);
 }
 
 function option(value: string, label: string, selected = false) {
@@ -272,10 +379,11 @@ function option(value: string, label: string, selected = false) {
   return el;
 }
 
-function field(label: string, control: HTMLElement) {
-  return h('label', {}, [h('span', {}, [label]), control]);
+function field(label: string, control: HTMLElement, extraClass = '') {
+  return h('div', { class: `field ${extraClass}`.trim() }, [h('label', { for: control.id }, [label]), control]);
 }
 
+const joinList = (items: string[]) => (items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')} and ${items.at(-1)}`);
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 void load();

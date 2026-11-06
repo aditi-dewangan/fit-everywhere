@@ -1,6 +1,6 @@
 {
   "name": "fit-everywhere",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "scripts": {
     "build": "tsc --noEmit && vite build && vite build --config vite.content.config.ts",
     "test": "vitest run",
@@ -20,6 +20,8 @@
     "vitest": "^5.1.0"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
     "zod": "^4.6.7"
   },
   "private": true,
