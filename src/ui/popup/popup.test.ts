@@ -2,7 +2,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { BrandSizeChart, FitProfile, ProductContext } from '../../types';
 
-// Drives the placeholder popup through every state with the browser APIs
+// Drives the popup through every state with the browser APIs
 // stubbed out. The brand below is test data, not a real chart.
 
 const chart: BrandSizeChart = {
@@ -51,7 +51,7 @@ async function openPopup() {
 const state = () => document.querySelector('header')!.dataset.state;
 const text = () => document.getElementById('app')!.textContent!;
 const click = (label: string) => {
-  const target = [...document.querySelectorAll('button')].find((b) => b.textContent === label);
+  const target = [...document.querySelectorAll('button')].find((b) => b.textContent === label || b.getAttribute('aria-label') === label);
   if (!target) throw new Error(`no button "${label}"`);
   target.click();
 };
@@ -65,13 +65,29 @@ beforeEach(() => {
 });
 
 describe('popup states', () => {
-  it('Result: shows size, fit label, explanation, and chart source', async () => {
+  it('Result: shows size, fit label, notes, and chart source', async () => {
     await openPopup();
     expect(state()).toBe('result');
-    expect(text()).toContain('Recommended size: M');
-    expect(text()).toContain('Fit: true to size');
-    expect(text()).toContain('Bust, waist, and hips fit well.');
+    expect(document.querySelector('.size-value')!.textContent).toBe('M');
+    expect(document.querySelector('.pill')!.textContent).toBe('True to size');
+    expect(text()).toContain('Detected: Wrap Dress · Dresses');
+    const notes = [...document.querySelectorAll('.note')].map((n) => [n.className, n.textContent]);
+    expect(notes).toEqual([
+      ['note ok', 'Bust fits well'],
+      ['note ok', 'Waist fits well'],
+      ['note ok', 'Hips fit well'],
+    ]);
+    expect(document.querySelector<HTMLAnchorElement>('a.button')!.href).toBe('https://example.com/size-chart');
     expect(text()).toContain("Based on Example Brand's size chart.");
+    expect(document.querySelector('header')!.textContent).toContain('Profile: Regular fit');
+  });
+
+  it('Result: flags snug areas and offers the alternate size', async () => {
+    stored = { measurements: { bust: 36.8, waist: 29.8, hips: 39.8 }, preferredFit: 'regular', updatedAt: '' };
+    await openPopup();
+    expect(document.querySelector('.size-value')!.textContent).toBe('L');
+    expect(text()).toContain('M is also a close match if you want a closer fit');
+    expect(document.querySelector('.note.warn')!.textContent).toBe('Bust may feel roomy');
   });
 
   it('Setup needed: creating a profile leads to a result', async () => {
@@ -79,24 +95,29 @@ describe('popup states', () => {
     await openPopup();
     expect(state()).toBe('setup_needed');
 
-    click('Save profile');
+    click('Fitted');
+    click('Save my profile');
     expect(text()).toContain('Add at least one of bust, waist, or hips');
 
     (input('bust') as HTMLInputElement).value = '35.5';
     (input('waist') as HTMLInputElement).value = '28';
     (input('hips') as HTMLInputElement).value = '38.5';
-    click('Save profile');
+    click('Save my profile');
     await vi.waitFor(() => expect(state()).toBe('result'));
     expect(saved()?.measurements).toEqual({ bust: 35.5, waist: 28, hips: 38.5 });
+    expect(saved()?.preferredFit).toBe('fitted');
   });
 
   it('Setup needed: an owned item alone is enough', async () => {
     stored = null;
     await openPopup();
+    click('Or add an item you own instead');
+    click('Save my profile');
+    expect(text()).toContain('Pick a brand, type, and size for your item.');
     input('ownedBrand').value = 'example';
     input('ownedBrand').dispatchEvent(new Event('change'));
     input('ownedSize').value = 'M';
-    click('Save profile');
+    click('Save my profile');
     await vi.waitFor(() => expect(state()).toBe('result'));
     expect(saved()?.ownedItem).toEqual({ brandId: 'example', category: 'dresses', size: 'M' });
     expect(text()).toContain('Adding your measurements gives a more accurate result.');
@@ -108,6 +129,7 @@ describe('popup states', () => {
     await openPopup();
     expect(state()).toBe('unsupported_site');
     expect(text()).toContain("doesn't work on this site");
+    expect(text()).toContain('Works on');
     expect(text()).toContain('Example Brand');
   });
 
@@ -124,14 +146,16 @@ describe('popup states', () => {
     expect(state()).toBe('choose_category');
     click('Dresses');
     expect(state()).toBe('result');
-    expect(text()).toContain('Recommended size: M');
+    expect(document.querySelector('.size-value')!.textContent).toBe('M');
+    click('Change');
+    expect(state()).toBe('choose_category');
   });
 
   it('Unsupported item: the brand chart lacks the clothing type', async () => {
     product = { ...dress, category: 'jeans' };
     await openPopup();
     expect(state()).toBe('unsupported_item');
-    expect(text()).toContain('Open a product from: dresses.');
+    expect(text()).toContain('Example Brand has charts for dresses.');
   });
 
   it('Fix profile: measurements do not cover the item', async () => {
@@ -159,6 +183,6 @@ describe('popup states', () => {
     expect((input('bust') as HTMLInputElement).value).toBe('35.5');
     click('Delete profile');
     await vi.waitFor(() => expect(saved()).toBeNull());
-    expect(text()).toContain('Set up your fit profile');
+    expect(text()).toContain('Create your fit profile');
   });
 });

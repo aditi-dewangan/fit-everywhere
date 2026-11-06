@@ -32,7 +32,7 @@ The extension gives real recommendations on **Hollister**, **H&M**, and **PacSun
 | 4. Labeled sample chart | ✅ Done (`src/data/charts/sample.json`, test-only) |
 | 5. Profile storage, content script, messaging | ✅ Done |
 | 6. Brand adapters from saved fixtures | ✅ Done for all three brands |
-| 7. Placeholder popup covering every state | ✅ Done |
+| 7. Popup covering every state | ✅ Done, final design |
 
 Chart coverage by brand (✅ = chart in; the last column shows which product-page types have a saved fixture and tested adapter):
 
@@ -78,7 +78,7 @@ Start from [`docs/chart-template.json`](docs/chart-template.json). Rules:
 - If the chart lists one number instead of a range, set `min` and `max` to that number.
 - List sizes **smallest to largest**.
 - Supported clothing types are `tops`, `dresses`, and `jeans`. Include only the ones the brand's chart covers.
-- Write any exceptions (petite lines, styles that run small) in `notes`. The popup shows this text.
+- Record where the numbers came from and any exceptions (petite lines, styles that run small) in `notes`. This is for maintainers; the popup doesn't show it.
 
 Run `npm test` to check the file. The data tests validate every chart against the schema (`min <= max`, ascending sizes, source URL present) and confirm it produces a recommendation.
 
@@ -131,18 +131,18 @@ src/
     content.ts            Runs on the product page when the popup opens
     messages.ts           getProductContext(tabId)
     storage.ts            getProfile / saveProfile / clearProfile
-  ui/popup/               Placeholder UI, replaced by the final design
+  ui/popup/               Popup UI (design by Anya and Heesu)
 fixtures/                 Saved product pages for adapter tests
 ```
 
-**For the final design:** the UI only needs `getProfile`, `saveProfile`, `clearProfile`, `getProductContext`, and `recommend`, plus the popup states in `src/ui/popup/state.ts` (setup needed, unsupported site, choose clothing type, unsupported item, fix profile, and result). You can replace `popup.ts` and `popup.css` without touching the engine.
+**Popup UI:** follows Anya and Heesu's design (Canva, page 2). It only needs `getProfile`, `saveProfile`, `clearProfile`, `getProductContext`, and `recommend`, plus the popup states in `src/ui/popup/state.ts` (setup needed, unsupported site, choose clothing type, unsupported item, fix profile, and result). Design changes go in `popup.ts` and `popup.css` without touching the engine. Fonts (Inter, Space Grotesk) are bundled into the extension, so the popup makes no network requests.
 
 ## Privacy
 
 - The fit profile is stored only in `chrome.storage.local` on your device.
 - No measurements or browsing data are sent anywhere, and there are no analytics.
 - The extension has no standing site access. It reads a page only when you open the popup on a supported brand's site.
-- To delete your profile, open the popup and choose **Edit profile → Delete profile**.
+- To delete your profile, open the popup and click **Profile: … fit** at the top, then **Delete profile**.
 
 ## Team
 
