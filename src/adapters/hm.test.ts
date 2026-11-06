@@ -27,6 +27,15 @@ describe('H&M adapter', () => {
     });
   });
 
+  it("reads a women's dress", () => {
+    const { url, doc } = loadFixture('hm/dresses.html');
+    expect(extractProductContext(url, doc, [hm])).toMatchObject({
+      category: 'dresses',
+      productName: 'Tie-Shoulder-Strap Smocked Dress',
+      cut: 'regular',
+    });
+  });
+
   it('ignores non-product pages', () => {
     const { doc } = loadFixture('hm/tops.html');
     expect(hm.isProductPage(new URL('https://www2.hm.com/en_us/women/products/tops.html'), doc)).toBe(false);

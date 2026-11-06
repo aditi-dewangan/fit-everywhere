@@ -2,8 +2,8 @@
   "brandId": "pacsun",
   "brandName": "PacSun",
   "sourceUrl": "https://www.pacsun.com/sizechart-womens-jeans.html",
-  "collectedOn": "2026-11-04",
-  "notes": "Jeans: PacSun women's jeans chart (standard sizes 23\u201332; old sizes 0\u201317 map to the same columns), archived Nov 2020. Tops: PacSun women's tops chart (https://www.pacsun.com/sizechart-womens-tops.html), archived Mar 2017; each letter size spans the two numeric sizes listed under it. Both live pages block automated access, so values were read from Wayback Machine copies of PacSun's own pages and match PacSun's current figures quoted in search results.",
+  "collectedOn": "2026-11-05",
+  "notes": "Jeans: PacSun women's jeans chart (standard sizes 23\u201332; old sizes 0\u201317 map to the same columns), archived Nov 2020. Tops: PacSun women's tops chart (https://www.pacsun.com/sizechart-womens-tops.html), archived Mar 2017; each letter size spans the two numeric sizes listed under it. Both live pages block automated access, so values were read from Wayback Machine copies of PacSun's own pages and match PacSun's current figures quoted in search results. Sizes 33 and 34 confirmed by Aditi on the live jeans chart, Nov 2026.",
   "charts": {
     "tops": [
       {
@@ -176,6 +176,28 @@
         "hips": {
           "min": 45,
           "max": 45
+        }
+      },
+      {
+        "size": "33",
+        "waist": {
+          "min": 36,
+          "max": 36
+        },
+        "hips": {
+          "min": 46.5,
+          "max": 46.5
+        }
+      },
+      {
+        "size": "34",
+        "waist": {
+          "min": 37.5,
+          "max": 37.5
+        },
+        "hips": {
+          "min": 48,
+          "max": 48
         }
       }
     ]
