@@ -1,0 +1,25 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "anthropologie",
+  "brandName": "Anthropologie",
+  "sourceUrl": "https://www.anthropologie.com/shop/by-anthropologie-sheer-satin-tuxedo-blouse",
+  "notes": "Copied from the Size Guide dialog: tops from the page above, dresses from /shop/by-anthropologie-sequined-sleeveless-mini-dress; both show this chart. Natural waist is stored as waist; drop waist is unused. The denim size guide only converts between countries' sizes and has no body measurements, so there is no jeans chart. Petite and plus tabs are not modeled.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 32, "max": 32 }, "waist": { "min": 24, "max": 24 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "XS", "bust": { "min": 33, "max": 34 }, "waist": { "min": 25, "max": 26 }, "hips": { "min": 35, "max": 36 } },
+      { "size": "S", "bust": { "min": 35, "max": 36 }, "waist": { "min": 27, "max": 28 }, "hips": { "min": 37, "max": 38 } },
+      { "size": "M", "bust": { "min": 37, "max": 38 }, "waist": { "min": 29, "max": 30 }, "hips": { "min": 39, "max": 40 } },
+      { "size": "L", "bust": { "min": 39.5, "max": 41 }, "waist": { "min": 31.5, "max": 33 }, "hips": { "min": 41.5, "max": 43 } },
+      { "size": "XL", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 34.5, "max": 34.5 }, "hips": { "min": 44.5, "max": 44.5 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 32, "max": 32 }, "waist": { "min": 24, "max": 24 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "XS", "bust": { "min": 33, "max": 34 }, "waist": { "min": 25, "max": 26 }, "hips": { "min": 35, "max": 36 } },
+      { "size": "S", "bust": { "min": 35, "max": 36 }, "waist": { "min": 27, "max": 28 }, "hips": { "min": 37, "max": 38 } },
+      { "size": "M", "bust": { "min": 37, "max": 38 }, "waist": { "min": 29, "max": 30 }, "hips": { "min": 39, "max": 40 } },
+      { "size": "L", "bust": { "min": 39.5, "max": 41 }, "waist": { "min": 31.5, "max": 33 }, "hips": { "min": 41.5, "max": 43 } },
+      { "size": "XL", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 34.5, "max": 34.5 }, "hips": { "min": 44.5, "max": 44.5 } }
+    ]
+  }
+}

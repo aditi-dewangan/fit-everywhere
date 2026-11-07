@@ -2,18 +2,19 @@ import type { ProductContext } from '../types';
 import { abercrombie } from './abercrombie';
 import { americanEagle } from './american-eagle';
 import { defaultDescription, detectCut } from './common';
-import { gap, oldNavy } from './gap';
+import { athleta, bananaRepublic, gap, oldNavy } from './gap';
 import { hm } from './hm';
 import { hollister } from './hollister';
 import { pacsun } from './pacsun';
 import { ralphLauren } from './ralph-lauren';
 import { stussy } from './stussy';
 import type { BrandAdapter } from './types';
+import { anthropologie, freePeople, urbanOutfitters } from './urbn';
 
 export type { BrandAdapter } from './types';
 
 // One adapter per supported brand. Each needs a chart in src/data/charts and fixtures in fixtures/<brandId>/.
-export const adapters: BrandAdapter[] = [hm, pacsun, hollister, abercrombie, americanEagle, gap, oldNavy, ralphLauren, stussy];
+export const adapters: BrandAdapter[] = [hm, pacsun, hollister, abercrombie, americanEagle, gap, oldNavy, bananaRepublic, athleta, ralphLauren, stussy, urbanOutfitters, freePeople, anthropologie];
 
 export function findAdapter(hostname: string, list: readonly BrandAdapter[] = adapters): BrandAdapter | null {
   const host = hostname.toLowerCase().replace(/^www\./, '');
