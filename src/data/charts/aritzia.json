@@ -1,0 +1,41 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "aritzia",
+  "brandName": "Aritzia",
+  "sourceUrl": "https://www.aritzia.com/us/en/size-guide",
+  "notes": "Copied from the 'All Brands Exclusive to Aritzia' tables on the size guide page, published in centimeters and converted to inches (divided by 2.54, rounded to two decimals). The alpha table is used for tops and dresses; the page also publishes numeric sizes (00-16) and a 1-3 scale for the same measurements. Curve Fit denim, with hips about 5 cm larger, is not modeled.",
+  "charts": {
+    "tops": [
+      { "size": "3XS", "bust": { "min": 28.94, "max": 28.94 }, "waist": { "min": 21.06, "max": 21.06 }, "hips": { "min": 30.91, "max": 30.91 } },
+      { "size": "2XS", "bust": { "min": 30.51, "max": 30.51 }, "waist": { "min": 22.44, "max": 22.44 }, "hips": { "min": 32.48, "max": 32.48 } },
+      { "size": "XS", "bust": { "min": 32.09, "max": 33.07 }, "waist": { "min": 24.02, "max": 25 }, "hips": { "min": 34.06, "max": 35.04 } },
+      { "size": "S", "bust": { "min": 34.06, "max": 35.04 }, "waist": { "min": 25.98, "max": 26.97 }, "hips": { "min": 36.02, "max": 37.01 } },
+      { "size": "M", "bust": { "min": 36.02, "max": 37.6 }, "waist": { "min": 27.95, "max": 29.53 }, "hips": { "min": 37.99, "max": 39.57 } },
+      { "size": "L", "bust": { "min": 38.98, "max": 40.55 }, "waist": { "min": 30.91, "max": 32.48 }, "hips": { "min": 40.94, "max": 42.52 } },
+      { "size": "XL", "bust": { "min": 41.93, "max": 43.5 }, "waist": { "min": 34.06, "max": 35.43 }, "hips": { "min": 44.09, "max": 45.47 } },
+      { "size": "2XL", "bust": { "min": 45.08, "max": 45.08 }, "waist": { "min": 37.01, "max": 37.01 }, "hips": { "min": 47.05, "max": 47.05 } }
+    ],
+    "dresses": [
+      { "size": "3XS", "bust": { "min": 28.94, "max": 28.94 }, "waist": { "min": 21.06, "max": 21.06 }, "hips": { "min": 30.91, "max": 30.91 } },
+      { "size": "2XS", "bust": { "min": 30.51, "max": 30.51 }, "waist": { "min": 22.44, "max": 22.44 }, "hips": { "min": 32.48, "max": 32.48 } },
+      { "size": "XS", "bust": { "min": 32.09, "max": 33.07 }, "waist": { "min": 24.02, "max": 25 }, "hips": { "min": 34.06, "max": 35.04 } },
+      { "size": "S", "bust": { "min": 34.06, "max": 35.04 }, "waist": { "min": 25.98, "max": 26.97 }, "hips": { "min": 36.02, "max": 37.01 } },
+      { "size": "M", "bust": { "min": 36.02, "max": 37.6 }, "waist": { "min": 27.95, "max": 29.53 }, "hips": { "min": 37.99, "max": 39.57 } },
+      { "size": "L", "bust": { "min": 38.98, "max": 40.55 }, "waist": { "min": 30.91, "max": 32.48 }, "hips": { "min": 40.94, "max": 42.52 } },
+      { "size": "XL", "bust": { "min": 41.93, "max": 43.5 }, "waist": { "min": 34.06, "max": 35.43 }, "hips": { "min": 44.09, "max": 45.47 } },
+      { "size": "2XL", "bust": { "min": 45.08, "max": 45.08 }, "waist": { "min": 37.01, "max": 37.01 }, "hips": { "min": 47.05, "max": 47.05 } }
+    ],
+    "jeans": [
+      { "size": "23", "waist": { "min": 22.44, "max": 22.44 }, "hips": { "min": 32.48, "max": 32.48 } },
+      { "size": "24", "waist": { "min": 24.02, "max": 24.02 }, "hips": { "min": 34.06, "max": 34.06 } },
+      { "size": "25", "waist": { "min": 25, "max": 25 }, "hips": { "min": 35.04, "max": 35.04 } },
+      { "size": "26", "waist": { "min": 25.98, "max": 25.98 }, "hips": { "min": 36.02, "max": 36.02 } },
+      { "size": "27", "waist": { "min": 26.97, "max": 26.97 }, "hips": { "min": 37.01, "max": 37.01 } },
+      { "size": "28", "waist": { "min": 27.95, "max": 27.95 }, "hips": { "min": 37.99, "max": 37.99 } },
+      { "size": "29", "waist": { "min": 29.53, "max": 29.53 }, "hips": { "min": 39.57, "max": 39.57 } },
+      { "size": "30", "waist": { "min": 30.91, "max": 30.91 }, "hips": { "min": 40.94, "max": 40.94 } },
+      { "size": "31", "waist": { "min": 32.48, "max": 32.48 }, "hips": { "min": 42.52, "max": 42.52 } },
+      { "size": "32", "waist": { "min": 34.06, "max": 34.06 }, "hips": { "min": 44.09, "max": 44.09 } }
+    ]
+  }
+}

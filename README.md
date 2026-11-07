@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Banana Republic**, **Athleta**, **Ralph Lauren**, **Stüssy**, **Urban Outfitters**, **Free People**, **Anthropologie**, **Ann Taylor**, and **LOFT** product pages. Every brand and clothing type below is tested against a saved product page.
+The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Banana Republic**, **Athleta**, **Ralph Lauren**, **Stüssy**, **Urban Outfitters**, **Free People**, **Anthropologie**, **Ann Taylor**, **LOFT**, **Aritzia**, and **UNIQLO** product pages. Every brand and clothing type below is tested against a saved product page.
 
 | Spec step | Status |
 | --- | --- |
@@ -55,6 +55,8 @@ Chart coverage by brand (✅ = chart in; the last column shows which product-pag
 | Anthropologie | ✅ XXS–XL | ✅ XXS–XL | — guide has no body measurements | Size Guide on [anthropologie.com](https://www.anthropologie.com/shop/by-anthropologie-sheer-satin-tuxedo-blouse) product pages | tops, dresses |
 | Ann Taylor | ✅ XXS/00–XXL/18 | ✅ XXS/00–XXL/18 | ✅ XXS/00–XXL/18 | [anntaylor.com size chart](https://www.anntaylor.com/ANN_Size_Chart.html) | tops, dresses, jeans |
 | LOFT | ✅ XXS/00–XXL/18 | ✅ XXS/00–XXL/18 | ✅ 00/24–18/34 | [loft.com size chart](https://www.loft.com/LOFT_Size_Chart.html) | tops, dresses, jeans |
+| Aritzia | ✅ 3XS–2XL | ✅ 3XS–2XL | ✅ 23–32 | [aritzia.com size guide](https://www.aritzia.com/us/en/size-guide) (converted from cm) | tops, dresses, jeans |
+| UNIQLO | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 22–34 inch (waist only) | Size Guide on [uniqlo.com](https://www.uniqlo.com/us/en/products/E465760-000/00) product pages | tops, dresses, jeans |
 
 Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating.
 
