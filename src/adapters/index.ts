@@ -4,6 +4,7 @@ import { annTaylor, loft } from './ann-inc';
 import { aritzia } from './aritzia';
 import { americanEagle } from './american-eagle';
 import { defaultDescription, detectCut } from './common';
+import { express } from './express';
 import { athleta, bananaRepublic, gap, oldNavy } from './gap';
 import { hm } from './hm';
 import { hollister } from './hollister';
@@ -17,7 +18,7 @@ import { anthropologie, freePeople, urbanOutfitters } from './urbn';
 export type { BrandAdapter } from './types';
 
 // One adapter per supported brand. Each needs a chart in src/data/charts and fixtures in fixtures/<brandId>/.
-export const adapters: BrandAdapter[] = [hm, pacsun, hollister, abercrombie, americanEagle, gap, oldNavy, bananaRepublic, athleta, ralphLauren, stussy, urbanOutfitters, freePeople, anthropologie, annTaylor, loft, aritzia, uniqlo];
+export const adapters: BrandAdapter[] = [hm, pacsun, hollister, abercrombie, americanEagle, gap, oldNavy, bananaRepublic, athleta, ralphLauren, stussy, urbanOutfitters, freePeople, anthropologie, annTaylor, loft, aritzia, uniqlo, express];
 
 export function findAdapter(hostname: string, list: readonly BrandAdapter[] = adapters): BrandAdapter | null {
   const host = hostname.toLowerCase().replace(/^www\./, '');
