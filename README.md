@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Banana Republic**, **Athleta**, **Ralph Lauren**, **Stüssy**, **Urban Outfitters**, **Free People**, **Anthropologie**, **Ann Taylor**, **LOFT**, **Aritzia**, **UNIQLO**, **Express**, **Forever 21**, and **Garage** product pages. Every brand and clothing type below is tested against a saved product page.
+The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Banana Republic**, **Athleta**, **Ralph Lauren**, **Stüssy**, **Urban Outfitters**, **Free People**, **Anthropologie**, **Ann Taylor**, **LOFT**, **Aritzia**, **UNIQLO**, **Express**, **Forever 21**, **Garage**, **Fashion Nova**, and **Edikted** product pages. Every brand and clothing type below is tested against a saved product page.
 
 | Spec step | Status |
 | --- | --- |
@@ -60,6 +60,8 @@ Chart coverage by brand (✅ = chart in; the last column shows which product-pag
 | Express | ✅ XXS–XL (bust only) | ✅ XXS–XL | ✅ 000–18 | Size Chart on [express.com](https://www.express.com/clothing/women/high-waisted-relaxed-flare-medium-wash-jeans/pro/07153269/color/Mid%20Wash) product pages | tops, dresses, jeans |
 | Forever 21 | ✅ XXS–XXL | ✅ XXS–XXL | — no regular women's jeans found to test | [forever21.com size guide](https://www.forever21.com/pages/sizing-guide) (plus sizes excluded) | tops, dresses |
 | Garage | ✅ XXS/00–XL/15 | ✅ XXS/00–XL/15 | ✅ XXS/00–XL/15 | [garageclothing.com size chart](https://www.garageclothing.com/us/gar-size-chart.html) | tops, dresses, jeans |
+| Fashion Nova | ✅ XS–3X | ✅ XS–3X | ✅ XS–3X | [fashionnova.com size guide](https://www.fashionnova.com/pages/size-guide) | tops, dresses, jeans |
+| Edikted | ✅ XS–XXL | ✅ XS–XXL | ✅ XS–XXL | [edikted.com size charts](https://edikted.com/pages/size-guide) | tops, dresses, jeans |
 
 Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating.
 
