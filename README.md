@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Banana Republic**, **Athleta**, **Ralph Lauren**, **Stüssy**, **Urban Outfitters**, **Free People**, **Anthropologie**, **Ann Taylor**, **LOFT**, **Aritzia**, **UNIQLO**, **Express**, **Forever 21**, **Garage**, **Fashion Nova**, **Edikted**, and **Princess Polly** product pages. Every brand and clothing type below is tested against a saved product page.
+The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Banana Republic**, **Athleta**, **Ralph Lauren**, **Stüssy**, **Urban Outfitters**, **Free People**, **Anthropologie**, **Ann Taylor**, **LOFT**, **Aritzia**, **UNIQLO**, **Express**, **Forever 21**, **Garage**, **Fashion Nova**, **Edikted**, **Princess Polly**, **Madewell**, and **J.Crew** product pages. Every brand and clothing type below is tested against a saved product page.
 
 | Spec step | Status |
 | --- | --- |
@@ -63,6 +63,8 @@ Chart coverage by brand (✅ = chart in; the last column shows which product-pag
 | Fashion Nova | ✅ XS–3X | ✅ XS–3X | ✅ XS–3X | [fashionnova.com size guide](https://www.fashionnova.com/pages/size-guide) | tops, dresses, jeans |
 | Edikted | ✅ XS–XXL | ✅ XS–XXL | ✅ XS–XXL | [edikted.com size charts](https://edikted.com/pages/size-guide) | tops, dresses, jeans |
 | Princess Polly | ✅ US 0–20 | ✅ US 0–20 | ✅ US 0–20 | [princesspolly.com sizing](https://us.princesspolly.com/pages/sizing) | tops, dresses, jeans |
+| Madewell | ✅ 00/XXS–26/3X | ✅ 00/XS–26/3X | ✅ 23–33 | Size Chart on [madewell.com](https://www.madewell.com/p/womens/clothing/jeans/straight-leg-jeans/the-90s-jean/OB741/) product pages | tops, dresses, jeans |
+| J.Crew | ✅ XXXS/000–3X/24 | ✅ XXXS/000–3X/24 | ✅ 23–37 (waist only) | Size Chart on [jcrew.com](https://www.jcrew.com/p/womens/categories/clothing/jeans/boyfriend/embellished-lowrider-jean/CZ648) product pages | tops, dresses, jeans |
 
 Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating. ASOS isn't supported: it's a marketplace whose chart changes by brand, and the ASOS DESIGN chart has inconsistent numbers (UK 6 hips listed smaller than UK 4).
 
