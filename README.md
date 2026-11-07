@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, and **Old Navy** product pages. Every brand and clothing type below is tested against a saved product page.
+The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Ralph Lauren**, and **Stüssy** product pages. Every brand and clothing type below is tested against a saved product page.
 
 | Spec step | Status |
 | --- | --- |
@@ -46,6 +46,8 @@ Chart coverage by brand (✅ = chart in; the last column shows which product-pag
 | Aerie | ✅ XXS–XXL (bust only) | — not collected | — not collected | Size Details on [ae.com](https://www.ae.com/us/en/p/aerie/tops/sweaters-cardigans/aerie-ribbed-cardigan/9492_4173_572) product pages | tops |
 | Gap | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 000/23–22/36 | Size Guide on [gap.com](https://www.gap.com/browse/product.do?pid=1185296002) product pages | tops, dresses, jeans |
 | Old Navy | ✅ XXS–4X | ✅ XXS–4X (no hips) | ✅ 000–30 | Size Guide on [oldnavy.gap.com](https://oldnavy.gap.com/browse/product.do?pid=734873002) product pages | tops, dresses, jeans |
+| Ralph Lauren | ✅ XXS/000–XXL/22 | ✅ XXS/000–XXL/22 | ✅ 24–34 | Size Chart on [ralphlauren.com](https://www.ralphlauren.com/women-clothing-jeans/high-rise-straight-jean/100043703.html) product pages (Polo; the Lauren line is excluded) | tops, dresses, jeans |
+| Stüssy | ✅ XS–XXL (unisex) | — no chart | — left out, labels don't match sizes sold | [stussy.com size guide](https://www.stussy.com/pages/size-guide) | tops |
 
 Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating.
 
