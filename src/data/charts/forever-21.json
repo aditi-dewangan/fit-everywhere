@@ -1,0 +1,27 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "forever-21",
+  "brandName": "Forever 21",
+  "sourceUrl": "https://www.forever21.com/pages/sizing-guide",
+  "notes": "Copied from the women's tables on the size guide page, in inches. Tops and dresses share the alpha table; the page's second column gives numeric equivalents (XXS=0, XS=1, S=3-5, M=7-9, L=11, XL=13, XXL=15). Plus-size products are excluded in the adapter because their chart has not been collected. The page also has a numeric jeans table, left out because the jeans found on the site were men's or plus-size, so there was no women's page to test against.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 31, "max": 31 }, "waist": { "min": 22, "max": 23 }, "hips": { "min": 31, "max": 32 } },
+      { "size": "XS", "bust": { "min": 32, "max": 32 }, "waist": { "min": 24, "max": 25 }, "hips": { "min": 33, "max": 34 } },
+      { "size": "S", "bust": { "min": 34, "max": 35 }, "waist": { "min": 25, "max": 26 }, "hips": { "min": 35, "max": 37 } },
+      { "size": "M", "bust": { "min": 35, "max": 36 }, "waist": { "min": 27, "max": 28 }, "hips": { "min": 38, "max": 39 } },
+      { "size": "L", "bust": { "min": 36, "max": 37 }, "waist": { "min": 28, "max": 29 }, "hips": { "min": 40, "max": 42 } },
+      { "size": "XL", "bust": { "min": 38, "max": 41 }, "waist": { "min": 30, "max": 32 }, "hips": { "min": 43, "max": 45 } },
+      { "size": "XXL", "bust": { "min": 42, "max": 45 }, "waist": { "min": 33, "max": 35 }, "hips": { "min": 46, "max": 48 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 31, "max": 31 }, "waist": { "min": 22, "max": 23 }, "hips": { "min": 31, "max": 32 } },
+      { "size": "XS", "bust": { "min": 32, "max": 32 }, "waist": { "min": 24, "max": 25 }, "hips": { "min": 33, "max": 34 } },
+      { "size": "S", "bust": { "min": 34, "max": 35 }, "waist": { "min": 25, "max": 26 }, "hips": { "min": 35, "max": 37 } },
+      { "size": "M", "bust": { "min": 35, "max": 36 }, "waist": { "min": 27, "max": 28 }, "hips": { "min": 38, "max": 39 } },
+      { "size": "L", "bust": { "min": 36, "max": 37 }, "waist": { "min": 28, "max": 29 }, "hips": { "min": 40, "max": 42 } },
+      { "size": "XL", "bust": { "min": 38, "max": 41 }, "waist": { "min": 30, "max": 32 }, "hips": { "min": 43, "max": 45 } },
+      { "size": "XXL", "bust": { "min": 42, "max": 45 }, "waist": { "min": 33, "max": 35 }, "hips": { "min": 46, "max": 48 } }
+    ]
+  }
+}
