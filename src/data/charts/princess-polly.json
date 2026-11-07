@@ -1,0 +1,48 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "princess-polly",
+  "brandName": "Princess Polly",
+  "sourceUrl": "https://us.princesspolly.com/pages/sizing",
+  "notes": "Copied from the US inches table on the sizing page, also shown on product pages. Jeans are sold in the same US sizes (US 0-12 on the page checked). Sizes above 12 are the curve range, as published.",
+  "charts": {
+    "tops": [
+      { "size": "0", "bust": { "min": 31, "max": 31 }, "waist": { "min": 24, "max": 24 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "2", "bust": { "min": 32, "max": 32 }, "waist": { "min": 25, "max": 25 }, "hips": { "min": 35, "max": 35 } },
+      { "size": "4", "bust": { "min": 34, "max": 34 }, "waist": { "min": 27, "max": 27 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "6", "bust": { "min": 36, "max": 36 }, "waist": { "min": 29, "max": 29 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "8", "bust": { "min": 38, "max": 38 }, "waist": { "min": 31, "max": 31 }, "hips": { "min": 41, "max": 41 } },
+      { "size": "10", "bust": { "min": 40, "max": 40 }, "waist": { "min": 33, "max": 33 }, "hips": { "min": 43, "max": 43 } },
+      { "size": "12", "bust": { "min": 42, "max": 42 }, "waist": { "min": 35.5, "max": 35.5 }, "hips": { "min": 45, "max": 45 } },
+      { "size": "14", "bust": { "min": 46.5, "max": 46.5 }, "waist": { "min": 39.5, "max": 39.5 }, "hips": { "min": 51, "max": 51 } },
+      { "size": "16", "bust": { "min": 49, "max": 49 }, "waist": { "min": 42, "max": 42 }, "hips": { "min": 53.5, "max": 53.5 } },
+      { "size": "18", "bust": { "min": 52, "max": 52 }, "waist": { "min": 45, "max": 45 }, "hips": { "min": 56, "max": 56 } },
+      { "size": "20", "bust": { "min": 55, "max": 55 }, "waist": { "min": 48, "max": 48 }, "hips": { "min": 59, "max": 59 } }
+    ],
+    "dresses": [
+      { "size": "0", "bust": { "min": 31, "max": 31 }, "waist": { "min": 24, "max": 24 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "2", "bust": { "min": 32, "max": 32 }, "waist": { "min": 25, "max": 25 }, "hips": { "min": 35, "max": 35 } },
+      { "size": "4", "bust": { "min": 34, "max": 34 }, "waist": { "min": 27, "max": 27 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "6", "bust": { "min": 36, "max": 36 }, "waist": { "min": 29, "max": 29 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "8", "bust": { "min": 38, "max": 38 }, "waist": { "min": 31, "max": 31 }, "hips": { "min": 41, "max": 41 } },
+      { "size": "10", "bust": { "min": 40, "max": 40 }, "waist": { "min": 33, "max": 33 }, "hips": { "min": 43, "max": 43 } },
+      { "size": "12", "bust": { "min": 42, "max": 42 }, "waist": { "min": 35.5, "max": 35.5 }, "hips": { "min": 45, "max": 45 } },
+      { "size": "14", "bust": { "min": 46.5, "max": 46.5 }, "waist": { "min": 39.5, "max": 39.5 }, "hips": { "min": 51, "max": 51 } },
+      { "size": "16", "bust": { "min": 49, "max": 49 }, "waist": { "min": 42, "max": 42 }, "hips": { "min": 53.5, "max": 53.5 } },
+      { "size": "18", "bust": { "min": 52, "max": 52 }, "waist": { "min": 45, "max": 45 }, "hips": { "min": 56, "max": 56 } },
+      { "size": "20", "bust": { "min": 55, "max": 55 }, "waist": { "min": 48, "max": 48 }, "hips": { "min": 59, "max": 59 } }
+    ],
+    "jeans": [
+      { "size": "0", "waist": { "min": 24, "max": 24 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "2", "waist": { "min": 25, "max": 25 }, "hips": { "min": 35, "max": 35 } },
+      { "size": "4", "waist": { "min": 27, "max": 27 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "6", "waist": { "min": 29, "max": 29 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "8", "waist": { "min": 31, "max": 31 }, "hips": { "min": 41, "max": 41 } },
+      { "size": "10", "waist": { "min": 33, "max": 33 }, "hips": { "min": 43, "max": 43 } },
+      { "size": "12", "waist": { "min": 35.5, "max": 35.5 }, "hips": { "min": 45, "max": 45 } },
+      { "size": "14", "waist": { "min": 39.5, "max": 39.5 }, "hips": { "min": 51, "max": 51 } },
+      { "size": "16", "waist": { "min": 42, "max": 42 }, "hips": { "min": 53.5, "max": 53.5 } },
+      { "size": "18", "waist": { "min": 45, "max": 45 }, "hips": { "min": 56, "max": 56 } },
+      { "size": "20", "waist": { "min": 48, "max": 48 }, "hips": { "min": 59, "max": 59 } }
+    ]
+  }
+}

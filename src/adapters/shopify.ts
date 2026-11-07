@@ -13,6 +13,15 @@ export const edikted: BrandAdapter = {
   getCategory: (_url, doc) => categoryFromCrumbsAndName(doc),
 };
 
+export const princessPolly: BrandAdapter = {
+  brandId: 'princess-polly',
+  hostnames: ['princesspolly.com'],
+  isProductPage: (url) => PRODUCT_PATH.test(url.pathname),
+  getProductName: defaultProductName,
+  // Princess Polly only sells women's clothing.
+  getCategory: (_url, doc) => categoryFromCrumbsAndName(doc),
+};
+
 export const fashionNova: BrandAdapter = {
   brandId: 'fashion-nova',
   hostnames: ['fashionnova.com'],

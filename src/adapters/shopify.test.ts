@@ -1,13 +1,14 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest';
 import { extractProductContext } from './index';
-import { edikted, fashionNova } from './shopify';
+import { edikted, fashionNova, princessPolly } from './shopify';
 import { loadFixture } from './test-fixtures';
 
 describe('Shopify store adapters', () => {
   it.each([
     [edikted, 'edikted'],
     [fashionNova, 'fashion-nova'],
+    [princessPolly, 'princess-polly'],
   ] as const)('reads each saved page for %#', (adapter, brandId) => {
     for (const category of ['jeans', 'tops', 'dresses']) {
       const { url, doc } = loadFixture(`${brandId}/${category}.html`);
