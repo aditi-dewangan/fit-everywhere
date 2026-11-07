@@ -88,6 +88,22 @@ export function defaultCategory(url: URL, doc: Document, productName: string | n
   return categoryFromText(path) ?? categoryFromText(productName);
 }
 
+// Sold on the same sites but not covered by any chart, and easily misread ("jean jacket").
+// "shorts" stays plural so a "Short Sleeve Tee" still counts as a top.
+const NOT_CHARTED = /\b(jackets?|coats?|shorts|skirts?|skorts?|pants?)\b/i;
+
+/** For sites whose breadcrumbs end in the product's own name, which isn't a category. */
+export function categoryFromCrumbsAndName(doc: Document): Category | null {
+  const name = defaultProductName(doc);
+  if (NOT_CHARTED.test(name ?? '')) return null;
+  const crumbs = jsonLdBreadcrumbs(doc).filter((crumb) => crumb.trim() !== name);
+  for (const crumb of [...crumbs].reverse()) {
+    const category = categoryFromText(crumb);
+    if (category) return category;
+  }
+  return categoryFromText(name);
+}
+
 const CUT_KEYWORDS: [Cut, RegExp][] = [
   ['oversized', /\b(oversized?|over-sized)\b/i],
   ['relaxed', /\b(relaxed|loose|baggy|boyfriend|dad)\b/i],

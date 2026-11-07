@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Banana Republic**, **Athleta**, **Ralph Lauren**, **Stüssy**, **Urban Outfitters**, **Free People**, and **Anthropologie** product pages. Every brand and clothing type below is tested against a saved product page.
+The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Banana Republic**, **Athleta**, **Ralph Lauren**, **Stüssy**, **Urban Outfitters**, **Free People**, **Anthropologie**, **Ann Taylor**, and **LOFT** product pages. Every brand and clothing type below is tested against a saved product page.
 
 | Spec step | Status |
 | --- | --- |
@@ -53,6 +53,8 @@ Chart coverage by brand (✅ = chart in; the last column shows which product-pag
 | Urban Outfitters | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 23–36 | Size Guide on [urbanoutfitters.com](https://www.urbanoutfitters.com/shop/bdg-keira-low-rise-slim-jean) product pages | tops, dresses, jeans |
 | Free People | ✅ XXS–XL | ✅ XXS–XL | ✅ 00/24–16-18/33-34 (hips only) | Size Guide on [freepeople.com](https://www.freepeople.com/shop/we-the-free-good-luck-mid-rise-barrel-jeans/) product pages | tops, dresses, jeans |
 | Anthropologie | ✅ XXS–XL | ✅ XXS–XL | — guide has no body measurements | Size Guide on [anthropologie.com](https://www.anthropologie.com/shop/by-anthropologie-sheer-satin-tuxedo-blouse) product pages | tops, dresses |
+| Ann Taylor | ✅ XXS/00–XXL/18 | ✅ XXS/00–XXL/18 | ✅ XXS/00–XXL/18 | [anntaylor.com size chart](https://www.anntaylor.com/ANN_Size_Chart.html) | tops, dresses, jeans |
+| LOFT | ✅ XXS/00–XXL/18 | ✅ XXS/00–XXL/18 | ✅ 00/24–18/34 | [loft.com size chart](https://www.loft.com/LOFT_Size_Chart.html) | tops, dresses, jeans |
 
 Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating.
 
