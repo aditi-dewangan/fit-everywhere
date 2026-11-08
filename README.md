@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-42 brands are in the source code (table below). How far each one has been checked:
+44 brands are in the source code (table below). How far each one has been checked:
 
 - **Confirmed on the live site in the real extension:** H&M, Hollister, PacSun, Gap.
 - **Tested against saved product pages only:** every other brand in the table. Each saved page is a cut-down copy of a real product page, so these should work but haven't been tried on the live site yet. If one doesn't, please open an issue with the product link.
@@ -86,6 +86,8 @@ Chart coverage by brand. ✅ means the brand's chart for that clothing type is i
 | Calvin Klein | ✅ XS–XL (no hips) | ✅ XS–XL (no hips) | — chart sizes don't match sizes sold | Size Guide on [calvinklein.us](https://www.calvinklein.us/en/women/apparel/dresses/relaxed-rib-mini-dress/47H379G-HMT.html) product pages | tops, dresses |
 | Michael Kors | ✅ XXS/00–XXL | ✅ XXS/00–XXL | — no women's jeans found | Size Guide on [michaelkors.com](https://www.michaelkors.com/rhinestone-embellished-scuba-mini-dress/MF683LCD6E.html) product pages | tops, dresses |
 | Reformation | ✅ 0/XS–24 | ✅ 0/XS–24 | ✅ 23–31 | [thereformation.com size guide](https://www.thereformation.com/fitting-and-sizes.html) (petite and extended denim not modeled) | tops, dresses, jeans |
+| Everlane | ✅ XXS–XXXL (no hips) | ✅ XXS–XXL | ✅ 23–35 | Size Guide on [everlane.com](https://www.everlane.com/products/womens-column-jean-ocean) product pages | tops, dresses, jeans |
+| SKIMS | ✅ XXS–4X | ✅ XXS–4X | — doesn't sell jeans | [skims.com size guides](https://skims.com/pages/size-guides) (Loungewear and Swimwear) | tops, dresses |
 
 Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating. Fabletics isn't supported: its product pages don't say whether an item is men's or women's, so a men's item would get a women's size. ASOS isn't supported: it's a marketplace whose chart changes by brand, and the ASOS DESIGN chart has inconsistent numbers (UK 6 hips listed smaller than UK 4).
 

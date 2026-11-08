@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest';
 import { extractProductContext } from './index';
-import { agolde, aloYoga, edikted, fashionNova, goodAmerican, princessPolly, vuori } from './shopify';
+import { agolde, aloYoga, edikted, everlane, fashionNova, goodAmerican, princessPolly, skims, vuori } from './shopify';
 import { loadFixture } from './test-fixtures';
 
 describe('Shopify store adapters', () => {
@@ -10,6 +10,7 @@ describe('Shopify store adapters', () => {
     [fashionNova, 'fashion-nova'],
     [princessPolly, 'princess-polly'],
     [agolde, 'agolde'],
+    [everlane, 'everlane'],
   ] as const)('reads each saved page for %#', (adapter, brandId) => {
     for (const category of ['jeans', 'tops', 'dresses']) {
       const { url, doc } = loadFixture(`${brandId}/${category}.html`);
@@ -43,6 +44,7 @@ describe('Shopify store adapters', () => {
   it.each([
     [aloYoga, 'alo-yoga'],
     [vuori, 'vuori'],
+    [skims, 'skims'],
   ] as const)('reads the saved tops and dresses pages for %#', (adapter, brandId) => {
     for (const category of ['tops', 'dresses']) {
       const { url, doc } = loadFixture(`${brandId}/${category}.html`);
@@ -54,6 +56,17 @@ describe('Shopify store adapters', () => {
     const { url, doc } = loadFixture('alo-yoga/tops.html');
     for (const s of doc.querySelectorAll('script')) s.textContent = s.textContent!.replace('"female"', '"male"');
     expect(aloYoga.getCategory(url, doc)).toBeNull();
+  });
+
+  it("leaves Everlane men's products without a clothing type", () => {
+    const { doc } = loadFixture('everlane/jeans.html');
+    expect(everlane.getCategory(new URL('https://www.everlane.com/products/mens-slim-fit-jean-dark-indigo'), doc)).toBeNull();
+  });
+
+  it("leaves SKIMS men's products without a clothing type", () => {
+    const { url, doc } = loadFixture('skims/tops.html');
+    for (const s of doc.querySelectorAll('script')) s.textContent = s.textContent!.replace('COTTON JERSEY', 'COTTON JERSEY MENS');
+    expect(skims.getCategory(url, doc)).toBeNull();
   });
 
   it('ignores collection pages', () => {

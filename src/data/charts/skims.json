@@ -1,0 +1,31 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "skims",
+  "brandName": "SKIMS",
+  "sourceUrl": "https://skims.com/pages/size-guides",
+  "notes": "Copied from the Loungewear and Swimwear Size Guide on the page above (inches), which covers clothing, loungewear and swim styles sized XXS to 4X. Used for tops and dresses. Shapewear, bodysuits and bras have their own charts and aren't modeled. SKIMS doesn't sell jeans.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 30, "max": 31 }, "waist": { "min": 23, "max": 24 }, "hips": { "min": 31, "max": 34 } },
+      { "size": "XS", "bust": { "min": 31.5, "max": 33.5 }, "waist": { "min": 24, "max": 26 }, "hips": { "min": 34, "max": 36.5 } },
+      { "size": "S", "bust": { "min": 34, "max": 36 }, "waist": { "min": 26.5, "max": 28.5 }, "hips": { "min": 37, "max": 39 } },
+      { "size": "M", "bust": { "min": 36.5, "max": 38.5 }, "waist": { "min": 29, "max": 31 }, "hips": { "min": 39.5, "max": 41.5 } },
+      { "size": "L", "bust": { "min": 39, "max": 41 }, "waist": { "min": 31.5, "max": 34.5 }, "hips": { "min": 42, "max": 44 } },
+      { "size": "XL", "bust": { "min": 41.5, "max": 44.5 }, "waist": { "min": 35, "max": 38 }, "hips": { "min": 44.5, "max": 47.5 } },
+      { "size": "2X", "bust": { "min": 45, "max": 48 }, "waist": { "min": 38.5, "max": 41.5 }, "hips": { "min": 48, "max": 51 } },
+      { "size": "3X", "bust": { "min": 48.5, "max": 52 }, "waist": { "min": 42, "max": 45.5 }, "hips": { "min": 51.5, "max": 55 } },
+      { "size": "4X", "bust": { "min": 52.5, "max": 56 }, "waist": { "min": 46, "max": 49.5 }, "hips": { "min": 55.5, "max": 59 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 30, "max": 31 }, "waist": { "min": 23, "max": 24 }, "hips": { "min": 31, "max": 34 } },
+      { "size": "XS", "bust": { "min": 31.5, "max": 33.5 }, "waist": { "min": 24, "max": 26 }, "hips": { "min": 34, "max": 36.5 } },
+      { "size": "S", "bust": { "min": 34, "max": 36 }, "waist": { "min": 26.5, "max": 28.5 }, "hips": { "min": 37, "max": 39 } },
+      { "size": "M", "bust": { "min": 36.5, "max": 38.5 }, "waist": { "min": 29, "max": 31 }, "hips": { "min": 39.5, "max": 41.5 } },
+      { "size": "L", "bust": { "min": 39, "max": 41 }, "waist": { "min": 31.5, "max": 34.5 }, "hips": { "min": 42, "max": 44 } },
+      { "size": "XL", "bust": { "min": 41.5, "max": 44.5 }, "waist": { "min": 35, "max": 38 }, "hips": { "min": 44.5, "max": 47.5 } },
+      { "size": "2X", "bust": { "min": 45, "max": 48 }, "waist": { "min": 38.5, "max": 41.5 }, "hips": { "min": 48, "max": 51 } },
+      { "size": "3X", "bust": { "min": 48.5, "max": 52 }, "waist": { "min": 42, "max": 45.5 }, "hips": { "min": 51.5, "max": 55 } },
+      { "size": "4X", "bust": { "min": 52.5, "max": 56 }, "waist": { "min": 46, "max": 49.5 }, "hips": { "min": 55.5, "max": 59 } }
+    ]
+  }
+}
