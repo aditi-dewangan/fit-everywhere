@@ -1,0 +1,42 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "levis",
+  "brandName": "Levi's",
+  "sourceUrl": "https://www.levi.com/US/en_US/clothing/women/jeans/straight/501-90s-womens-jeans/p/A19590115",
+  "notes": "Copied from the Size Guide dialog (US/Canada, inches): jeans (\"Find Your Levi's Waist\") from the page above, tops (\"Women's Tops & Outerwear\") from /US/en_US/clothing/women/shirts-blouses-tops/harlie-boyfriend-button-down-shirt/p/001HM0003, dresses (\"Women's Dresses\") from /US/en_US/clothing/women/dresses-skirts/clementine-midi-dress/p/007YA0005. Jeans use the Levi's waist size (23-35); the chart also lists numeric and alpha equivalents. The plus dress table isn't modeled.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 30, "max": 31 }, "waist": { "min": 24, "max": 25 }, "hips": { "min": 33, "max": 34 } },
+      { "size": "XS", "bust": { "min": 32, "max": 33 }, "waist": { "min": 26, "max": 27 }, "hips": { "min": 35, "max": 36 } },
+      { "size": "S", "bust": { "min": 34, "max": 35 }, "waist": { "min": 28, "max": 29 }, "hips": { "min": 37, "max": 38 } },
+      { "size": "M", "bust": { "min": 36, "max": 37.5 }, "waist": { "min": 30, "max": 31 }, "hips": { "min": 39, "max": 40 } },
+      { "size": "L", "bust": { "min": 38.5, "max": 40 }, "waist": { "min": 32, "max": 34 }, "hips": { "min": 41, "max": 43 } },
+      { "size": "XL", "bust": { "min": 41, "max": 43 }, "waist": { "min": 35, "max": 37 }, "hips": { "min": 44, "max": 46 } },
+      { "size": "XXL", "bust": { "min": 44, "max": 46 }, "waist": { "min": 38, "max": 40 }, "hips": { "min": 47, "max": 49 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 31, "max": 31 }, "waist": { "min": 24.25, "max": 24.25 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "XS", "bust": { "min": 33, "max": 33 }, "waist": { "min": 26.25, "max": 26.25 }, "hips": { "min": 36, "max": 36 } },
+      { "size": "S", "bust": { "min": 35, "max": 35 }, "waist": { "min": 28.25, "max": 28.25 }, "hips": { "min": 38, "max": 38 } },
+      { "size": "M", "bust": { "min": 37, "max": 37 }, "waist": { "min": 30.25, "max": 30.25 }, "hips": { "min": 40, "max": 40 } },
+      { "size": "L", "bust": { "min": 39.5, "max": 39.5 }, "waist": { "min": 32.75, "max": 32.75 }, "hips": { "min": 42.5, "max": 42.5 } },
+      { "size": "XL", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 35.75, "max": 35.75 }, "hips": { "min": 45.5, "max": 45.5 } },
+      { "size": "XXL", "bust": { "min": 45.5, "max": 45.5 }, "waist": { "min": 38.75, "max": 38.75 }, "hips": { "min": 48.5, "max": 48.5 } }
+    ],
+    "jeans": [
+      { "size": "23", "waist": { "min": 24.25, "max": 24.25 }, "hips": { "min": 33, "max": 33 } },
+      { "size": "24", "waist": { "min": 25.25, "max": 25.25 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "25", "waist": { "min": 26.25, "max": 26.25 }, "hips": { "min": 35, "max": 35 } },
+      { "size": "26", "waist": { "min": 27.25, "max": 27.25 }, "hips": { "min": 36, "max": 36 } },
+      { "size": "27", "waist": { "min": 28.25, "max": 28.25 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "28", "waist": { "min": 29.25, "max": 29.25 }, "hips": { "min": 38, "max": 38 } },
+      { "size": "29", "waist": { "min": 30.25, "max": 30.25 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "30", "waist": { "min": 31.25, "max": 31.25 }, "hips": { "min": 40, "max": 40 } },
+      { "size": "31", "waist": { "min": 32.75, "max": 32.75 }, "hips": { "min": 41.5, "max": 41.5 } },
+      { "size": "32", "waist": { "min": 34.25, "max": 34.25 }, "hips": { "min": 43, "max": 43 } },
+      { "size": "33", "waist": { "min": 35.75, "max": 35.75 }, "hips": { "min": 44.5, "max": 44.5 } },
+      { "size": "34", "waist": { "min": 37.75, "max": 37.75 }, "hips": { "min": 46.5, "max": 46.5 } },
+      { "size": "35", "waist": { "min": 39.75, "max": 39.75 }, "hips": { "min": 48.5, "max": 48.5 } }
+    ]
+  }
+}

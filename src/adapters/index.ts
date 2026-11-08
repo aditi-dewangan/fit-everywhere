@@ -11,6 +11,7 @@ import { athleta, bananaRepublic, gap, oldNavy } from './gap';
 import { hm } from './hm';
 import { hollister } from './hollister';
 import { jCrew, madewell } from './jcrew-madewell';
+import { levis } from './levis';
 import { pacsun } from './pacsun';
 import { ralphLauren } from './ralph-lauren';
 import { edikted, fashionNova, princessPolly } from './shopify';
@@ -18,11 +19,12 @@ import { stussy } from './stussy';
 import type { BrandAdapter } from './types';
 import { uniqlo } from './uniqlo';
 import { anthropologie, freePeople, urbanOutfitters } from './urbn';
+import { wrangler } from './wrangler';
 
 export type { BrandAdapter } from './types';
 
 // One adapter per supported brand. Each needs a chart in src/data/charts and fixtures in fixtures/<brandId>/.
-export const adapters: BrandAdapter[] = [hm, pacsun, hollister, abercrombie, americanEagle, gap, oldNavy, bananaRepublic, athleta, ralphLauren, stussy, urbanOutfitters, freePeople, anthropologie, annTaylor, loft, aritzia, uniqlo, express, forever21, garage, edikted, fashionNova, princessPolly, madewell, jCrew];
+export const adapters: BrandAdapter[] = [hm, pacsun, hollister, abercrombie, americanEagle, gap, oldNavy, bananaRepublic, athleta, ralphLauren, stussy, urbanOutfitters, freePeople, anthropologie, annTaylor, loft, aritzia, uniqlo, express, forever21, garage, edikted, fashionNova, princessPolly, madewell, jCrew, wrangler, levis];
 
 export function findAdapter(hostname: string, list: readonly BrandAdapter[] = adapters): BrandAdapter | null {
   const host = hostname.toLowerCase().replace(/^www\./, '');
