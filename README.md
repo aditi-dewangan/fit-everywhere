@@ -22,7 +22,13 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, **Abercrombie & Fitch**, **American Eagle**, **Aerie**, **Gap**, **Old Navy**, **Banana Republic**, **Athleta**, **Ralph Lauren**, **Stüssy**, **Urban Outfitters**, **Free People**, **Anthropologie**, **Ann Taylor**, **LOFT**, **Aritzia**, **UNIQLO**, **Express**, **Forever 21**, **Garage**, **Fashion Nova**, **Edikted**, **Princess Polly**, **Madewell**, and **J.Crew** product pages. Every brand and clothing type below is tested against a saved product page.
+27 brands are in the source code (table below). How far each one has been checked:
+
+- **Confirmed on the live site in the real extension:** H&M, Hollister, PacSun, Gap.
+- **Tested against saved product pages only:** every other brand in the table. Each saved page is a cut-down copy of a real product page, so these should work but haven't been tried on the live site yet. If one doesn't, please open an issue with the product link.
+- **In the download:** the latest release (v0.4.0) only has H&M, Hollister and PacSun. The other brands will be in the next release. Until then, build from source (see [Development](#development)).
+
+Only women's sizing is supported. On men's, kids' or other department pages the popup asks you to choose a clothing type instead of recommending a size. Petite, tall, curvy and plus charts aren't modeled.
 
 | Spec step | Status |
 | --- | --- |
@@ -34,7 +40,7 @@ The extension gives real recommendations on **Hollister**, **H&M**, **PacSun**, 
 | 6. Brand adapters from saved fixtures | ✅ Done for every brand below |
 | 7. Popup covering every state | ✅ Done, final design |
 
-Chart coverage by brand (✅ = chart in; the last column shows which product-page types have a saved fixture and tested adapter):
+Chart coverage by brand. ✅ means the brand's chart for that clothing type is included. The last column lists the clothing types tested against a saved product page.
 
 | Brand | Tops | Dresses | Jeans | Chart source | Adapter tested on |
 | --- | --- | --- | --- | --- | --- |
