@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest';
 import { extractProductContext } from './index';
-import { agolde, aloYoga, edikted, fashionNova, goodAmerican, princessPolly } from './shopify';
+import { agolde, aloYoga, edikted, fashionNova, goodAmerican, princessPolly, vuori } from './shopify';
 import { loadFixture } from './test-fixtures';
 
 describe('Shopify store adapters', () => {
@@ -40,10 +40,13 @@ describe('Shopify store adapters', () => {
     expect(agolde.getCategory(url, doc)).toBeNull();
   });
 
-  it('reads the saved Alo Yoga pages', () => {
+  it.each([
+    [aloYoga, 'alo-yoga'],
+    [vuori, 'vuori'],
+  ] as const)('reads the saved tops and dresses pages for %#', (adapter, brandId) => {
     for (const category of ['tops', 'dresses']) {
-      const { url, doc } = loadFixture(`alo-yoga/${category}.html`);
-      expect(extractProductContext(url, doc, [aloYoga])).toMatchObject({ brandId: 'alo-yoga', category });
+      const { url, doc } = loadFixture(`${brandId}/${category}.html`);
+      expect(extractProductContext(url, doc, [adapter])).toMatchObject({ brandId, category });
     }
   });
 

@@ -1,0 +1,19 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "under-armour",
+  "brandName": "Under Armour",
+  "sourceUrl": "https://www.underarmour.com/en-us/t/size-guide/womens-tops/",
+  "notes": "Copied from the Women's Tops chart above (bust and waist). It also lists US numeric equivalents (XXS is 00, XS 0-2, SM 4-6 and so on). The plus rows (1X-3X, 16W-26W) restart smaller than 3XL, so they aren't modeled. Under Armour publishes no women's dress chart, and doesn't sell jeans.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 31, "max": 32.5 }, "waist": { "min": 24.5, "max": 25.5 } },
+      { "size": "XS", "bust": { "min": 32.5, "max": 33.5 }, "waist": { "min": 25.5, "max": 27 } },
+      { "size": "SM", "bust": { "min": 33.5, "max": 36 }, "waist": { "min": 27, "max": 29 } },
+      { "size": "MD", "bust": { "min": 36, "max": 38 }, "waist": { "min": 29, "max": 31 } },
+      { "size": "LG", "bust": { "min": 38, "max": 41 }, "waist": { "min": 31, "max": 34 } },
+      { "size": "XL", "bust": { "min": 41, "max": 44 }, "waist": { "min": 34, "max": 37 } },
+      { "size": "XXL", "bust": { "min": 44, "max": 47 }, "waist": { "min": 37, "max": 40 } },
+      { "size": "3XL", "bust": { "min": 47, "max": 50 }, "waist": { "min": 40, "max": 43 } }
+    ]
+  }
+}

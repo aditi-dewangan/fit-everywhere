@@ -70,3 +70,10 @@ export const aloYoga: BrandAdapter = {
     return categoryFromCrumbsAndName(doc);
   },
 };
+
+export const vuori: BrandAdapter = {
+  ...aloYoga,
+  brandId: 'vuori',
+  // The product JSON-LD says female or male, the same as Alo's.
+  hostnames: ['vuoriclothing.com'],
+};
