@@ -1,6 +1,6 @@
 {
   "name": "fit-everywhere",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "scripts": {
     "build": "tsc --noEmit && vite build && vite build --config vite.content.config.ts",
     "test": "vitest run",
