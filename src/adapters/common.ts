@@ -34,6 +34,15 @@ export function jsonLdProduct(doc: Document): JsonLdNode | null {
   return readJsonLd(doc).find((n) => hasType(n, 'Product') || hasType(n, 'ProductGroup')) ?? null;
 }
 
+/** The product JSON-LD's audience.suggestedGender, such as "female", "https://schema.org/Female" or "Unisex". */
+export function jsonLdGender(doc: Document): string {
+  const audience = jsonLdProduct(doc)?.audience as { suggestedGender?: unknown } | undefined;
+  return typeof audience?.suggestedGender === 'string' ? audience.suggestedGender : '';
+}
+
+/** True when the product JSON-LD says the item is for women. */
+export const isForWomen = (doc: Document) => /(^|\/)female$/i.test(jsonLdGender(doc).trim());
+
 export function jsonLdBreadcrumbs(doc: Document): string[] {
   const list = readJsonLd(doc).find((n) => hasType(n, 'BreadcrumbList'));
   const items = Array.isArray(list?.itemListElement) ? (list.itemListElement as JsonLdNode[]) : [];

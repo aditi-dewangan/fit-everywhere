@@ -1,0 +1,18 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "adidas",
+  "brandName": "adidas",
+  "sourceUrl": "https://www.adidas.com/us/help/size_charts/women-shirts_tops",
+  "notes": "Copied from the Standard table of the women's T-shirt & jacket chart above. The chart also gives US numeric equivalents (2XS is 00, XS is 0-2, up to 2XL at 20); the site sells tops by the alpha label. Tall and short tables aren't modeled. adidas publishes no women's dress chart, and doesn't sell jeans.",
+  "charts": {
+    "tops": [
+      { "size": "2XS", "bust": { "min": 28.5, "max": 29.5 }, "waist": { "min": 22, "max": 23.5 }, "hips": { "min": 31.5, "max": 33 } },
+      { "size": "XS", "bust": { "min": 30, "max": 32 }, "waist": { "min": 24, "max": 26 }, "hips": { "min": 33.5, "max": 35.5 } },
+      { "size": "S", "bust": { "min": 32.5, "max": 34.5 }, "waist": { "min": 26.5, "max": 28.5 }, "hips": { "min": 36, "max": 38 } },
+      { "size": "M", "bust": { "min": 35, "max": 37 }, "waist": { "min": 29, "max": 31 }, "hips": { "min": 38.5, "max": 40.5 } },
+      { "size": "L", "bust": { "min": 37.5, "max": 40 }, "waist": { "min": 31.5, "max": 33.5 }, "hips": { "min": 41, "max": 43 } },
+      { "size": "XL", "bust": { "min": 40.5, "max": 43 }, "waist": { "min": 34, "max": 37 }, "hips": { "min": 43.5, "max": 46 } },
+      { "size": "2XL", "bust": { "min": 43.5, "max": 46.5 }, "waist": { "min": 37.5, "max": 41 }, "hips": { "min": 46.5, "max": 49 } }
+    ]
+  }
+}

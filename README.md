@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-34 brands are in the source code (table below). How far each one has been checked:
+36 brands are in the source code (table below). How far each one has been checked:
 
 - **Confirmed on the live site in the real extension:** H&M, Hollister, PacSun, Gap.
 - **Tested against saved product pages only:** every other brand in the table. Each saved page is a cut-down copy of a real product page, so these should work but haven't been tried on the live site yet. If one doesn't, please open an issue with the product link.
@@ -78,6 +78,8 @@ Chart coverage by brand. ✅ means the brand's chart for that clothing type is i
 | AGOLDE | ✅ XS–XL | ✅ XS–XL | ✅ 22–34 | [agolde.com size chart](https://agolde.com/pages/agolde-size-chart) | tops, dresses, jeans (only when the name says "jean") |
 | lululemon | ✅ 0/XXXS–20-22/2X (bust only) | ✅ 0/XXXS–20/2X | — doesn't sell jeans | [lululemon women's size guide](https://shop.lululemon.com/help/size-guide/womens) (shelf-bra styles not modeled) | tops, dresses |
 | Nike | ✅ XXS–XXL | ✅ XXS–XXL | — doesn't sell jeans | [Nike women's tops](https://www.nike.com/size-fit/womens-tops-alpha) / [skirts and dresses](https://www.nike.com/size-fit/womens-skirt-dress) charts (plus sizes not modeled) | tops, dresses |
+| adidas | ✅ 2XS–2XL | — no women's dress chart | — doesn't sell jeans | [adidas women's tops chart](https://www.adidas.com/us/help/size_charts/women-shirts_tops) (tall and short not modeled) | tops |
+| Alo Yoga | ✅ XXS–2XL | ✅ XXS–2XL | — doesn't sell jeans | [aloyoga.com size guide](https://www.aloyoga.com/pages/size-chart) (Women) | tops, dresses |
 
 Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating. ASOS isn't supported: it's a marketplace whose chart changes by brand, and the ASOS DESIGN chart has inconsistent numbers (UK 6 hips listed smaller than UK 4).
 

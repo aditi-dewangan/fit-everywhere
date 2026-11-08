@@ -1,0 +1,27 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "alo-yoga",
+  "brandName": "Alo Yoga",
+  "sourceUrl": "https://www.aloyoga.com/pages/size-chart",
+  "notes": "Copied from the Women tab of the size guide above, in inches: tops from Bras & Tops (bust and waist; under bust is left out), dresses from Bodysuits & Dresses (adds hip). The chart also lists US numeric sizes (XXS is 00-0, XS 2-4, S 4-6 and so on); the site sells by alpha size. Alo doesn't sell jeans.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 30, "max": 32 }, "waist": { "min": 23.5, "max": 24.5 } },
+      { "size": "XS", "bust": { "min": 32, "max": 34 }, "waist": { "min": 25, "max": 26.5 } },
+      { "size": "S", "bust": { "min": 34, "max": 36 }, "waist": { "min": 27, "max": 28.5 } },
+      { "size": "M", "bust": { "min": 36, "max": 38 }, "waist": { "min": 29, "max": 30.5 } },
+      { "size": "L", "bust": { "min": 38, "max": 40 }, "waist": { "min": 31, "max": 33.5 } },
+      { "size": "XL", "bust": { "min": 40, "max": 42.5 }, "waist": { "min": 34, "max": 36.5 } },
+      { "size": "2XL", "bust": { "min": 42.5, "max": 45.5 }, "waist": { "min": 37, "max": 40 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 30, "max": 32 }, "waist": { "min": 23.5, "max": 24.5 }, "hips": { "min": 33, "max": 34 } },
+      { "size": "XS", "bust": { "min": 32, "max": 34 }, "waist": { "min": 25, "max": 26.5 }, "hips": { "min": 34.5, "max": 36 } },
+      { "size": "S", "bust": { "min": 34, "max": 36 }, "waist": { "min": 27, "max": 28.5 }, "hips": { "min": 36.5, "max": 38 } },
+      { "size": "M", "bust": { "min": 36, "max": 38 }, "waist": { "min": 29, "max": 30.5 }, "hips": { "min": 38.5, "max": 40 } },
+      { "size": "L", "bust": { "min": 38, "max": 40 }, "waist": { "min": 31, "max": 33.5 }, "hips": { "min": 40.5, "max": 42.5 } },
+      { "size": "XL", "bust": { "min": 40, "max": 42.5 }, "waist": { "min": 34, "max": 36.5 }, "hips": { "min": 43, "max": 45.5 } },
+      { "size": "2XL", "bust": { "min": 42.5, "max": 45.5 }, "waist": { "min": 37, "max": 40 }, "hips": { "min": 46, "max": 49 } }
+    ]
+  }
+}

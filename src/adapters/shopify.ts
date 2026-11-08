@@ -1,4 +1,4 @@
-import { categoryFromCrumbsAndName, defaultProductName, jsonLdBreadcrumbs, jsonLdProduct } from './common';
+import { categoryFromCrumbsAndName, defaultProductName, isForWomen, jsonLdBreadcrumbs, jsonLdProduct } from './common';
 import type { BrandAdapter } from './types';
 
 // Shopify stores share /products/<slug> and /collections/<name>/products/<slug>.
@@ -55,6 +55,18 @@ export const agolde: BrandAdapter = {
     // Men's products carry the brand "AGOLDE MENS"; only women's sizing is supported.
     const brand = (jsonLdProduct(doc)?.brand as { name?: unknown } | undefined)?.name;
     if (typeof brand === 'string' && /\bmens\b/i.test(brand)) return null;
+    return categoryFromCrumbsAndName(doc);
+  },
+};
+
+export const aloYoga: BrandAdapter = {
+  brandId: 'alo-yoga',
+  hostnames: ['aloyoga.com'],
+  isProductPage: (url) => PRODUCT_PATH.test(url.pathname),
+  getProductName: defaultProductName,
+  getCategory(_url, doc) {
+    // The product JSON-LD says female, male or unisex. Only women's sizing is supported.
+    if (!isForWomen(doc)) return null;
     return categoryFromCrumbsAndName(doc);
   },
 };
