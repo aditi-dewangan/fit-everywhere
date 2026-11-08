@@ -1,0 +1,39 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "express",
+  "brandName": "Express",
+  "sourceUrl": "https://www.express.com/clothing/women/high-waisted-relaxed-flare-medium-wash-jeans/pro/07153269/color/Mid%20Wash",
+  "notes": "Copied from the Size Chart dialog on women's product pages: jeans from the page above, tops from /clothing/women/plaid-tie-neck-short-sleeve-top/pro/08652129, dresses from /clothing/women/satin-strapless-bow-waist-maxi-dress-with-pockets/pro/07850061. Tops list bust only. Jeans use the numeric table with its standard hip column; curvy hips run 3 inches larger and are not modeled. FlexX bottoms and petite charts are also not modeled.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 29.5, "max": 30.5 } },
+      { "size": "XS", "bust": { "min": 31.5, "max": 32.5 } },
+      { "size": "S", "bust": { "min": 33.5, "max": 34.5 } },
+      { "size": "M", "bust": { "min": 35.5, "max": 37 } },
+      { "size": "L", "bust": { "min": 38.5, "max": 40.5 } },
+      { "size": "XL", "bust": { "min": 43, "max": 45.5 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 29.5, "max": 30.5 }, "waist": { "min": 23, "max": 24 }, "hips": { "min": 33, "max": 34 } },
+      { "size": "XS", "bust": { "min": 31.5, "max": 32.5 }, "waist": { "min": 25, "max": 26 }, "hips": { "min": 35, "max": 36 } },
+      { "size": "S", "bust": { "min": 33.5, "max": 34.5 }, "waist": { "min": 27, "max": 28 }, "hips": { "min": 37, "max": 38 } },
+      { "size": "M", "bust": { "min": 35.5, "max": 37 }, "waist": { "min": 29, "max": 30.5 }, "hips": { "min": 39, "max": 41 } },
+      { "size": "L", "bust": { "min": 38.5, "max": 40.5 }, "waist": { "min": 32, "max": 34 }, "hips": { "min": 42, "max": 44 } },
+      { "size": "XL", "bust": { "min": 43, "max": 45.5 }, "waist": { "min": 36.5, "max": 39 }, "hips": { "min": 46, "max": 49 } }
+    ],
+    "jeans": [
+      { "size": "000", "waist": { "min": 23, "max": 23 }, "hips": { "min": 33.5, "max": 33.5 } },
+      { "size": "00", "waist": { "min": 24, "max": 24 }, "hips": { "min": 34.5, "max": 34.5 } },
+      { "size": "0", "waist": { "min": 25, "max": 25 }, "hips": { "min": 35.5, "max": 35.5 } },
+      { "size": "2", "waist": { "min": 26, "max": 26 }, "hips": { "min": 36.5, "max": 36.5 } },
+      { "size": "4", "waist": { "min": 27, "max": 27 }, "hips": { "min": 37.5, "max": 37.5 } },
+      { "size": "6", "waist": { "min": 28, "max": 28 }, "hips": { "min": 38.5, "max": 38.5 } },
+      { "size": "8", "waist": { "min": 29, "max": 29 }, "hips": { "min": 39.5, "max": 39.5 } },
+      { "size": "10", "waist": { "min": 30.5, "max": 30.5 }, "hips": { "min": 41, "max": 41 } },
+      { "size": "12", "waist": { "min": 32, "max": 32 }, "hips": { "min": 42.5, "max": 42.5 } },
+      { "size": "14", "waist": { "min": 34, "max": 34 }, "hips": { "min": 44.5, "max": 44.5 } },
+      { "size": "16", "waist": { "min": 36.5, "max": 36.5 }, "hips": { "min": 47, "max": 47 } },
+      { "size": "18", "waist": { "min": 39, "max": 39 }, "hips": { "min": 49.5, "max": 49.5 } }
+    ]
+  }
+}

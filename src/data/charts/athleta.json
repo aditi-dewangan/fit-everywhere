@@ -1,0 +1,31 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "athleta",
+  "brandName": "Athleta",
+  "sourceUrl": "https://athleta.gap.com/browse/product.do?pid=1177198062",
+  "notes": "Copied from the Size Guide dialog (regular tab), which shows the same chart on tops and dresses. Numeric equivalents: XXS=00, XS=0-2, S=4-6, M=8-10, L=12-14, XL=16, 1X=18W, 2X=20W-22W, 3X=24W. Petite and tall tabs are not modeled. Athleta doesn't sell jeans, so there's no jeans chart.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 31.5, "max": 31.5 }, "waist": { "min": 24.25, "max": 24.25 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "XS", "bust": { "min": 32.5, "max": 33.5 }, "waist": { "min": 25.25, "max": 26.25 }, "hips": { "min": 35, "max": 36 } },
+      { "size": "S", "bust": { "min": 34.5, "max": 35.5 }, "waist": { "min": 27.25, "max": 28.25 }, "hips": { "min": 37, "max": 38 } },
+      { "size": "M", "bust": { "min": 36.5, "max": 37.5 }, "waist": { "min": 29.25, "max": 30.25 }, "hips": { "min": 39, "max": 40 } },
+      { "size": "L", "bust": { "min": 39, "max": 40.5 }, "waist": { "min": 31.75, "max": 33.25 }, "hips": { "min": 41.5, "max": 43 } },
+      { "size": "XL", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 35.25, "max": 35.25 }, "hips": { "min": 45, "max": 45 } },
+      { "size": "1X", "bust": { "min": 46.25, "max": 46.25 }, "waist": { "min": 39.5, "max": 39.5 }, "hips": { "min": 48.75, "max": 48.75 } },
+      { "size": "2X", "bust": { "min": 48.25, "max": 50.25 }, "waist": { "min": 41.5, "max": 43.5 }, "hips": { "min": 50.75, "max": 52.75 } },
+      { "size": "3X", "bust": { "min": 52.75, "max": 52.75 }, "waist": { "min": 46, "max": 46 }, "hips": { "min": 55.25, "max": 55.25 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 31.5, "max": 31.5 }, "waist": { "min": 24.25, "max": 24.25 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "XS", "bust": { "min": 32.5, "max": 33.5 }, "waist": { "min": 25.25, "max": 26.25 }, "hips": { "min": 35, "max": 36 } },
+      { "size": "S", "bust": { "min": 34.5, "max": 35.5 }, "waist": { "min": 27.25, "max": 28.25 }, "hips": { "min": 37, "max": 38 } },
+      { "size": "M", "bust": { "min": 36.5, "max": 37.5 }, "waist": { "min": 29.25, "max": 30.25 }, "hips": { "min": 39, "max": 40 } },
+      { "size": "L", "bust": { "min": 39, "max": 40.5 }, "waist": { "min": 31.75, "max": 33.25 }, "hips": { "min": 41.5, "max": 43 } },
+      { "size": "XL", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 35.25, "max": 35.25 }, "hips": { "min": 45, "max": 45 } },
+      { "size": "1X", "bust": { "min": 46.25, "max": 46.25 }, "waist": { "min": 39.5, "max": 39.5 }, "hips": { "min": 48.75, "max": 48.75 } },
+      { "size": "2X", "bust": { "min": 48.25, "max": 50.25 }, "waist": { "min": 41.5, "max": 43.5 }, "hips": { "min": 50.75, "max": 52.75 } },
+      { "size": "3X", "bust": { "min": 52.75, "max": 52.75 }, "waist": { "min": 46, "max": 46 }, "hips": { "min": 55.25, "max": 55.25 } }
+    ]
+  }
+}

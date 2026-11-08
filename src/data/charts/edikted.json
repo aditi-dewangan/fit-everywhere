@@ -1,0 +1,33 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "edikted",
+  "brandName": "Edikted",
+  "sourceUrl": "https://edikted.com/pages/size-guide",
+  "notes": "Copied from the size charts page, which publishes one table for all clothing and notes that products may differ across fabrics and styles. Jeans are sold in these alpha sizes.",
+  "charts": {
+    "tops": [
+      { "size": "XS", "bust": { "min": 31.5, "max": 32.5 }, "waist": { "min": 24, "max": 25 }, "hips": { "min": 33, "max": 34.5 } },
+      { "size": "S", "bust": { "min": 32.5, "max": 34 }, "waist": { "min": 25, "max": 27 }, "hips": { "min": 35, "max": 36.5 } },
+      { "size": "M", "bust": { "min": 34, "max": 35.5 }, "waist": { "min": 27.5, "max": 29.5 }, "hips": { "min": 37, "max": 38.5 } },
+      { "size": "L", "bust": { "min": 35.5, "max": 38 }, "waist": { "min": 30, "max": 32 }, "hips": { "min": 39, "max": 40.5 } },
+      { "size": "XL", "bust": { "min": 38, "max": 39.5 }, "waist": { "min": 32, "max": 34 }, "hips": { "min": 41, "max": 43 } },
+      { "size": "XXL", "bust": { "min": 40, "max": 42 }, "waist": { "min": 34.5, "max": 36.5 }, "hips": { "min": 43.5, "max": 45.5 } }
+    ],
+    "dresses": [
+      { "size": "XS", "bust": { "min": 31.5, "max": 32.5 }, "waist": { "min": 24, "max": 25 }, "hips": { "min": 33, "max": 34.5 } },
+      { "size": "S", "bust": { "min": 32.5, "max": 34 }, "waist": { "min": 25, "max": 27 }, "hips": { "min": 35, "max": 36.5 } },
+      { "size": "M", "bust": { "min": 34, "max": 35.5 }, "waist": { "min": 27.5, "max": 29.5 }, "hips": { "min": 37, "max": 38.5 } },
+      { "size": "L", "bust": { "min": 35.5, "max": 38 }, "waist": { "min": 30, "max": 32 }, "hips": { "min": 39, "max": 40.5 } },
+      { "size": "XL", "bust": { "min": 38, "max": 39.5 }, "waist": { "min": 32, "max": 34 }, "hips": { "min": 41, "max": 43 } },
+      { "size": "XXL", "bust": { "min": 40, "max": 42 }, "waist": { "min": 34.5, "max": 36.5 }, "hips": { "min": 43.5, "max": 45.5 } }
+    ],
+    "jeans": [
+      { "size": "XS", "waist": { "min": 24, "max": 25 }, "hips": { "min": 33, "max": 34.5 } },
+      { "size": "S", "waist": { "min": 25, "max": 27 }, "hips": { "min": 35, "max": 36.5 } },
+      { "size": "M", "waist": { "min": 27.5, "max": 29.5 }, "hips": { "min": 37, "max": 38.5 } },
+      { "size": "L", "waist": { "min": 30, "max": 32 }, "hips": { "min": 39, "max": 40.5 } },
+      { "size": "XL", "waist": { "min": 32, "max": 34 }, "hips": { "min": 41, "max": 43 } },
+      { "size": "XXL", "waist": { "min": 34.5, "max": 36.5 }, "hips": { "min": 43.5, "max": 45.5 } }
+    ]
+  }
+}

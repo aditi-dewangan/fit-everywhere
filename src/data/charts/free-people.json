@@ -1,0 +1,33 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "free-people",
+  "brandName": "Free People",
+  "sourceUrl": "https://www.freepeople.com/shop/we-the-free-good-luck-mid-rise-barrel-jeans/",
+  "notes": "Copied from the Size Guide dialog: jeans from the page above, tops from /shop/we-the-free-surplus-cuff-top/, dresses from /shop/brightest-star-mini-dress/. Natural waist is stored as waist. The jeans chart publishes only drop waist, which sits lower than the natural waist shoppers measure, so jeans use hips alone. Drop waist on the dress chart is also unused. The tops and dress charts differ at L and XL and are copied as published.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 32, "max": 32 }, "waist": { "min": 24, "max": 24 } },
+      { "size": "XS", "bust": { "min": 33, "max": 34 }, "waist": { "min": 25, "max": 26 } },
+      { "size": "S", "bust": { "min": 35, "max": 36 }, "waist": { "min": 27, "max": 28 } },
+      { "size": "M", "bust": { "min": 37, "max": 38 }, "waist": { "min": 29, "max": 30 } },
+      { "size": "L", "bust": { "min": 39, "max": 41 }, "waist": { "min": 31, "max": 32 } },
+      { "size": "XL", "bust": { "min": 41, "max": 41 }, "waist": { "min": 33, "max": 33 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 31, "max": 32 }, "waist": { "min": 23, "max": 24 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "XS", "bust": { "min": 33, "max": 34 }, "waist": { "min": 25, "max": 26 }, "hips": { "min": 35, "max": 36 } },
+      { "size": "S", "bust": { "min": 35, "max": 36 }, "waist": { "min": 27, "max": 28 }, "hips": { "min": 37, "max": 38 } },
+      { "size": "M", "bust": { "min": 37, "max": 38 }, "waist": { "min": 29, "max": 30 }, "hips": { "min": 39, "max": 40 } },
+      { "size": "L", "bust": { "min": 39.5, "max": 41 }, "waist": { "min": 31.5, "max": 33 }, "hips": { "min": 41, "max": 42 } },
+      { "size": "XL", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 34.5, "max": 34.5 }, "hips": { "min": 43, "max": 43 } }
+    ],
+    "jeans": [
+      { "size": "00/24", "hips": { "min": 34, "max": 34 } },
+      { "size": "0-2/25-26", "hips": { "min": 35, "max": 36 } },
+      { "size": "4-6/27-28", "hips": { "min": 37, "max": 38 } },
+      { "size": "8-10/29-30", "hips": { "min": 39, "max": 40 } },
+      { "size": "12-14/31-32", "hips": { "min": 41, "max": 42 } },
+      { "size": "16-18/33-34", "hips": { "min": 43, "max": 44 } }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "ann-taylor",
+  "brandName": "Ann Taylor",
+  "sourceUrl": "https://www.anntaylor.com/ANN_Size_Chart.html",
+  "notes": "Copied from the Classic tab of the size chart page, which states these are body measurements. 'Chest' on the dress chart is stored as bust. Curvy-fit columns are not modeled: curvy waists run 0.5 inch smaller and hips about 1.5 inches larger. Petite and tall tabs are also not modeled. Sizes keep the published alpha/numeric pairs.",
+  "charts": {
+    "tops": [
+      { "size": "XXS/00", "bust": { "min": 31.5, "max": 31.5 }, "waist": { "min": 24.5, "max": 24.5 } },
+      { "size": "XS/0", "bust": { "min": 32.5, "max": 32.5 }, "waist": { "min": 25.5, "max": 25.5 } },
+      { "size": "XS/2", "bust": { "min": 33.5, "max": 33.5 }, "waist": { "min": 26.5, "max": 26.5 } },
+      { "size": "S/4", "bust": { "min": 34.5, "max": 34.5 }, "waist": { "min": 27.5, "max": 27.5 } },
+      { "size": "S/6", "bust": { "min": 35.5, "max": 35.5 }, "waist": { "min": 28.5, "max": 28.5 } },
+      { "size": "M/8", "bust": { "min": 36.5, "max": 36.5 }, "waist": { "min": 29.5, "max": 29.5 } },
+      { "size": "M/10", "bust": { "min": 37.5, "max": 37.5 }, "waist": { "min": 30.5, "max": 30.5 } },
+      { "size": "L/12", "bust": { "min": 39, "max": 39 }, "waist": { "min": 32, "max": 32 } },
+      { "size": "L/14", "bust": { "min": 40.5, "max": 40.5 }, "waist": { "min": 33.5, "max": 33.5 } },
+      { "size": "XL/16", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 35.5, "max": 35.5 } },
+      { "size": "XXL/18", "bust": { "min": 44.5, "max": 44.5 }, "waist": { "min": 37.5, "max": 37.5 } }
+    ],
+    "dresses": [
+      { "size": "XXS/00", "bust": { "min": 31.5, "max": 31.5 }, "waist": { "min": 24.5, "max": 24.5 }, "hips": { "min": 34.5, "max": 34.5 } },
+      { "size": "XS/0", "bust": { "min": 32.5, "max": 32.5 }, "waist": { "min": 25.5, "max": 25.5 }, "hips": { "min": 35.5, "max": 35.5 } },
+      { "size": "XS/2", "bust": { "min": 33.5, "max": 33.5 }, "waist": { "min": 26.5, "max": 26.5 }, "hips": { "min": 36.5, "max": 36.5 } },
+      { "size": "S/4", "bust": { "min": 34.5, "max": 34.5 }, "waist": { "min": 27.5, "max": 27.5 }, "hips": { "min": 37.5, "max": 37.5 } },
+      { "size": "S/6", "bust": { "min": 35.5, "max": 35.5 }, "waist": { "min": 28.5, "max": 28.5 }, "hips": { "min": 38.5, "max": 38.5 } },
+      { "size": "M/8", "bust": { "min": 36.5, "max": 36.5 }, "waist": { "min": 29.5, "max": 29.5 }, "hips": { "min": 39.5, "max": 39.5 } },
+      { "size": "M/10", "bust": { "min": 37.5, "max": 37.5 }, "waist": { "min": 30.5, "max": 30.5 }, "hips": { "min": 40.5, "max": 40.5 } },
+      { "size": "L/12", "bust": { "min": 39, "max": 39 }, "waist": { "min": 32, "max": 32 }, "hips": { "min": 42, "max": 42 } },
+      { "size": "L/14", "bust": { "min": 40.5, "max": 40.5 }, "waist": { "min": 33.5, "max": 33.5 }, "hips": { "min": 43.5, "max": 43.5 } },
+      { "size": "XL/16", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 35.5, "max": 35.5 }, "hips": { "min": 45.5, "max": 45.5 } },
+      { "size": "XXL/18", "bust": { "min": 44.5, "max": 44.5 }, "waist": { "min": 37.5, "max": 37.5 }, "hips": { "min": 47.5, "max": 47.5 } }
+    ],
+    "jeans": [
+      { "size": "XXS/00", "waist": { "min": 24.5, "max": 24.5 }, "hips": { "min": 34.5, "max": 34.5 } },
+      { "size": "XS/0", "waist": { "min": 25.5, "max": 25.5 }, "hips": { "min": 35.5, "max": 35.5 } },
+      { "size": "XS/2", "waist": { "min": 26.5, "max": 26.5 }, "hips": { "min": 36.5, "max": 36.5 } },
+      { "size": "S/4", "waist": { "min": 27.5, "max": 27.5 }, "hips": { "min": 37.5, "max": 37.5 } },
+      { "size": "S/6", "waist": { "min": 28.5, "max": 28.5 }, "hips": { "min": 38.5, "max": 38.5 } },
+      { "size": "M/8", "waist": { "min": 29.5, "max": 29.5 }, "hips": { "min": 39.5, "max": 39.5 } },
+      { "size": "M/10", "waist": { "min": 30.5, "max": 30.5 }, "hips": { "min": 40.5, "max": 40.5 } },
+      { "size": "L/12", "waist": { "min": 32, "max": 32 }, "hips": { "min": 42, "max": 42 } },
+      { "size": "L/14", "waist": { "min": 33.5, "max": 33.5 }, "hips": { "min": 43.5, "max": 43.5 } },
+      { "size": "XL/16", "waist": { "min": 35.5, "max": 35.5 }, "hips": { "min": 45.5, "max": 45.5 } },
+      { "size": "XXL/18", "waist": { "min": 37.5, "max": 37.5 }, "hips": { "min": 47.5, "max": 47.5 } }
+    ]
+  }
+}

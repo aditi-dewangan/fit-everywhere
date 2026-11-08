@@ -1,0 +1,17 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "stussy",
+  "brandName": "Stüssy",
+  "sourceUrl": "https://www.stussy.com/pages/size-guide",
+  "notes": "Copied from the Body Measurements table on the size guide page. The 'Chest' row is stored as bust. Stüssy sells unisex clothing with no women's chart, so sizes run large for most women's measurements. The guide says fit varies by style and points to flat garment measurements on each product. Jeans are left out: the chart's numeric labels (28, 29-30, 31-32...) don't match the sizes sold (26, 28, 30...), and styles like the Big Ol' Jean have an oversized waist.",
+  "charts": {
+    "tops": [
+      { "size": "XS", "bust": { "min": 38, "max": 40 }, "waist": { "min": 26, "max": 27 } },
+      { "size": "S", "bust": { "min": 42, "max": 44 }, "waist": { "min": 28, "max": 29 } },
+      { "size": "M", "bust": { "min": 44, "max": 46 }, "waist": { "min": 30, "max": 31 } },
+      { "size": "L", "bust": { "min": 46, "max": 48 }, "waist": { "min": 32, "max": 34 } },
+      { "size": "XL", "bust": { "min": 48, "max": 50 }, "waist": { "min": 35, "max": 36 } },
+      { "size": "XXL", "bust": { "min": 52, "max": 54 }, "waist": { "min": 37, "max": 37 } }
+    ]
+  }
+}

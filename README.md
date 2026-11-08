@@ -22,7 +22,13 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-The extension gives real recommendations on **Hollister**, **H&M**, and **PacSun** product pages. Every brand and clothing type below is tested against a saved product page.
+27 brands are in the source code (table below). How far each one has been checked:
+
+- **Confirmed on the live site in the real extension:** H&M, Hollister, PacSun, Gap.
+- **Tested against saved product pages only:** every other brand in the table. Each saved page is a cut-down copy of a real product page, so these should work but haven't been tried on the live site yet. If one doesn't, please open an issue with the product link.
+- **In the download:** the latest release (v0.4.0) only has H&M, Hollister and PacSun. The other brands will be in the next release. Until then, build from source (see [Development](#development)).
+
+Only women's sizing is supported. On men's, kids' or other department pages the popup asks you to choose a clothing type instead of recommending a size. Petite, tall, curvy and plus charts aren't modeled.
 
 | Spec step | Status |
 | --- | --- |
@@ -31,16 +37,42 @@ The extension gives real recommendations on **Hollister**, **H&M**, and **PacSun
 | 3. Recommendation engine with tests | ✅ Done, both worked examples pass |
 | 4. Labeled sample chart | ✅ Done (`src/data/charts/sample.json`, test-only) |
 | 5. Profile storage, content script, messaging | ✅ Done |
-| 6. Brand adapters from saved fixtures | ✅ Done for all three brands |
+| 6. Brand adapters from saved fixtures | ✅ Done for every brand below |
 | 7. Popup covering every state | ✅ Done, final design |
 
-Chart coverage by brand (✅ = chart in; the last column shows which product-page types have a saved fixture and tested adapter):
+Chart coverage by brand. ✅ means the brand's chart for that clothing type is included. The last column lists the clothing types tested against a saved product page.
 
 | Brand | Tops | Dresses | Jeans | Chart source | Adapter tested on |
 | --- | --- | --- | --- | --- | --- |
 | Hollister | ✅ XS–L (bust only) | — no chart | ✅ 0–11 | [hollisterco.com size charts](https://www.hollisterco.com/hol/faq/sizecharts.html) | tops, jeans |
 | H&M | ✅ XXS–4XL | ✅ XXS–4XL | ✅ US 0–30 | [H&M US size guide](https://www2.hm.com/en_us/customer-service/sizeguide/ladies.html) (archived Jun 2023) | tops, dresses, jeans |
 | PacSun | ✅ XS–L | — no chart | ✅ 23–34 | [PacSun jeans](https://www.pacsun.com/sizechart-womens-jeans.html) / [tops](https://www.pacsun.com/sizechart-womens-tops.html) charts (archived) | tops, jeans |
+| Abercrombie & Fitch | ✅ XXS–XXXL (bust only) | ✅ XXS–XXXL | ✅ 23–37 | Size Guide on [abercrombie.com](https://www.abercrombie.com/shop/us/p/high-rise-wide-leg-jean-63893393) product pages | tops, dresses, jeans |
+| American Eagle | ✅ XXS–XXL (bust only) | ✅ XXS–XXL | ✅ 000–22 | Size Details on [ae.com](https://www.ae.com/us/en/p/women/jeans/flare-bootcut-jeans/ae-super-high-waisted-flare-jean/1436_5865_927) product pages | tops, dresses, jeans |
+| Aerie | ✅ XXS–XXL (bust only) | — not collected | — not collected | Size Details on [ae.com](https://www.ae.com/us/en/p/aerie/tops/sweaters-cardigans/aerie-ribbed-cardigan/9492_4173_572) product pages | tops |
+| Gap | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 000/23–22/36 | Size Guide on [gap.com](https://www.gap.com/browse/product.do?pid=1185296002) product pages | tops, dresses, jeans |
+| Old Navy | ✅ XXS–4X | ✅ XXS–4X (no hips) | ✅ 000–30 | Size Guide on [oldnavy.gap.com](https://oldnavy.gap.com/browse/product.do?pid=734873002) product pages | tops, dresses, jeans |
+| Ralph Lauren | ✅ XXS/000–XXL/22 | ✅ XXS/000–XXL/22 | ✅ 24–34 | Size Chart on [ralphlauren.com](https://www.ralphlauren.com/women-clothing-jeans/high-rise-straight-jean/100043703.html) product pages (Polo; the Lauren line is excluded) | tops, dresses, jeans |
+| Stüssy | ✅ XS–XXL (unisex) | — no chart | — left out, labels don't match sizes sold | [stussy.com size guide](https://www.stussy.com/pages/size-guide) | tops |
+| Banana Republic | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 000/23–20/35 | Size Guide on [bananarepublic.gap.com](https://bananarepublic.gap.com/browse/product.do?pid=826977012) product pages | tops, dresses, jeans |
+| Athleta | ✅ XXS–3X | ✅ XXS–3X | — doesn't sell jeans | Size Guide on [athleta.gap.com](https://athleta.gap.com/browse/product.do?pid=1177198062) product pages | tops, dresses |
+| Urban Outfitters | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 23–36 | Size Guide on [urbanoutfitters.com](https://www.urbanoutfitters.com/shop/bdg-keira-low-rise-slim-jean) product pages | tops, dresses, jeans |
+| Free People | ✅ XXS–XL | ✅ XXS–XL | ✅ 00/24–16-18/33-34 (hips only) | Size Guide on [freepeople.com](https://www.freepeople.com/shop/we-the-free-good-luck-mid-rise-barrel-jeans/) product pages | tops, dresses, jeans |
+| Anthropologie | ✅ XXS–XL | ✅ XXS–XL | — guide has no body measurements | Size Guide on [anthropologie.com](https://www.anthropologie.com/shop/by-anthropologie-sheer-satin-tuxedo-blouse) product pages | tops, dresses |
+| Ann Taylor | ✅ XXS/00–XXL/18 | ✅ XXS/00–XXL/18 | ✅ XXS/00–XXL/18 | [anntaylor.com size chart](https://www.anntaylor.com/ANN_Size_Chart.html) | tops, dresses, jeans |
+| LOFT | ✅ XXS/00–XXL/18 | ✅ XXS/00–XXL/18 | ✅ 00/24–18/34 | [loft.com size chart](https://www.loft.com/LOFT_Size_Chart.html) | tops, dresses, jeans |
+| Aritzia | ✅ 3XS–2XL | ✅ 3XS–2XL | ✅ 23–32 | [aritzia.com size guide](https://www.aritzia.com/us/en/size-guide) (converted from cm) | tops, dresses, jeans |
+| UNIQLO | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 22–34 inch (waist only) | Size Guide on [uniqlo.com](https://www.uniqlo.com/us/en/products/E465760-000/00) product pages | tops, dresses, jeans |
+| Express | ✅ XXS–XL (bust only) | ✅ XXS–XL | ✅ 000–18 | Size Chart on [express.com](https://www.express.com/clothing/women/high-waisted-relaxed-flare-medium-wash-jeans/pro/07153269/color/Mid%20Wash) product pages | tops, dresses, jeans |
+| Forever 21 | ✅ XXS–XXL | ✅ XXS–XXL | — no regular women's jeans found to test | [forever21.com size guide](https://www.forever21.com/pages/sizing-guide) (plus sizes excluded) | tops, dresses |
+| Garage | ✅ XXS/00–XL/15 | ✅ XXS/00–XL/15 | ✅ XXS/00–XL/15 | [garageclothing.com size chart](https://www.garageclothing.com/us/gar-size-chart.html) | tops, dresses, jeans |
+| Fashion Nova | ✅ XS–3X | ✅ XS–3X | ✅ XS–3X | [fashionnova.com size guide](https://www.fashionnova.com/pages/size-guide) | tops, dresses, jeans |
+| Edikted | ✅ XS–XXL | ✅ XS–XXL | ✅ XS–XXL | [edikted.com size charts](https://edikted.com/pages/size-guide) | tops, dresses, jeans |
+| Princess Polly | ✅ US 0–20 | ✅ US 0–20 | ✅ US 0–20 | [princesspolly.com sizing](https://us.princesspolly.com/pages/sizing) | tops, dresses, jeans |
+| Madewell | ✅ 00/XXS–26/3X | ✅ 00/XS–26/3X | ✅ 23–33 | Size Chart on [madewell.com](https://www.madewell.com/p/womens/clothing/jeans/straight-leg-jeans/the-90s-jean/OB741/) product pages | tops, dresses, jeans |
+| J.Crew | ✅ XXXS/000–3X/24 | ✅ XXXS/000–3X/24 | ✅ 23–37 (waist only) | Size Chart on [jcrew.com](https://www.jcrew.com/p/womens/categories/clothing/jeans/boyfriend/embellished-lowrider-jean/CZ648) product pages | tops, dresses, jeans |
+
+Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating. ASOS isn't supported: it's a marketplace whose chart changes by brand, and the ASOS DESIGN chart has inconsistent numbers (UK 6 hips listed smaller than UK 4).
 
 ## How it works
 

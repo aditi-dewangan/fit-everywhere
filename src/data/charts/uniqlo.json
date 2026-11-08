@@ -1,0 +1,40 @@
+{
+  "collectedOn": "2026-11-06",
+  "brandId": "uniqlo",
+  "brandName": "UNIQLO",
+  "sourceUrl": "https://www.uniqlo.com/us/en/products/E465760-000/00",
+  "notes": "Copied from the Body Size tab of the Size Guide dialog on women's product pages: tops from the page above, dresses from /us/en/products/E487294-000/00 (which lists XS-L of the same table), jeans from /us/en/products/E491104-000/00. Ranges overlap as published. Most women's jeans are sold in inches, which is the scale stored here, with waist only. Some are sold in letter sizes (e.g. E488450, Baggy Jeans) and will still get an inch recommendation.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 29.5, "max": 32 }, "waist": { "min": 22.5, "max": 24.75 }, "hips": { "min": 32.75, "max": 35 } },
+      { "size": "XS", "bust": { "min": 31, "max": 33.5 }, "waist": { "min": 24, "max": 26.5 }, "hips": { "min": 34.25, "max": 36.5 } },
+      { "size": "S", "bust": { "min": 32.75, "max": 35 }, "waist": { "min": 25.5, "max": 28 }, "hips": { "min": 35.75, "max": 38.25 } },
+      { "size": "M", "bust": { "min": 34.25, "max": 36.5 }, "waist": { "min": 27.25, "max": 29.5 }, "hips": { "min": 37.5, "max": 39.75 } },
+      { "size": "L", "bust": { "min": 36.5, "max": 39 }, "waist": { "min": 29.5, "max": 32 }, "hips": { "min": 39.75, "max": 42.25 } },
+      { "size": "XL", "bust": { "min": 39, "max": 41.25 }, "waist": { "min": 32, "max": 34.25 }, "hips": { "min": 42.25, "max": 44.5 } },
+      { "size": "XXL", "bust": { "min": 41.25, "max": 43.75 }, "waist": { "min": 34.25, "max": 36.5 }, "hips": { "min": 44.5, "max": 46.75 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 29.5, "max": 32 }, "waist": { "min": 22.5, "max": 24.75 }, "hips": { "min": 32.75, "max": 35 } },
+      { "size": "XS", "bust": { "min": 31, "max": 33.5 }, "waist": { "min": 24, "max": 26.5 }, "hips": { "min": 34.25, "max": 36.5 } },
+      { "size": "S", "bust": { "min": 32.75, "max": 35 }, "waist": { "min": 25.5, "max": 28 }, "hips": { "min": 35.75, "max": 38.25 } },
+      { "size": "M", "bust": { "min": 34.25, "max": 36.5 }, "waist": { "min": 27.25, "max": 29.5 }, "hips": { "min": 37.5, "max": 39.75 } },
+      { "size": "L", "bust": { "min": 36.5, "max": 39 }, "waist": { "min": 29.5, "max": 32 }, "hips": { "min": 39.75, "max": 42.25 } },
+      { "size": "XL", "bust": { "min": 39, "max": 41.25 }, "waist": { "min": 32, "max": 34.25 }, "hips": { "min": 42.25, "max": 44.5 } },
+      { "size": "XXL", "bust": { "min": 41.25, "max": 43.75 }, "waist": { "min": 34.25, "max": 36.5 }, "hips": { "min": 44.5, "max": 46.75 } }
+    ],
+    "jeans": [
+      { "size": "22inch", "waist": { "min": 22, "max": 22 } },
+      { "size": "23inch", "waist": { "min": 23, "max": 23 } },
+      { "size": "24inch", "waist": { "min": 24, "max": 24 } },
+      { "size": "25inch", "waist": { "min": 25, "max": 25 } },
+      { "size": "26inch", "waist": { "min": 26, "max": 26 } },
+      { "size": "27inch", "waist": { "min": 27, "max": 27 } },
+      { "size": "28inch", "waist": { "min": 28, "max": 28 } },
+      { "size": "29inch", "waist": { "min": 29, "max": 29 } },
+      { "size": "30inch", "waist": { "min": 30, "max": 30 } },
+      { "size": "32inch", "waist": { "min": 32, "max": 32 } },
+      { "size": "34inch", "waist": { "min": 34, "max": 34 } }
+    ]
+  }
+}
