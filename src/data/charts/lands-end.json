@@ -1,0 +1,48 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "lands-end",
+  "brandName": "Lands' End",
+  "sourceUrl": "https://www.landsend.com/products/supima-cotton-crew-neck-t-shirt/id_234877",
+  "notes": "Copied from the Size Charts panel on product pages: tops from the page above (Women's Tops & Shirts, bust only), dresses from /products/womens-poplin-perfect-shirt-dress/id_404052 (Women's Dresses), jeans from /products/womens-high-rise-straight-leg-blue-jeans/id_388259 (Women's Pants & Shorts). Each column pairs an alpha size with a numeric size, and both are kept. The dress chart lists size 0's waist as 25, a single number, where the pants chart lists 25 1/2 - 26 1/2; copied as published. Petite, tall and plus aren't modeled.",
+  "charts": {
+    "tops": [
+      { "size": "XXS/00", "bust": { "min": 31, "max": 31 } },
+      { "size": "XXS/0", "bust": { "min": 32, "max": 32 } },
+      { "size": "XS/2", "bust": { "min": 33, "max": 33 } },
+      { "size": "XS/4", "bust": { "min": 34, "max": 34 } },
+      { "size": "S/6", "bust": { "min": 35, "max": 35 } },
+      { "size": "S/8", "bust": { "min": 36, "max": 36 } },
+      { "size": "M/10", "bust": { "min": 37, "max": 37 } },
+      { "size": "M/12", "bust": { "min": 38.5, "max": 38.5 } },
+      { "size": "L/14", "bust": { "min": 40, "max": 40 } },
+      { "size": "L/16", "bust": { "min": 42, "max": 42 } },
+      { "size": "XL/18", "bust": { "min": 44, "max": 44 } }
+    ],
+    "dresses": [
+      { "size": "XXS/00", "bust": { "min": 31, "max": 31 }, "waist": { "min": 24.5, "max": 25.5 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "XXS/0", "bust": { "min": 32, "max": 32 }, "waist": { "min": 25, "max": 25 }, "hips": { "min": 35, "max": 35 } },
+      { "size": "XS/2", "bust": { "min": 33, "max": 33 }, "waist": { "min": 26.5, "max": 27.5 }, "hips": { "min": 36, "max": 36 } },
+      { "size": "XS/4", "bust": { "min": 34, "max": 34 }, "waist": { "min": 27.5, "max": 28.5 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "S/6", "bust": { "min": 35, "max": 35 }, "waist": { "min": 28.5, "max": 29.5 }, "hips": { "min": 38, "max": 38 } },
+      { "size": "S/8", "bust": { "min": 36, "max": 36 }, "waist": { "min": 29.5, "max": 30.5 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "M/10", "bust": { "min": 37, "max": 37 }, "waist": { "min": 30.5, "max": 31.5 }, "hips": { "min": 40, "max": 40 } },
+      { "size": "M/12", "bust": { "min": 38.5, "max": 38.5 }, "waist": { "min": 32, "max": 33 }, "hips": { "min": 41.5, "max": 41.5 } },
+      { "size": "L/14", "bust": { "min": 40, "max": 40 }, "waist": { "min": 33.5, "max": 34.5 }, "hips": { "min": 43, "max": 43 } },
+      { "size": "L/16", "bust": { "min": 42, "max": 42 }, "waist": { "min": 35, "max": 36.5 }, "hips": { "min": 44.5, "max": 44.5 } },
+      { "size": "XL/18", "bust": { "min": 44, "max": 44 }, "waist": { "min": 37, "max": 38.5 }, "hips": { "min": 46.5, "max": 46.5 } }
+    ],
+    "jeans": [
+      { "size": "XXS/00", "waist": { "min": 24.5, "max": 25.5 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "XXS/0", "waist": { "min": 25.5, "max": 26.5 }, "hips": { "min": 35, "max": 35 } },
+      { "size": "XS/2", "waist": { "min": 26.5, "max": 27.5 }, "hips": { "min": 36, "max": 36 } },
+      { "size": "XS/4", "waist": { "min": 27.5, "max": 28.5 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "S/6", "waist": { "min": 28.5, "max": 29.5 }, "hips": { "min": 38, "max": 38 } },
+      { "size": "S/8", "waist": { "min": 29.5, "max": 30.5 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "M/10", "waist": { "min": 30.5, "max": 31.5 }, "hips": { "min": 40, "max": 40 } },
+      { "size": "M/12", "waist": { "min": 32, "max": 33 }, "hips": { "min": 41.5, "max": 41.5 } },
+      { "size": "L/14", "waist": { "min": 33.5, "max": 34.5 }, "hips": { "min": 43, "max": 43 } },
+      { "size": "L/16", "waist": { "min": 35, "max": 36.5 }, "hips": { "min": 44.5, "max": 44.5 } },
+      { "size": "XL/18", "waist": { "min": 37, "max": 38.5 }, "hips": { "min": 46.5, "max": 46.5 } }
+    ]
+  }
+}
