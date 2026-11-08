@@ -1,0 +1,50 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "reformation",
+  "brandName": "Reformation",
+  "sourceUrl": "https://www.thereformation.com/fitting-and-sizes.html",
+  "notes": "Copied from the page above (inches). Tops and dresses use the Numeric measurements table, because product pages sell tops and dresses in numeric sizes; each row also carries the alpha size the Alpha measurements table pairs it with (XS 0, S 2/4, M 6/8, L 10, XL 12, 1X 14, 2X 16/18, 3X 20). The chart's hip is low hip. Jeans use the Denim measurements table (waist sizes 23-31); the extended denim sizes (32-38) are a separate table and aren't modeled. Petite tables aren't modeled.",
+  "charts": {
+    "tops": [
+      { "size": "0/XS", "bust": { "min": 33, "max": 33 }, "waist": { "min": 25, "max": 25 }, "hips": { "min": 36, "max": 36 } },
+      { "size": "2/S", "bust": { "min": 34, "max": 34 }, "waist": { "min": 26, "max": 26 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "4/S", "bust": { "min": 35, "max": 35 }, "waist": { "min": 27, "max": 27 }, "hips": { "min": 38, "max": 38 } },
+      { "size": "6/M", "bust": { "min": 36, "max": 36 }, "waist": { "min": 28, "max": 28 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "8/M", "bust": { "min": 37.5, "max": 37.5 }, "waist": { "min": 29.5, "max": 29.5 }, "hips": { "min": 40.5, "max": 40.5 } },
+      { "size": "10/L", "bust": { "min": 39.5, "max": 39.5 }, "waist": { "min": 31.5, "max": 31.5 }, "hips": { "min": 42.5, "max": 42.5 } },
+      { "size": "12/XL", "bust": { "min": 41.5, "max": 41.5 }, "waist": { "min": 33.5, "max": 33.5 }, "hips": { "min": 44.5, "max": 44.5 } },
+      { "size": "14/1X", "bust": { "min": 45, "max": 45 }, "waist": { "min": 37.5, "max": 37.5 }, "hips": { "min": 47.5, "max": 47.5 } },
+      { "size": "16/2X", "bust": { "min": 47, "max": 47 }, "waist": { "min": 39.5, "max": 39.5 }, "hips": { "min": 49.5, "max": 49.5 } },
+      { "size": "18/2X", "bust": { "min": 49, "max": 49 }, "waist": { "min": 41.5, "max": 41.5 }, "hips": { "min": 51.5, "max": 51.5 } },
+      { "size": "20/3X", "bust": { "min": 51, "max": 51 }, "waist": { "min": 43.5, "max": 43.5 }, "hips": { "min": 53.5, "max": 53.5 } },
+      { "size": "22", "bust": { "min": 53, "max": 53 }, "waist": { "min": 45.5, "max": 45.5 }, "hips": { "min": 55.5, "max": 55.5 } },
+      { "size": "24", "bust": { "min": 55, "max": 55 }, "waist": { "min": 47.5, "max": 47.5 }, "hips": { "min": 57.5, "max": 57.5 } }
+    ],
+    "dresses": [
+      { "size": "0/XS", "bust": { "min": 33, "max": 33 }, "waist": { "min": 25, "max": 25 }, "hips": { "min": 36, "max": 36 } },
+      { "size": "2/S", "bust": { "min": 34, "max": 34 }, "waist": { "min": 26, "max": 26 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "4/S", "bust": { "min": 35, "max": 35 }, "waist": { "min": 27, "max": 27 }, "hips": { "min": 38, "max": 38 } },
+      { "size": "6/M", "bust": { "min": 36, "max": 36 }, "waist": { "min": 28, "max": 28 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "8/M", "bust": { "min": 37.5, "max": 37.5 }, "waist": { "min": 29.5, "max": 29.5 }, "hips": { "min": 40.5, "max": 40.5 } },
+      { "size": "10/L", "bust": { "min": 39.5, "max": 39.5 }, "waist": { "min": 31.5, "max": 31.5 }, "hips": { "min": 42.5, "max": 42.5 } },
+      { "size": "12/XL", "bust": { "min": 41.5, "max": 41.5 }, "waist": { "min": 33.5, "max": 33.5 }, "hips": { "min": 44.5, "max": 44.5 } },
+      { "size": "14/1X", "bust": { "min": 45, "max": 45 }, "waist": { "min": 37.5, "max": 37.5 }, "hips": { "min": 47.5, "max": 47.5 } },
+      { "size": "16/2X", "bust": { "min": 47, "max": 47 }, "waist": { "min": 39.5, "max": 39.5 }, "hips": { "min": 49.5, "max": 49.5 } },
+      { "size": "18/2X", "bust": { "min": 49, "max": 49 }, "waist": { "min": 41.5, "max": 41.5 }, "hips": { "min": 51.5, "max": 51.5 } },
+      { "size": "20/3X", "bust": { "min": 51, "max": 51 }, "waist": { "min": 43.5, "max": 43.5 }, "hips": { "min": 53.5, "max": 53.5 } },
+      { "size": "22", "bust": { "min": 53, "max": 53 }, "waist": { "min": 45.5, "max": 45.5 }, "hips": { "min": 55.5, "max": 55.5 } },
+      { "size": "24", "bust": { "min": 55, "max": 55 }, "waist": { "min": 47.5, "max": 47.5 }, "hips": { "min": 57.5, "max": 57.5 } }
+    ],
+    "jeans": [
+      { "size": "23", "waist": { "min": 23.5, "max": 23.5 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "24", "waist": { "min": 24.5, "max": 24.5 }, "hips": { "min": 35, "max": 35 } },
+      { "size": "25", "waist": { "min": 25.5, "max": 25.5 }, "hips": { "min": 36, "max": 36 } },
+      { "size": "26", "waist": { "min": 26.5, "max": 26.5 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "27", "waist": { "min": 27.5, "max": 27.5 }, "hips": { "min": 38, "max": 38 } },
+      { "size": "28", "waist": { "min": 28.5, "max": 28.5 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "29", "waist": { "min": 30, "max": 30 }, "hips": { "min": 40.5, "max": 40.5 } },
+      { "size": "30", "waist": { "min": 31.5, "max": 31.5 }, "hips": { "min": 42, "max": 42 } },
+      { "size": "31", "waist": { "min": 33.25, "max": 33.25 }, "hips": { "min": 43.75, "max": 43.75 } }
+    ]
+  }
+}
