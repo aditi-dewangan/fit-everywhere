@@ -1,0 +1,27 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "nike",
+  "brandName": "Nike",
+  "sourceUrl": "https://www.nike.com/size-fit/womens-tops-alpha",
+  "notes": "Tops copied from the Women's Tops & Tees chart above; dresses from https://www.nike.com/size-fit/womens-skirt-dress, which has the same numbers. Plus sizes (0X-4X) are a separate table and aren't modeled. Nike doesn't sell jeans.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 27.5, "max": 29.5 }, "waist": { "min": 21.25, "max": 23.5 }, "hips": { "min": 30.5, "max": 33 } },
+      { "size": "XS", "bust": { "min": 29.5, "max": 32.5 }, "waist": { "min": 23.5, "max": 26 }, "hips": { "min": 33, "max": 35.5 } },
+      { "size": "S", "bust": { "min": 32.5, "max": 35.5 }, "waist": { "min": 26, "max": 29 }, "hips": { "min": 35.5, "max": 38.5 } },
+      { "size": "M", "bust": { "min": 35.5, "max": 38 }, "waist": { "min": 29, "max": 31.5 }, "hips": { "min": 38.5, "max": 41 } },
+      { "size": "L", "bust": { "min": 38, "max": 41 }, "waist": { "min": 31.5, "max": 34.5 }, "hips": { "min": 41, "max": 44 } },
+      { "size": "XL", "bust": { "min": 41, "max": 44.5 }, "waist": { "min": 34.5, "max": 38.5 }, "hips": { "min": 44, "max": 47 } },
+      { "size": "XXL", "bust": { "min": 44.5, "max": 48.5 }, "waist": { "min": 38.5, "max": 42.5 }, "hips": { "min": 47, "max": 50 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 27.5, "max": 29.5 }, "waist": { "min": 21.25, "max": 23.5 }, "hips": { "min": 30.5, "max": 33 } },
+      { "size": "XS", "bust": { "min": 29.5, "max": 32.5 }, "waist": { "min": 23.5, "max": 26 }, "hips": { "min": 33, "max": 35.5 } },
+      { "size": "S", "bust": { "min": 32.5, "max": 35.5 }, "waist": { "min": 26, "max": 29 }, "hips": { "min": 35.5, "max": 38.5 } },
+      { "size": "M", "bust": { "min": 35.5, "max": 38 }, "waist": { "min": 29, "max": 31.5 }, "hips": { "min": 38.5, "max": 41 } },
+      { "size": "L", "bust": { "min": 38, "max": 41 }, "waist": { "min": 31.5, "max": 34.5 }, "hips": { "min": 41, "max": 44 } },
+      { "size": "XL", "bust": { "min": 41, "max": 44.5 }, "waist": { "min": 34.5, "max": 38.5 }, "hips": { "min": 44, "max": 47 } },
+      { "size": "XXL", "bust": { "min": 44.5, "max": 48.5 }, "waist": { "min": 38.5, "max": 42.5 }, "hips": { "min": 47, "max": 50 } }
+    ]
+  }
+}

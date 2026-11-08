@@ -1,0 +1,33 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "lululemon",
+  "brandName": "lululemon",
+  "sourceUrl": "https://shop.lululemon.com/help/size-guide/womens",
+  "notes": "Copied from the Tops Size Chart (chest only) and the Bodysuits & Dresses Size Chart on the page above. lululemon sells some tops in numeric sizes and others in alpha sizes, so each row keeps both labels. The tops chart publishes 12-14, 16-18 and 20-22 as single rows. Tops and dresses with a built-in shelf bra (named with a cup size or support level) have their own Shelf Bra chart, which isn't modeled. lululemon doesn't sell jeans.",
+  "charts": {
+    "tops": [
+      { "size": "0/XXXS", "bust": { "min": 28.5, "max": 28.5 } },
+      { "size": "2/XXS", "bust": { "min": 30, "max": 30 } },
+      { "size": "4/XS", "bust": { "min": 31, "max": 32 } },
+      { "size": "6/S", "bust": { "min": 33, "max": 34 } },
+      { "size": "8/M", "bust": { "min": 35, "max": 36 } },
+      { "size": "10/L", "bust": { "min": 37, "max": 38.5 } },
+      { "size": "12-14/XL", "bust": { "min": 40, "max": 42 } },
+      { "size": "16-18/1X", "bust": { "min": 45, "max": 47 } },
+      { "size": "20-22/2X", "bust": { "min": 49, "max": 51 } }
+    ],
+    "dresses": [
+      { "size": "0/XXXS", "bust": { "min": 28.5, "max": 28.5 }, "waist": { "min": 21.5, "max": 21.5 }, "hips": { "min": 31.5, "max": 31.5 } },
+      { "size": "2/XXS", "bust": { "min": 30, "max": 30 }, "waist": { "min": 23, "max": 23 }, "hips": { "min": 33, "max": 33 } },
+      { "size": "4/XS", "bust": { "min": 31, "max": 32 }, "waist": { "min": 24, "max": 25 }, "hips": { "min": 34, "max": 35 } },
+      { "size": "6/S", "bust": { "min": 33, "max": 34 }, "waist": { "min": 26, "max": 27 }, "hips": { "min": 36, "max": 37 } },
+      { "size": "8/M", "bust": { "min": 35, "max": 36 }, "waist": { "min": 28, "max": 29 }, "hips": { "min": 38, "max": 39 } },
+      { "size": "10/L", "bust": { "min": 37, "max": 38.5 }, "waist": { "min": 30, "max": 31.5 }, "hips": { "min": 40, "max": 41.5 } },
+      { "size": "12/XL", "bust": { "min": 40, "max": 40 }, "waist": { "min": 33, "max": 33 }, "hips": { "min": 43, "max": 43 } },
+      { "size": "14/XL", "bust": { "min": 42, "max": 42 }, "waist": { "min": 35, "max": 35 }, "hips": { "min": 45, "max": 45 } },
+      { "size": "16/1X", "bust": { "min": 45, "max": 45 }, "waist": { "min": 39, "max": 39 }, "hips": { "min": 47, "max": 47 } },
+      { "size": "18/1X", "bust": { "min": 47, "max": 47 }, "waist": { "min": 41, "max": 41 }, "hips": { "min": 49, "max": 49 } },
+      { "size": "20/2X", "bust": { "min": 49, "max": 49 }, "waist": { "min": 43, "max": 43 }, "hips": { "min": 51, "max": 51 } }
+    ]
+  }
+}
