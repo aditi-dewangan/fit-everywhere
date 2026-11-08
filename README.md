@@ -18,6 +18,8 @@ To install:
 4. Click **Load unpacked** and select the unzipped folder.
 5. Pin Fit Everywhere from the puzzle-piece menu, then click it to set up your profile.
 
+**Updating from an older build:** on `chrome://extensions`, click **Remove** on Fit Everywhere, then install the new zip with the steps above. Removing the extension also deletes your saved profile, so you'll set it up again.
+
 All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-everywhere/releases).
 
 ## Status
@@ -26,7 +28,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 - **Confirmed on the live site in the real extension:** H&M, Hollister, PacSun, Gap.
 - **Tested against saved product pages only:** every other brand in the table. Each saved page is a cut-down copy of a real product page, so these should work but haven't been tried on the live site yet. If one doesn't, please open an issue with the product link.
-- **In the download:** the latest release (v0.4.0) only has H&M, Hollister and PacSun. The other brands will be in the next release. Until then, build from source (see [Development](#development)).
+- **In the download:** all 47 brands, starting with v0.5.0. Builds before v0.5.0 only had H&M, Hollister and PacSun.
 
 Only women's sizing is supported. On men's, kids' or other department pages the popup asks you to choose a clothing type instead of recommending a size. Petite, tall, curvy and plus charts aren't modeled.
 
