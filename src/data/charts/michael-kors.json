@@ -1,0 +1,27 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "michael-kors",
+  "brandName": "Michael Kors",
+  "sourceUrl": "https://www.michaelkors.com/rhinestone-embellished-scuba-mini-dress/MF683LCD6E.html",
+  "notes": "Copied from the Size Guide dialog (inches): dresses from the page above, tops from /brushed-alpaca-blend-sweater/MF661MALFS.html (same table). Rows are published as US size with the alpha size in brackets; where one alpha size covers two US sizes, their values form the range, and each row keeps both labels. The chart lists XXL with no US size. No women's jeans section was found.",
+  "charts": {
+    "tops": [
+      { "size": "XXS/00", "bust": { "min": 31.5, "max": 31.5 }, "waist": { "min": 24.5, "max": 24.5 }, "hips": { "min": 34.5, "max": 34.5 } },
+      { "size": "XS/0-2", "bust": { "min": 32.5, "max": 33.5 }, "waist": { "min": 25.5, "max": 26.5 }, "hips": { "min": 35.5, "max": 36.5 } },
+      { "size": "S/4-6", "bust": { "min": 34.5, "max": 35.5 }, "waist": { "min": 27.5, "max": 28.5 }, "hips": { "min": 37.5, "max": 38.5 } },
+      { "size": "M/8-10", "bust": { "min": 36.5, "max": 38 }, "waist": { "min": 29.5, "max": 31 }, "hips": { "min": 39.5, "max": 41 } },
+      { "size": "L/12-14", "bust": { "min": 39.5, "max": 41 }, "waist": { "min": 32.5, "max": 34 }, "hips": { "min": 42.5, "max": 44 } },
+      { "size": "XL/16", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 35.5, "max": 35.5 }, "hips": { "min": 45.5, "max": 45.5 } },
+      { "size": "XXL", "bust": { "min": 44, "max": 44 }, "waist": { "min": 37, "max": 37 }, "hips": { "min": 47, "max": 47 } }
+    ],
+    "dresses": [
+      { "size": "XXS/00", "bust": { "min": 31.5, "max": 31.5 }, "waist": { "min": 24.5, "max": 24.5 }, "hips": { "min": 34.5, "max": 34.5 } },
+      { "size": "XS/0-2", "bust": { "min": 32.5, "max": 33.5 }, "waist": { "min": 25.5, "max": 26.5 }, "hips": { "min": 35.5, "max": 36.5 } },
+      { "size": "S/4-6", "bust": { "min": 34.5, "max": 35.5 }, "waist": { "min": 27.5, "max": 28.5 }, "hips": { "min": 37.5, "max": 38.5 } },
+      { "size": "M/8-10", "bust": { "min": 36.5, "max": 38 }, "waist": { "min": 29.5, "max": 31 }, "hips": { "min": 39.5, "max": 41 } },
+      { "size": "L/12-14", "bust": { "min": 39.5, "max": 41 }, "waist": { "min": 32.5, "max": 34 }, "hips": { "min": 42.5, "max": 44 } },
+      { "size": "XL/16", "bust": { "min": 42.5, "max": 42.5 }, "waist": { "min": 35.5, "max": 35.5 }, "hips": { "min": 45.5, "max": 45.5 } },
+      { "size": "XXL", "bust": { "min": 44, "max": 44 }, "waist": { "min": 37, "max": 37 }, "hips": { "min": 47, "max": 47 } }
+    ]
+  }
+}
