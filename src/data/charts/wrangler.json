@@ -1,0 +1,44 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "wrangler",
+  "brandName": "Wrangler",
+  "sourceUrl": "https://www.wrangler.com/size-charts.html",
+  "notes": "Copied from the women's general chart (Women > General on the page above), which is also the table in the Size Chart dialog on women's jeans (/shop/womens-wrangler-bespoke-high-rise-flare-jean-5BESFL.html), tops (/shop/womens-wrangler-classic-western-snap-denim-shirt-LW700.html) and dresses (/shop/womens-wrangler-iconic-western-snap-denim-dress-LWD761.html). The chart's Size column has four unlabeled sub-columns; the alpha size is used for tops and dresses, and the waist size (24-36), which matches the sizes sold on jean pages, for jeans. Where an alpha size spans two rows, the rows are merged into one range. Some jeans are sold in size 37, which the chart doesn't list. Tops are sold as 3X, which the chart lists as XXXL. Plus (W) sizes aren't modeled.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 29.5, "max": 31.5 }, "waist": { "min": 25, "max": 25.5 }, "hips": { "min": 33.5, "max": 34 } },
+      { "size": "XS", "bust": { "min": 31.5, "max": 33.5 }, "waist": { "min": 26, "max": 27.5 }, "hips": { "min": 34.5, "max": 36 } },
+      { "size": "S", "bust": { "min": 33.5, "max": 35.5 }, "waist": { "min": 28, "max": 29.5 }, "hips": { "min": 36.5, "max": 38 } },
+      { "size": "M", "bust": { "min": 35.5, "max": 37.5 }, "waist": { "min": 30, "max": 31.5 }, "hips": { "min": 38.5, "max": 40 } },
+      { "size": "L", "bust": { "min": 37.5, "max": 40.5 }, "waist": { "min": 32, "max": 34.5 }, "hips": { "min": 40.5, "max": 43 } },
+      { "size": "XL", "bust": { "min": 40.5, "max": 44 }, "waist": { "min": 35, "max": 38.5 }, "hips": { "min": 43.5, "max": 46.5 } },
+      { "size": "XXL", "bust": { "min": 44.5, "max": 46 }, "waist": { "min": 39, "max": 40.75 }, "hips": { "min": 47, "max": 48.5 } },
+      { "size": "XXXL", "bust": { "min": 46.5, "max": 49.5 }, "waist": { "min": 41.25, "max": 43 }, "hips": { "min": 49, "max": 50.5 } }
+    ],
+    "dresses": [
+      { "size": "XXS", "bust": { "min": 29.5, "max": 31.5 }, "waist": { "min": 25, "max": 25.5 }, "hips": { "min": 33.5, "max": 34 } },
+      { "size": "XS", "bust": { "min": 31.5, "max": 33.5 }, "waist": { "min": 26, "max": 27.5 }, "hips": { "min": 34.5, "max": 36 } },
+      { "size": "S", "bust": { "min": 33.5, "max": 35.5 }, "waist": { "min": 28, "max": 29.5 }, "hips": { "min": 36.5, "max": 38 } },
+      { "size": "M", "bust": { "min": 35.5, "max": 37.5 }, "waist": { "min": 30, "max": 31.5 }, "hips": { "min": 38.5, "max": 40 } },
+      { "size": "L", "bust": { "min": 37.5, "max": 40.5 }, "waist": { "min": 32, "max": 34.5 }, "hips": { "min": 40.5, "max": 43 } },
+      { "size": "XL", "bust": { "min": 40.5, "max": 44 }, "waist": { "min": 35, "max": 38.5 }, "hips": { "min": 43.5, "max": 46.5 } },
+      { "size": "XXL", "bust": { "min": 44.5, "max": 46 }, "waist": { "min": 39, "max": 40.75 }, "hips": { "min": 47, "max": 48.5 } },
+      { "size": "XXXL", "bust": { "min": 46.5, "max": 49.5 }, "waist": { "min": 41.25, "max": 43 }, "hips": { "min": 49, "max": 50.5 } }
+    ],
+    "jeans": [
+      { "size": "24", "waist": { "min": 25, "max": 25.5 }, "hips": { "min": 33.5, "max": 34 } },
+      { "size": "25", "waist": { "min": 26, "max": 26.5 }, "hips": { "min": 34.5, "max": 35 } },
+      { "size": "26", "waist": { "min": 27, "max": 27.5 }, "hips": { "min": 35.5, "max": 36 } },
+      { "size": "27", "waist": { "min": 28, "max": 28.5 }, "hips": { "min": 36.5, "max": 37 } },
+      { "size": "28", "waist": { "min": 29, "max": 29.5 }, "hips": { "min": 37.5, "max": 38 } },
+      { "size": "29", "waist": { "min": 30, "max": 30.5 }, "hips": { "min": 38.5, "max": 39 } },
+      { "size": "30", "waist": { "min": 31, "max": 31.5 }, "hips": { "min": 39.5, "max": 40 } },
+      { "size": "31", "waist": { "min": 32, "max": 33.5 }, "hips": { "min": 40.5, "max": 41.5 } },
+      { "size": "32", "waist": { "min": 33.5, "max": 34.5 }, "hips": { "min": 42, "max": 43 } },
+      { "size": "33", "waist": { "min": 35, "max": 36.75 }, "hips": { "min": 43.5, "max": 44.5 } },
+      { "size": "34", "waist": { "min": 36.75, "max": 38.5 }, "hips": { "min": 45, "max": 46.5 } },
+      { "size": "35", "waist": { "min": 39, "max": 40.75 }, "hips": { "min": 47, "max": 48.5 } },
+      { "size": "36", "waist": { "min": 41.25, "max": 43 }, "hips": { "min": 49, "max": 50.5 } }
+    ]
+  }
+}

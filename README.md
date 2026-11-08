@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-27 brands are in the source code (table below). How far each one has been checked:
+29 brands are in the source code (table below). How far each one has been checked:
 
 - **Confirmed on the live site in the real extension:** H&M, Hollister, PacSun, Gap.
 - **Tested against saved product pages only:** every other brand in the table. Each saved page is a cut-down copy of a real product page, so these should work but haven't been tried on the live site yet. If one doesn't, please open an issue with the product link.
@@ -71,6 +71,8 @@ Chart coverage by brand. ✅ means the brand's chart for that clothing type is i
 | Princess Polly | ✅ US 0–20 | ✅ US 0–20 | ✅ US 0–20 | [princesspolly.com sizing](https://us.princesspolly.com/pages/sizing) | tops, dresses, jeans |
 | Madewell | ✅ 00/XXS–26/3X | ✅ 00/XS–26/3X | ✅ 23–33 | Size Chart on [madewell.com](https://www.madewell.com/p/womens/clothing/jeans/straight-leg-jeans/the-90s-jean/OB741/) product pages | tops, dresses, jeans |
 | J.Crew | ✅ XXXS/000–3X/24 | ✅ XXXS/000–3X/24 | ✅ 23–37 (waist only) | Size Chart on [jcrew.com](https://www.jcrew.com/p/womens/categories/clothing/jeans/boyfriend/embellished-lowrider-jean/CZ648) product pages | tops, dresses, jeans |
+| Levi's | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 23–35 | Size Guide on [levi.com](https://www.levi.com/US/en_US/clothing/women/jeans/straight/501-90s-womens-jeans/p/A19590115) product pages (plus dresses not included) | tops, dresses, jeans |
+| Wrangler | ✅ XXS–XXXL | ✅ XXS–XXXL | ✅ 24–36 | [wrangler.com size charts](https://www.wrangler.com/size-charts.html) (Women > General) | tops, dresses, jeans |
 
 Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating. ASOS isn't supported: it's a marketplace whose chart changes by brand, and the ASOS DESIGN chart has inconsistent numbers (UK 6 hips listed smaller than UK 4).
 
