@@ -1,0 +1,23 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "calvin-klein",
+  "brandName": "Calvin Klein",
+  "sourceUrl": "https://www.calvinklein.us/en/women/apparel/tshirts-tanks/textured-monogram-tank-top/47G321G-YAS.html",
+  "notes": "Copied from the Size Guide dialog: tops from the page above, dresses from /dresses/relaxed-rib-mini-dress/47H379G-HMT.html (same table). Each alpha size spans two US sizes (XS is 0-2, S 4-6 and so on), so the two published chest and waist values form the range. Jeans aren't included: the jeans chart (/denim/90s-straight-jeans/47B918G-SCB.html) is in US sizes 0-16 while jean pages sell waist sizes 25-31, and the chart doesn't say how they match.",
+  "charts": {
+    "tops": [
+      { "size": "XS", "bust": { "min": 32, "max": 33 }, "waist": { "min": 25.5, "max": 26.5 } },
+      { "size": "S", "bust": { "min": 34, "max": 35 }, "waist": { "min": 27.5, "max": 28.5 } },
+      { "size": "M", "bust": { "min": 36, "max": 37 }, "waist": { "min": 29.5, "max": 30.5 } },
+      { "size": "L", "bust": { "min": 38.5, "max": 40 }, "waist": { "min": 32, "max": 33.5 } },
+      { "size": "XL", "bust": { "min": 41.5, "max": 43 }, "waist": { "min": 35, "max": 36.5 } }
+    ],
+    "dresses": [
+      { "size": "XS", "bust": { "min": 32, "max": 33 }, "waist": { "min": 25.5, "max": 26.5 } },
+      { "size": "S", "bust": { "min": 34, "max": 35 }, "waist": { "min": 27.5, "max": 28.5 } },
+      { "size": "M", "bust": { "min": 36, "max": 37 }, "waist": { "min": 29.5, "max": 30.5 } },
+      { "size": "L", "bust": { "min": 38.5, "max": 40 }, "waist": { "min": 32, "max": 33.5 } },
+      { "size": "XL", "bust": { "min": 41.5, "max": 43 }, "waist": { "min": 35, "max": 36.5 } }
+    ]
+  }
+}
