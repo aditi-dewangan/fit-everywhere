@@ -1,0 +1,30 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "good-american",
+  "brandName": "Good American",
+  "sourceUrl": "https://www.goodamerican.com/products/good-low-rise-bootcut-jeans-rise",
+  "notes": "Copied from the Size Guide dialog (Measurements, inches) on the page above. The dialog is titled with the product name and also lists inseam (32.5\" for every size), but /products/vintage-low-loose-mesa, a loose fit, shows the identical table, so it's treated as the brand's jeans chart. Waist and hip only. Always Fits styles are sold in combined sizes (00-4 and so on) and aren't covered. Tops and dresses weren't collected: no live dress page could be opened.",
+  "charts": {
+    "jeans": [
+      { "size": "00", "waist": { "min": 24.5, "max": 24.5 }, "hips": { "min": 36, "max": 36 } },
+      { "size": "0", "waist": { "min": 25.5, "max": 25.5 }, "hips": { "min": 37, "max": 37 } },
+      { "size": "2", "waist": { "min": 26.5, "max": 26.5 }, "hips": { "min": 38, "max": 38 } },
+      { "size": "4", "waist": { "min": 27.5, "max": 27.5 }, "hips": { "min": 39, "max": 39 } },
+      { "size": "6", "waist": { "min": 28.5, "max": 28.5 }, "hips": { "min": 40, "max": 40 } },
+      { "size": "8", "waist": { "min": 29.5, "max": 29.5 }, "hips": { "min": 41, "max": 41 } },
+      { "size": "10", "waist": { "min": 31, "max": 31 }, "hips": { "min": 42.5, "max": 42.5 } },
+      { "size": "12", "waist": { "min": 32.5, "max": 32.5 }, "hips": { "min": 44, "max": 44 } },
+      { "size": "14", "waist": { "min": 34, "max": 34 }, "hips": { "min": 45.5, "max": 45.5 } },
+      { "size": "15", "waist": { "min": 37, "max": 37 }, "hips": { "min": 48, "max": 48 } },
+      { "size": "16", "waist": { "min": 39, "max": 39 }, "hips": { "min": 50, "max": 50 } },
+      { "size": "18", "waist": { "min": 41, "max": 41 }, "hips": { "min": 52, "max": 52 } },
+      { "size": "20", "waist": { "min": 43, "max": 43 }, "hips": { "min": 54, "max": 54 } },
+      { "size": "22", "waist": { "min": 45, "max": 45 }, "hips": { "min": 56, "max": 56 } },
+      { "size": "24", "waist": { "min": 47, "max": 47 }, "hips": { "min": 58, "max": 58 } },
+      { "size": "26", "waist": { "min": 49, "max": 49 }, "hips": { "min": 60, "max": 60 } },
+      { "size": "28", "waist": { "min": 51, "max": 51 }, "hips": { "min": 62, "max": 62 } },
+      { "size": "30", "waist": { "min": 53, "max": 53 }, "hips": { "min": 64, "max": 64 } },
+      { "size": "32", "waist": { "min": 55, "max": 55 }, "hips": { "min": 66, "max": 66 } }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-import { categoryFromCrumbsAndName, defaultProductName, jsonLdBreadcrumbs } from './common';
+import { categoryFromCrumbsAndName, defaultProductName, jsonLdBreadcrumbs, jsonLdProduct } from './common';
 import type { BrandAdapter } from './types';
 
 // Shopify stores share /products/<slug> and /collections/<name>/products/<slug>.
@@ -30,6 +30,31 @@ export const fashionNova: BrandAdapter = {
   getCategory(_url, doc) {
     // Breadcrumbs start at the department. Only women's sizing is supported.
     if (jsonLdBreadcrumbs(doc)[0]?.trim().toLowerCase() !== 'women') return null;
+    return categoryFromCrumbsAndName(doc);
+  },
+};
+
+export const goodAmerican: BrandAdapter = {
+  brandId: 'good-american',
+  hostnames: ['goodamerican.com'],
+  isProductPage: (url) => PRODUCT_PATH.test(url.pathname),
+  getProductName: defaultProductName,
+  getCategory(_url, doc) {
+    // Always Fits styles are sold in combined sizes (00-4) that the chart doesn't use.
+    if (/\balways fits\b/i.test(defaultProductName(doc) ?? '')) return null;
+    return categoryFromCrumbsAndName(doc);
+  },
+};
+
+export const agolde: BrandAdapter = {
+  brandId: 'agolde',
+  hostnames: ['agolde.com'],
+  isProductPage: (url) => PRODUCT_PATH.test(url.pathname),
+  getProductName: defaultProductName,
+  getCategory(_url, doc) {
+    // Men's products carry the brand "AGOLDE MENS"; only women's sizing is supported.
+    const brand = (jsonLdProduct(doc)?.brand as { name?: unknown } | undefined)?.name;
+    if (typeof brand === 'string' && /\bmens\b/i.test(brand)) return null;
     return categoryFromCrumbsAndName(doc);
   },
 };

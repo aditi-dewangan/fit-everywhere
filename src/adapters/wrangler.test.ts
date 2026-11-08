@@ -2,13 +2,16 @@
 import { describe, expect, it } from 'vitest';
 import { extractProductContext } from './index';
 import { loadFixture } from './test-fixtures';
-import { wrangler } from './wrangler';
+import { lee, wrangler } from './wrangler';
 
-describe('Wrangler adapter', () => {
-  it('reads each saved page', () => {
+describe('Wrangler and Lee adapters', () => {
+  it.each([
+    [wrangler, 'wrangler'],
+    [lee, 'lee'],
+  ] as const)('reads each saved page for %#', (adapter, brandId) => {
     for (const category of ['jeans', 'tops', 'dresses']) {
-      const { url, doc } = loadFixture(`wrangler/${category}.html`);
-      expect(extractProductContext(url, doc, [wrangler])).toMatchObject({ brandId: 'wrangler', category });
+      const { url, doc } = loadFixture(`${brandId}/${category}.html`);
+      expect(extractProductContext(url, doc, [adapter])).toMatchObject({ brandId, category });
     }
   });
 
@@ -19,7 +22,7 @@ describe('Wrangler adapter', () => {
   });
 
   it('ignores category pages', () => {
-    const { doc } = loadFixture('wrangler/jeans.html');
-    expect(wrangler.isProductPage(new URL('https://www.wrangler.com/shop/women-jeans'), doc)).toBe(false);
+    const { doc } = loadFixture('lee/jeans.html');
+    expect(lee.isProductPage(new URL('https://www.lee.com/shop/women-clothing-jeans'), doc)).toBe(false);
   });
 });

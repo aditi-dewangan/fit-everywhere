@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest';
 import { extractProductContext } from './index';
-import { edikted, fashionNova, princessPolly } from './shopify';
+import { agolde, edikted, fashionNova, goodAmerican, princessPolly } from './shopify';
 import { loadFixture } from './test-fixtures';
 
 describe('Shopify store adapters', () => {
@@ -9,6 +9,7 @@ describe('Shopify store adapters', () => {
     [edikted, 'edikted'],
     [fashionNova, 'fashion-nova'],
     [princessPolly, 'princess-polly'],
+    [agolde, 'agolde'],
   ] as const)('reads each saved page for %#', (adapter, brandId) => {
     for (const category of ['jeans', 'tops', 'dresses']) {
       const { url, doc } = loadFixture(`${brandId}/${category}.html`);
@@ -20,6 +21,23 @@ describe('Shopify store adapters', () => {
     const { url, doc } = loadFixture('fashion-nova/jeans.html');
     for (const s of doc.querySelectorAll('script')) s.textContent = s.textContent!.replace('"women"', '"men"');
     expect(fashionNova.getCategory(url, doc)).toBeNull();
+  });
+
+  it('reads the saved Good American jeans page', () => {
+    const { url, doc } = loadFixture('good-american/jeans.html');
+    expect(extractProductContext(url, doc, [goodAmerican])).toMatchObject({ brandId: 'good-american', category: 'jeans' });
+  });
+
+  it('leaves Good American Always Fits styles without a clothing type', () => {
+    const { url, doc } = loadFixture('good-american/jeans.html');
+    for (const s of doc.querySelectorAll('script')) s.textContent = s.textContent!.replace('SOFT TECH GOOD', 'ALWAYS FITS GOOD');
+    expect(goodAmerican.getCategory(url, doc)).toBeNull();
+  });
+
+  it("leaves AGOLDE men's products without a clothing type", () => {
+    const { url, doc } = loadFixture('agolde/jeans.html');
+    for (const s of doc.querySelectorAll('script')) s.textContent = s.textContent!.replace('"AGOLDE"', '"AGOLDE MENS"');
+    expect(agolde.getCategory(url, doc)).toBeNull();
   });
 
   it('ignores collection pages', () => {
