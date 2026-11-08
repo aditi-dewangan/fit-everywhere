@@ -1,0 +1,39 @@
+{
+  "collectedOn": "2026-11-07",
+  "brandId": "mango",
+  "brandName": "Mango",
+  "sourceUrl": "https://shop.mango.com/us/en/p/women/t-shirts/basics/long-sleeved-boat-neck-t-shirt/37094103/07/00",
+  "notes": "Copied from the Measurements panel (Body, inches) on product pages. The panel only lists the sizes the product is sold in. Tops from the page above (XXS-4XL), dresses from /us/en/p/women/dresses-and-jumpsuits/dresses/jacquard-dress-with-flared-sleeves/37067783/30/00 (only US 2-10 listed), jeans from /us/en/p/women/jeans/flare/high-waist-flared-jeans/37015862/TO/00 (US 0-14). Mango's inch values are converted from cm by the site. Plus-size products (/plus-sizes/ in the URL) aren't covered.",
+  "charts": {
+    "tops": [
+      { "size": "XXS", "bust": { "min": 30.71, "max": 30.71 }, "waist": { "min": 23.23, "max": 23.23 } },
+      { "size": "XS", "bust": { "min": 32.28, "max": 32.28 }, "waist": { "min": 24.41, "max": 24.41 } },
+      { "size": "S", "bust": { "min": 33.86, "max": 33.86 }, "waist": { "min": 25.98, "max": 25.98 } },
+      { "size": "M", "bust": { "min": 36.22, "max": 36.22 }, "waist": { "min": 28.35, "max": 28.35 } },
+      { "size": "L", "bust": { "min": 38.58, "max": 38.58 }, "waist": { "min": 30.71, "max": 30.71 } },
+      { "size": "XL", "bust": { "min": 40.94, "max": 40.94 }, "waist": { "min": 33.46, "max": 33.46 } },
+      { "size": "XXL", "bust": { "min": 43.31, "max": 43.31 }, "waist": { "min": 36.22, "max": 36.22 } },
+      { "size": "1XL", "bust": { "min": 45.67, "max": 45.67 }, "waist": { "min": 38.98, "max": 38.98 } },
+      { "size": "2XL", "bust": { "min": 48.82, "max": 48.82 }, "waist": { "min": 42.52, "max": 42.52 } },
+      { "size": "3XL", "bust": { "min": 51.97, "max": 51.97 }, "waist": { "min": 46.06, "max": 46.06 } },
+      { "size": "4XL", "bust": { "min": 55.12, "max": 55.12 }, "waist": { "min": 49.61, "max": 49.61 } }
+    ],
+    "dresses": [
+      { "size": "2", "bust": { "min": 32.28, "max": 32.28 }, "waist": { "min": 24.41, "max": 24.41 }, "hips": { "min": 35.43, "max": 35.43 } },
+      { "size": "4", "bust": { "min": 33.86, "max": 33.86 }, "waist": { "min": 25.98, "max": 25.98 }, "hips": { "min": 37.01, "max": 37.01 } },
+      { "size": "6", "bust": { "min": 36.22, "max": 36.22 }, "waist": { "min": 28.35, "max": 28.35 }, "hips": { "min": 39.37, "max": 39.37 } },
+      { "size": "8", "bust": { "min": 38.58, "max": 38.58 }, "waist": { "min": 30.71, "max": 30.71 }, "hips": { "min": 41.73, "max": 41.73 } },
+      { "size": "10", "bust": { "min": 40.94, "max": 40.94 }, "waist": { "min": 33.46, "max": 33.46 }, "hips": { "min": 44.09, "max": 44.09 } }
+    ],
+    "jeans": [
+      { "size": "0", "waist": { "min": 23.23, "max": 23.23 }, "hips": { "min": 33.86, "max": 33.86 } },
+      { "size": "2", "waist": { "min": 24.41, "max": 24.41 }, "hips": { "min": 35.43, "max": 35.43 } },
+      { "size": "4", "waist": { "min": 25.98, "max": 25.98 }, "hips": { "min": 37.01, "max": 37.01 } },
+      { "size": "6", "waist": { "min": 27.56, "max": 27.56 }, "hips": { "min": 38.58, "max": 38.58 } },
+      { "size": "8", "waist": { "min": 29.13, "max": 29.13 }, "hips": { "min": 40.16, "max": 40.16 } },
+      { "size": "10", "waist": { "min": 30.71, "max": 30.71 }, "hips": { "min": 41.73, "max": 41.73 } },
+      { "size": "12", "waist": { "min": 33.46, "max": 33.46 }, "hips": { "min": 44.09, "max": 44.09 } },
+      { "size": "14", "waist": { "min": 36.22, "max": 36.22 }, "hips": { "min": 46.46, "max": 46.46 } }
+    ]
+  }
+}
