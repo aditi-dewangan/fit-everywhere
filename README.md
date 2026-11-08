@@ -22,7 +22,7 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 
 ## Status
 
-29 brands are in the source code (table below). How far each one has been checked:
+32 brands are in the source code (table below). How far each one has been checked:
 
 - **Confirmed on the live site in the real extension:** H&M, Hollister, PacSun, Gap.
 - **Tested against saved product pages only:** every other brand in the table. Each saved page is a cut-down copy of a real product page, so these should work but haven't been tried on the live site yet. If one doesn't, please open an issue with the product link.
@@ -73,6 +73,9 @@ Chart coverage by brand. ✅ means the brand's chart for that clothing type is i
 | J.Crew | ✅ XXXS/000–3X/24 | ✅ XXXS/000–3X/24 | ✅ 23–37 (waist only) | Size Chart on [jcrew.com](https://www.jcrew.com/p/womens/categories/clothing/jeans/boyfriend/embellished-lowrider-jean/CZ648) product pages | tops, dresses, jeans |
 | Levi's | ✅ XXS–XXL | ✅ XXS–XXL | ✅ 23–35 | Size Guide on [levi.com](https://www.levi.com/US/en_US/clothing/women/jeans/straight/501-90s-womens-jeans/p/A19590115) product pages (plus dresses not included) | tops, dresses, jeans |
 | Wrangler | ✅ XXS–XXXL | ✅ XXS–XXXL | ✅ 24–36 | [wrangler.com size charts](https://www.wrangler.com/size-charts.html) (Women > General) | tops, dresses, jeans |
+| Lee | ✅ XXS–4XL | ✅ XXS–4XL | ✅ 00/24–22/36 | [lee.com size charts](https://www.lee.com/size-charts.html) (women's tops and bottoms) | tops, dresses, jeans |
+| Good American | — not collected | — not collected | ✅ 00–32 (Always Fits styles excluded) | Size Guide on [goodamerican.com](https://www.goodamerican.com/products/good-low-rise-bootcut-jeans-rise) product pages | jeans |
+| AGOLDE | ✅ XS–XL | ✅ XS–XL | ✅ 22–34 | [agolde.com size chart](https://agolde.com/pages/agolde-size-chart) | tops, dresses, jeans (only when the name says "jean") |
 
 Zara and Shein aren't supported: they publish per-product garment measurements, not a brand-wide body chart, so there's nothing to copy without estimating. ASOS isn't supported: it's a marketplace whose chart changes by brand, and the ASOS DESIGN chart has inconsistent numbers (UK 6 hips listed smaller than UK 4).
 
