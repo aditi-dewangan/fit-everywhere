@@ -77,3 +77,27 @@ export const vuori: BrandAdapter = {
   // The product JSON-LD says female or male, the same as Alo's.
   hostnames: ['vuoriclothing.com'],
 };
+
+export const everlane: BrandAdapter = {
+  brandId: 'everlane',
+  hostnames: ['everlane.com'],
+  isProductPage: (url) => PRODUCT_PATH.test(url.pathname),
+  getProductName: defaultProductName,
+  getCategory(url, doc) {
+    // Product handles start with the department: /products/womens-column-jean-ocean.
+    if (!/\/products\/womens-/.test(url.pathname)) return null;
+    return categoryFromCrumbsAndName(doc);
+  },
+};
+
+export const skims: BrandAdapter = {
+  brandId: 'skims',
+  hostnames: ['skims.com'],
+  isProductPage: (url) => PRODUCT_PATH.test(url.pathname),
+  getProductName: defaultProductName,
+  getCategory(_url, doc) {
+    // SKIMS is mostly women's; men's and kids' product names say so ("FLANNEL SLEEP MENS SLEEP SET").
+    if (/\b(mens|men's|kids|boys|girls)\b/i.test(defaultProductName(doc) ?? '')) return null;
+    return categoryFromCrumbsAndName(doc);
+  },
+};
