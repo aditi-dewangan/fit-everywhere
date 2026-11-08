@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest';
 import { extractProductContext } from './index';
-import { agolde, edikted, fashionNova, goodAmerican, princessPolly } from './shopify';
+import { agolde, aloYoga, edikted, fashionNova, goodAmerican, princessPolly } from './shopify';
 import { loadFixture } from './test-fixtures';
 
 describe('Shopify store adapters', () => {
@@ -38,6 +38,19 @@ describe('Shopify store adapters', () => {
     const { url, doc } = loadFixture('agolde/jeans.html');
     for (const s of doc.querySelectorAll('script')) s.textContent = s.textContent!.replace('"AGOLDE"', '"AGOLDE MENS"');
     expect(agolde.getCategory(url, doc)).toBeNull();
+  });
+
+  it('reads the saved Alo Yoga pages', () => {
+    for (const category of ['tops', 'dresses']) {
+      const { url, doc } = loadFixture(`alo-yoga/${category}.html`);
+      expect(extractProductContext(url, doc, [aloYoga])).toMatchObject({ brandId: 'alo-yoga', category });
+    }
+  });
+
+  it("leaves Alo Yoga men's products without a clothing type", () => {
+    const { url, doc } = loadFixture('alo-yoga/tops.html');
+    for (const s of doc.querySelectorAll('script')) s.textContent = s.textContent!.replace('"female"', '"male"');
+    expect(aloYoga.getCategory(url, doc)).toBeNull();
   });
 
   it('ignores collection pages', () => {
