@@ -54,6 +54,21 @@ export function jsonLdBreadcrumbs(doc: Document): string[] {
     .filter((name): name is string => typeof name === 'string');
 }
 
+const OTHER_DEPARTMENT = /^(men'?s|men|mens|guys|kids'?|boys'?|girls'?|baby|toddler)$/i;
+
+/**
+ * True when the page clearly belongs to a men's or kids' department: a breadcrumb or a
+ * URL path segment names it (PacSun's "Men's › Pants", Levi's /clothing/men/). Only
+ * women's sizing is supported, so the popup says so instead of offering a women's chart.
+ */
+export function isOtherDepartment(url: URL, doc: Document): boolean {
+  const crumbs = jsonLdBreadcrumbs(doc).slice(0, -1);
+  if (crumbs.some((c) => OTHER_DEPARTMENT.test(c.trim()))) return true;
+  return decodeURIComponent(url.pathname)
+    .split('/')
+    .some((segment) => OTHER_DEPARTMENT.test(segment));
+}
+
 export function textOf(doc: Document, selector: string): string | null {
   const text = doc.querySelector(selector)?.textContent?.replace(/\s+/g, ' ').trim();
   return text || null;

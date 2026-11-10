@@ -30,7 +30,15 @@ All builds are on the [Releases page](https://github.com/aditi-dewangan/fit-ever
 - **Tested against saved product pages only:** every other brand in the table. Each saved page is a cut-down copy of a real product page, so these should work but haven't been tried on the live site yet. If one doesn't, please open an issue with the product link.
 - **In the download:** all 47 brands, starting with v0.5.0. Builds before v0.5.0 only had H&M, Hollister and PacSun.
 
-Only women's sizing is supported. On men's, kids' or other department pages the popup asks you to choose a clothing type instead of recommending a size. Petite, tall, curvy and plus charts aren't modeled.
+Only women's sizing is supported. On a page the site files under men's or kids' (by its breadcrumbs or URL), the popup says so instead of recommending a size. Petite, tall, curvy and plus charts aren't modeled.
+
+The popup also reads the size buttons on the product page and checks them against the chart:
+
+- If the item is sold in letter sizes (S, M, L) and the chart uses numbers, or the other way round, it says the sizes don't match instead of showing a size the item isn't sold in.
+- It shows the size the way the page spells it, such as "MED" for M on PacSun or "4" for S/4 on Ann Taylor.
+- If the recommended size isn't among the page's buttons, it warns that the size may be sold out or the item may be sized differently.
+
+This was checked on live product pages for 24 brands on 2026-11-09, and the sizes were read on 21 of them. On Aritzia the sizes only appear once the size menu is opened, and on Forever 21 and Free People they couldn't be read. On those sites the popup skips this check and works as before. The other brands haven't been checked yet.
 
 | Spec step | Status |
 | --- | --- |
@@ -46,7 +54,7 @@ Chart coverage by brand. ✅ means the brand's chart for that clothing type is i
 
 | Brand | Tops | Dresses | Jeans | Chart source | Adapter tested on |
 | --- | --- | --- | --- | --- | --- |
-| Hollister | ✅ XS–L (bust only) | — no chart | ✅ 0–11 | [hollisterco.com size charts](https://www.hollisterco.com/hol/faq/sizecharts.html) | tops, jeans |
+| Hollister | ✅ XS–L (bust only) | — no chart | ⚠️ 0–11, but jeans checked on the site are sold in 000–20, so the popup warns | [hollisterco.com size charts](https://www.hollisterco.com/hol/faq/sizecharts.html) | tops, jeans |
 | H&M | ✅ XXS–4XL | ✅ XXS–4XL | ✅ US 0–30 | [H&M US size guide](https://www2.hm.com/en_us/customer-service/sizeguide/ladies.html) (archived Jun 2023) | tops, dresses, jeans |
 | PacSun | ✅ XS–L | — no chart | ✅ 23–34 | [PacSun jeans](https://www.pacsun.com/sizechart-womens-jeans.html) / [tops](https://www.pacsun.com/sizechart-womens-tops.html) charts (archived) | tops, jeans |
 | Abercrombie & Fitch | ✅ XXS–XXXL (bust only) | ✅ XXS–XXXL | ✅ 23–37 | Size Guide on [abercrombie.com](https://www.abercrombie.com/shop/us/p/high-rise-wide-leg-jean-63893393) product pages | tops, dresses, jeans |
@@ -88,7 +96,7 @@ Chart coverage by brand. ✅ means the brand's chart for that clothing type is i
 | Calvin Klein | ✅ XS–XL (no hips) | ✅ XS–XL (no hips) | — chart sizes don't match sizes sold | Size Guide on [calvinklein.us](https://www.calvinklein.us/en/women/apparel/dresses/relaxed-rib-mini-dress/47H379G-HMT.html) product pages | tops, dresses |
 | Michael Kors | ✅ XXS/00–XXL | ✅ XXS/00–XXL | — no women's jeans found | Size Guide on [michaelkors.com](https://www.michaelkors.com/rhinestone-embellished-scuba-mini-dress/MF683LCD6E.html) product pages | tops, dresses |
 | Reformation | ✅ 0/XS–24 | ✅ 0/XS–24 | ✅ 23–31 | [thereformation.com size guide](https://www.thereformation.com/fitting-and-sizes.html) (petite and extended denim not modeled) | tops, dresses, jeans |
-| Everlane | ✅ XXS–XXXL (no hips) | ✅ XXS–XXL | ✅ 23–35 | Size Guide on [everlane.com](https://www.everlane.com/products/womens-column-jean-ocean) product pages | tops, dresses, jeans |
+| Everlane | ✅ XXS–XXXL (no hips) | ⚠️ XXS–XXL, but some dresses are sold in 00–16, where the popup says the sizes don't match | ✅ 23–35 | Size Guide on [everlane.com](https://www.everlane.com/products/womens-column-jean-ocean) product pages | tops, dresses, jeans |
 | SKIMS | ✅ XXS–4X | ✅ XXS–4X | — doesn't sell jeans | [skims.com size guides](https://skims.com/pages/size-guides) (Loungewear and Swimwear) | tops, dresses |
 | Quince | ✅ XS–XL | ✅ XS–XL | ✅ 24–33 | Size Chart on [quince.com](https://www.quince.com/women/cotton-modal-relaxed-long-sleeve-tee) product pages | tops, dresses, jeans |
 | Lands' End | ✅ XXS/00–XL/18 (bust only) | ✅ XXS/00–XL/18 | ✅ XXS/00–XL/18 | Size Charts on [landsend.com](https://www.landsend.com/products/womens-poplin-perfect-shirt-dress/id_404052) product pages (petite, tall and plus not modeled) | tops, dresses, jeans |

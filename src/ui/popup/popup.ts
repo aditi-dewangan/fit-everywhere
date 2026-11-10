@@ -6,6 +6,7 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/space-grotesk';
 import './popup.css';
 import { findAdapterForUrl } from '../../adapters';
+import { listKind, listedAs } from '../../adapters/page-sizes';
 import { getChart, supportedCharts } from '../../data';
 import { CATEGORY_WEIGHTS } from '../../engine/config';
 import { FIT_LABEL_TEXT, isProfileComplete, recommend } from '../../engine';
@@ -53,7 +54,10 @@ function currentResponse(): RecommendResponse {
 function render() {
   const response = currentResponse();
   const state = editingProfile ? 'setup_needed' : popupStateFor(response);
+  const productState = state === 'choose_category' || state === 'unsupported_item' || state === 'result';
   const body = (() => {
+    if (productState && page.product?.otherDepartment) return otherDepartment();
+    if (state === 'result' && sizesMismatch()) return sizeMismatch();
     switch (state) {
       case 'setup_needed':
         return profileForm();
@@ -95,6 +99,7 @@ function result(response: RecommendResponse) {
   const chart = getChart(product.brandId);
   const rows = chart?.charts[product.category!] ?? [];
   const sizeIndex = (size?: string) => rows.findIndex((row) => row.size === size);
+  const recommended = asListed(r.recommendedSize);
 
   const notes: HTMLElement[] = [];
   for (const dim of DIMENSIONS) {
@@ -104,19 +109,26 @@ function result(response: RecommendResponse) {
     if (note) notes.push(noteItem(note === NOTE_FITS ? 'ok' : 'warn', `${capitalize(dim)} ${text}`));
   }
   if (r.dimensionNotes.length) notes.push(noteItem('warn', `Length ${r.dimensionNotes.length} for your height`));
+  const listed = product.pageSizes ?? [];
+  if (listed.length && !listedAs(r.recommendedSize, listed).length) {
+    notes.push(
+      noteItem('warn', `${r.recommendedSize} isn't listed for this item right now (${joinList(listed)}). It may be sold out, or this item may be sized differently from the chart.`),
+    );
+  }
   if (r.alternateSize) {
     const why = sizeIndex(r.alternateSize) > sizeIndex(r.recommendedSize) ? 'if you want more room' : 'if you want a closer fit';
-    notes.push(noteItem('info', `${r.alternateSize} is also a close match ${why}`));
+    notes.push(noteItem('info', `${asListed(r.alternateSize)} is also a close match ${why}`));
   }
 
   return h('section', { class: 'result' }, [
     detected(product),
     h('p', { class: 'eyebrow' }, ['Recommended size']),
     h('div', { class: 'size-row' }, [
-      h('span', { class: 'size-value' }, [r.recommendedSize]),
+      h('span', { class: 'size-value' }, [recommended]),
       h('span', { class: 'pill', 'data-label': r.fitLabel }, [capitalize(FIT_LABEL_TEXT[r.fitLabel])]),
     ]),
     fitScale(r.fitLabel),
+    recommended !== r.recommendedSize ? h('p', { class: 'muted' }, [`${r.recommendedSize} on ${chart?.brandName ?? 'the brand'}'s size chart.`]) : null,
     notes.length ? h('ul', { class: 'notes' }, notes) : null,
     r.profileSource === 'owned_item'
       ? h('p', { class: 'muted' }, ['Based on an item you own. Adding your measurements gives a more accurate result.'])
@@ -125,6 +137,45 @@ function result(response: RecommendResponse) {
       ? h('a', { class: 'button secondary', href: chart.sourceUrl, target: '_blank', rel: 'noopener noreferrer' }, ['See size chart'])
       : null,
     chart ? h('p', { class: 'muted' }, [`Based on ${chart.brandName}'s size chart.`]) : null,
+  ]);
+}
+
+/** The chart's size as this page spells it ("MED" for "M", "4" for "S/4"), or unchanged if that isn't one label. */
+function asListed(size: string): string {
+  const matches = listedAs(size, currentProduct()?.pageSizes ?? []);
+  return matches.length === 1 ? matches[0]! : size;
+}
+
+/** The page sells this item in letter sizes and the chart uses numbers, or the other way round. */
+function sizesMismatch(): boolean {
+  const product = currentProduct();
+  const pageKind = listKind(product?.pageSizes ?? []);
+  const rows = product?.category ? (getChart(product.brandId)?.charts[product.category] ?? []) : [];
+  const chartKind = listKind(rows.map((row) => row.size));
+  return !!pageKind && !!chartKind && pageKind !== 'mixed' && chartKind !== 'mixed' && pageKind !== chartKind;
+}
+
+function sizeMismatch() {
+  const product = currentProduct()!;
+  const chart = getChart(product.brandId)!;
+  const rows = chart.charts[product.category!]!;
+  return h('section', { class: 'message' }, [
+    detected(product),
+    h('h2', {}, ["This item's sizes don't match the chart"]),
+    h('p', {}, [
+      `This item comes in ${joinList(product.pageSizes!)}, but ${chart.brandName}'s ${product.category} chart uses ${rows[0]!.size}–${rows.at(-1)!.size}.`,
+    ]),
+    h('p', { class: 'muted' }, ['Wrong clothing type? Pick another:']),
+    categoryButtons(),
+  ]);
+}
+
+function otherDepartment() {
+  const product = page.product;
+  return h('section', { class: 'message' }, [
+    product?.productName ? h('p', { class: 'detected' }, ['Detected: ', h('strong', {}, [product.productName])]) : null,
+    h('h2', {}, ["Women's clothing only"]),
+    h('p', {}, ["This looks like a men's or kids' item. Fit Everywhere only has women's size charts, so it can't recommend a size here."]),
   ]);
 }
 

@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest';
 import { extractProductContext, findAdapter, findAdapterForUrl } from './index';
-import { categoryFromText, defaultCategory, defaultDescription, defaultProductName, detectCut, jsonLdBreadcrumbs } from './common';
+import { categoryFromText, defaultCategory, defaultDescription, defaultProductName, detectCut, isOtherDepartment, jsonLdBreadcrumbs } from './common';
 import type { BrandAdapter } from './types';
 
 const page = (html: string) => new DOMParser().parseFromString(html, 'text/html');
@@ -108,5 +108,26 @@ describe('adapter lookup', () => {
     });
     expect(extractProductContext(new URL('https://example.com/cart'), doc, [adapter])).toBeNull();
     expect(extractProductContext(new URL('https://other.com/p/1'), doc, [adapter])).toBeNull();
+  });
+});
+
+describe("men's and kids' departments", () => {
+  const crumbs = (...names: string[]) =>
+    page(ld({ '@type': 'BreadcrumbList', itemListElement: names.map((name, i) => ({ '@type': 'ListItem', position: i + 1, name })) }));
+
+  it('reads the department from breadcrumbs', () => {
+    // PacSun, live 2026-11-09: Gray Fleece Extreme Baggy Cargo Sweatpants.
+    expect(isOtherDepartment(new URL('https://www.pacsun.com/pacsun/x-0133484260037.html'), crumbs("Men's", 'Pants', 'Sweatpants'))).toBe(true);
+    expect(isOtherDepartment(new URL('https://example.com/p/1'), crumbs('Girls', 'Tops', 'Tee'))).toBe(true);
+    expect(isOtherDepartment(new URL('https://example.com/p/1'), crumbs("Women's", 'Jeans', 'Mom Jean'))).toBe(false);
+  });
+
+  it('reads the department from the URL path', () => {
+    expect(isOtherDepartment(new URL('https://www.levi.com/US/en_US/clothing/men/jeans/p/1'), page(''))).toBe(true);
+    expect(isOtherDepartment(new URL('https://www.levi.com/US/en_US/clothing/women/jeans/p/1'), page(''))).toBe(false);
+  });
+
+  it("ignores the product's own name in the last breadcrumb", () => {
+    expect(isOtherDepartment(new URL('https://example.com/p/1'), crumbs("Women's", 'Tops', 'Boys'))).toBe(false);
   });
 });

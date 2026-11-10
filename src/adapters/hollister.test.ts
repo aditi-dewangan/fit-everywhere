@@ -14,6 +14,7 @@ describe('Hollister adapter', () => {
       productName: 'High-Rise Light Wash Straight Jeans',
       cut: 'regular',
       url: url.href,
+      pageSizes: ['000', '00', '0', '2', '4', '6', '8', '10', '12', '14', '16', '18', '20'],
     });
   });
 

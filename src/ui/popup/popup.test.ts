@@ -90,6 +90,36 @@ describe('popup states', () => {
     expect(document.querySelector('.note.warn')!.textContent).toBe('Bust may feel roomy');
   });
 
+  it("Result: uses the page's spelling of the size", async () => {
+    product = { ...dress, pageSizes: ['XS', 'SML', 'MED', 'LRG'] };
+    await openPopup();
+    expect(document.querySelector('.size-value')!.textContent).toBe('MED');
+    expect(text()).toContain("M on Example Brand's size chart.");
+  });
+
+  it('Result: warns when the recommended size is not on the page', async () => {
+    product = { ...dress, pageSizes: ['S', 'L'] };
+    await openPopup();
+    expect(document.querySelector('.size-value')!.textContent).toBe('M');
+    expect(text()).toContain("M isn't listed for this item right now (S and L). It may be sold out, or this item may be sized differently from the chart.");
+  });
+
+  it("Size mismatch: doesn't show a chart size the item isn't sold in", async () => {
+    product = { ...dress, pageSizes: ['2', '4', '6', '8'] };
+    await openPopup();
+    expect(document.querySelector('.size-value')).toBeNull();
+    expect(text()).toContain("This item's sizes don't match the chart");
+    expect(text()).toContain("This item comes in 2, 4, 6 and 8, but Example Brand's dresses chart uses S–L.");
+    expect(document.querySelectorAll('.segmented button')).toHaveLength(3);
+  });
+
+  it("Men's or kids' item: says only women's sizing is supported", async () => {
+    product = { ...dress, category: null, otherDepartment: true };
+    await openPopup();
+    expect(text()).toContain("Women's clothing only");
+    expect(document.querySelectorAll('.segmented button')).toHaveLength(0);
+  });
+
   it('Setup needed: creating a profile leads to a result', async () => {
     stored = null;
     await openPopup();
