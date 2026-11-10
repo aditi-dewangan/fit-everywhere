@@ -59,7 +59,7 @@ Chart coverage by brand. ✅ means the brand's chart for that clothing type is i
 
 | Brand | Tops | Dresses | Jeans | Chart source | Adapter tested on |
 | --- | --- | --- | --- | --- | --- |
-| Hollister | ✅ XS–L (bust only) | — no chart | ⚠️ 0–11, but jeans checked on the site are sold in 000–20, so the popup warns | [hollisterco.com size charts](https://www.hollisterco.com/hol/faq/sizecharts.html) | tops, jeans |
+| Hollister | ✅ XXS–XXL (bust only) | — no chart | ✅ 000/23–20/35 | Size Guide on [hollisterco.com](https://www.hollisterco.com/shop/us/p/high-rise-light-wash-straight-jeans-60466934) product pages | tops, jeans |
 | H&M | ✅ XXS–4XL | ✅ XXS–4XL | ✅ US 0–30 | [H&M US size guide](https://www2.hm.com/en_us/customer-service/sizeguide/ladies.html) (archived Jun 2023) | tops, dresses, jeans |
 | PacSun | ✅ XS–L | — no chart | ✅ 23–34 | [PacSun jeans](https://www.pacsun.com/sizechart-womens-jeans.html) / [tops](https://www.pacsun.com/sizechart-womens-tops.html) charts (archived) | tops, jeans |
 | Abercrombie & Fitch | ✅ XXS–XXXL (bust only) | ✅ XXS–XXXL | ✅ 23–37 | Size Guide on [abercrombie.com](https://www.abercrombie.com/shop/us/p/high-rise-wide-leg-jean-63893393) product pages | tops, dresses, jeans |

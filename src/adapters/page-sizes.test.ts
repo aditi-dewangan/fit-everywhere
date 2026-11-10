@@ -131,6 +131,7 @@ describe('matching chart sizes to page sizes', () => {
     ['2XS', ['2XS', 'XS'], ['2XS']], // adidas
     ['5', ['0', '2', '4', '6'], []], // Hollister's odd-numbered chart vs even sizes sold
     ['25inch', ['24', '25', '26'], ['25']], // UNIQLO jeans
+    ['000/23', ['000', '00', '0'], ['000']], // Hollister jeans
   ])('%s on a page listing %j', (chart, page, expected) => expect(listedAs(chart, page)).toEqual(expected));
 
   it('drops length words and bracketed equivalents', () => {
