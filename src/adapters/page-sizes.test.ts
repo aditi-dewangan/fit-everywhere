@@ -113,6 +113,8 @@ describe('size kinds', () => {
     expect(listKind(['23', '24'])).toBe('numeric');
     expect(listKind(['XS', '0'])).toBe('mixed');
     expect(listKind([])).toBeNull();
+    // A chart that lists both systems never reads as letters only (Everlane dresses).
+    expect(listKind(['XXS/000', 'XS/00-0', 'S/2-4'])).not.toBe('letter');
   });
 
   it('treats spellings of the same size as equal', () => {
@@ -132,6 +134,8 @@ describe('matching chart sizes to page sizes', () => {
     ['5', ['0', '2', '4', '6'], []], // Hollister's odd-numbered chart vs even sizes sold
     ['25inch', ['24', '25', '26'], ['25']], // UNIQLO jeans
     ['000/23', ['000', '00', '0'], ['000']], // Hollister jeans
+    ['S/2-4', ['00', '0', '2', '4', '6'], ['2', '4']], // Everlane dresses sold in numbers
+    ['S/2-4', ['XS', 'S', 'M'], ['S']], // and in letters
   ])('%s on a page listing %j', (chart, page, expected) => expect(listedAs(chart, page)).toEqual(expected));
 
   it('drops length words and bracketed equivalents', () => {
