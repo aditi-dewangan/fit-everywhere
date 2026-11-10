@@ -3,7 +3,7 @@
   "brandId": "everlane",
   "brandName": "Everlane",
   "sourceUrl": "https://www.everlane.com/products/womens-organic-cotton-box-cut-pocket-tee-white",
-  "notes": "Copied from the Size Guide dialog (inches): tops from the page above (bust and waist, XXS-XXXL), dresses from /products/womens-cotton-pleated-mini-dress-white (adds hip, XXS-XXL), jeans from /products/womens-column-jean-ocean (denim sizes 23-35). The charts also list US numeric equivalents.",
+  "notes": "Copied from the Size Guide dialog (inches): tops from the page above (bust and waist, XXS-XXXL), dresses from /products/womens-cotton-pleated-mini-dress-white (adds hip, XXS-XXL; stored with the chart's US numeric sizes, e.g. XS/00-0, because some dresses are sold in numbers), jeans from /products/womens-column-jean-ocean (denim sizes 23-35). The charts also list US numeric equivalents.",
   "charts": {
     "tops": [
       { "size": "XXS", "bust": { "min": 30.5, "max": 30.5 }, "waist": { "min": 23, "max": 23 } },
@@ -16,13 +16,13 @@
       { "size": "XXXL", "bust": { "min": 46.75, "max": 48.75 }, "waist": { "min": 40, "max": 42 } }
     ],
     "dresses": [
-      { "size": "XXS", "bust": { "min": 30.5, "max": 30.5 }, "waist": { "min": 23, "max": 23 }, "hips": { "min": 34, "max": 34 } },
-      { "size": "XS", "bust": { "min": 31.5, "max": 32.5 }, "waist": { "min": 24, "max": 25 }, "hips": { "min": 35, "max": 36 } },
-      { "size": "S", "bust": { "min": 33.5, "max": 34.5 }, "waist": { "min": 26, "max": 27 }, "hips": { "min": 37, "max": 38 } },
-      { "size": "M", "bust": { "min": 35.5, "max": 36.5 }, "waist": { "min": 28, "max": 29 }, "hips": { "min": 39, "max": 40 } },
-      { "size": "L", "bust": { "min": 37.75, "max": 39.25 }, "waist": { "min": 30.25, "max": 31.75 }, "hips": { "min": 41.25, "max": 42.75 } },
-      { "size": "XL", "bust": { "min": 40.75, "max": 42.75 }, "waist": { "min": 33.25, "max": 35.5 }, "hips": { "min": 44.25, "max": 46.25 } },
-      { "size": "XXL", "bust": { "min": 44.75, "max": 46.75 }, "waist": { "min": 38, "max": 40 }, "hips": { "min": 48.75, "max": 50.75 } }
+      { "size": "XXS/000", "bust": { "min": 30.5, "max": 30.5 }, "waist": { "min": 23, "max": 23 }, "hips": { "min": 34, "max": 34 } },
+      { "size": "XS/00-0", "bust": { "min": 31.5, "max": 32.5 }, "waist": { "min": 24, "max": 25 }, "hips": { "min": 35, "max": 36 } },
+      { "size": "S/2-4", "bust": { "min": 33.5, "max": 34.5 }, "waist": { "min": 26, "max": 27 }, "hips": { "min": 37, "max": 38 } },
+      { "size": "M/6-8", "bust": { "min": 35.5, "max": 36.5 }, "waist": { "min": 28, "max": 29 }, "hips": { "min": 39, "max": 40 } },
+      { "size": "L/10-12", "bust": { "min": 37.75, "max": 39.25 }, "waist": { "min": 30.25, "max": 31.75 }, "hips": { "min": 41.25, "max": 42.75 } },
+      { "size": "XL/14-16", "bust": { "min": 40.75, "max": 42.75 }, "waist": { "min": 33.25, "max": 35.5 }, "hips": { "min": 44.25, "max": 46.25 } },
+      { "size": "XXL/18-20", "bust": { "min": 44.75, "max": 46.75 }, "waist": { "min": 38, "max": 40 }, "hips": { "min": 48.75, "max": 50.75 } }
     ],
     "jeans": [
       { "size": "23", "waist": { "min": 24, "max": 24 }, "hips": { "min": 34, "max": 34 } },
