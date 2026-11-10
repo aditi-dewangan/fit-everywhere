@@ -38,7 +38,12 @@ The popup also reads the size buttons on the product page and checks them agains
 - It shows the size the way the page spells it, such as "MED" for M on PacSun or "4" for S/4 on Ann Taylor.
 - If the recommended size isn't among the page's buttons, it warns that the size may be sold out or the item may be sized differently.
 
-This was checked on live product pages for 24 brands on 2026-11-09, and the sizes were read on 21 of them. On Aritzia the sizes only appear once the size menu is opened, and on Forever 21 and Free People they couldn't be read. On those sites the popup skips this check and works as before. The other brands haven't been checked yet.
+The size reader was run on live product pages for all 47 brands on 2026-11-09 and 2026-11-10, and read the sizes correctly on 42 of them. It could not read them on these five, where the popup skips this check and works as before:
+
+- Aritzia, J.Crew and Madewell: the sizes only appear once the size menu is opened.
+- Forever 21 and Free People: the sizes aren't marked in a way the reader can find.
+
+On Lands' End it reads tops and dresses but not jeans.
 
 | Spec step | Status |
 | --- | --- |
