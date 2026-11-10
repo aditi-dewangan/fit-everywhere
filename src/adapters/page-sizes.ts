@@ -17,6 +17,8 @@ export function sizeKind(label: string): SizeKind | null {
   if (NUMERIC_SIZE.test(label.trim())) return 'numeric';
   const kinds = new Set(parts.map((p) => (LETTER_SIZE.test(p) ? 'letter' : NUMERIC_SIZE.test(p) ? 'numeric' : null)));
   if (kinds.has(null)) return null;
+  // Number pairs other than a waist/inseam like 8/29 are counters ("1 / 6" on a photo carousel).
+  if (parts.length > 1 && kinds.size === 1 && kinds.has('numeric')) return null;
   return kinds.size === 1 ? [...kinds][0]! : 'mixed';
 }
 
@@ -33,9 +35,12 @@ const SPELLINGS: Record<string, string> = {
   sm: 's', md: 'm', lg: 'l',
 };
 
-/** "MED" and "M" compare equal, as do "XLG" and "XL". */
+// UNIQLO writes waist sizes as "25inch", on its pages and its chart.
+const INCH = /\s*(inch|")$/i;
+
+/** "MED" and "M" compare equal, as do "XLG" and "XL", and "25inch" and "25". */
 export function normalizeSize(label: string): string {
-  const lower = label.trim().toLowerCase();
+  const lower = label.trim().toLowerCase().replace(INCH, '');
   return SPELLINGS[lower] ?? lower;
 }
 
@@ -49,13 +54,18 @@ export function listedAs(chartSize: string, pageSizes: string[]): string[] {
   return pageSizes.filter((label) => parts.includes(normalizeSize(label)));
 }
 
-const SIZE_ATTR = /size/i;
+// "size" starting or ending a word ("size-1", "sku-size", "selectSize"), not inside one:
+// Fashion Nova's sale countdown has the class "body-lg-emphasized".
+const SIZE_ATTR = /(?<![a-z])size|size(?![a-z])/i;
 // Attributes that can mention "size" without marking a size picker (image URLs, inline styles).
 const IGNORED_ATTRS = new Set(['href', 'src', 'srcset', 'style', 'content']);
-// Size guides, filters on listing pages and fit widgets also say "size" but aren't the options.
-const NOT_OPTIONS = /guide|chart|filter|refine|facet|fit-?finder|recommend/i;
+// Size guides, filters on listing pages, fit widgets and quick-shop panels on recommended
+// products also say "size" but aren't this product's options.
+const NOT_OPTIONS = /guide|chart|filter|refine|facet|fit-?finder|recommend|quick-?shop/i;
 
 function mentionsSize(el: Element): boolean {
+  // Some sites use a custom element instead, like Lands' End's <product-sizes>.
+  if (el.localName.includes('-') && SIZE_ATTR.test(el.localName)) return true;
   return [...el.attributes].some(
     (a) => !IGNORED_ATTRS.has(a.name) && (SIZE_ATTR.test(a.name) || (a.value.length <= 80 && SIZE_ATTR.test(a.value))),
   );
@@ -66,8 +76,16 @@ const textOf = (el: Element) => el.textContent?.replace(/\s+/g, ' ').trim() ?? '
 // Length variants share one body size: "2 Regular" and "2 Long" are both a 2.
 const LENGTH_WORD = /\s+(x-?short|short|regular|reg|long|x-?long|tall|petite)$/i;
 
-/** The size without a length word or a bracketed equivalent: Alo's "XS (2-4)" is an XS. */
-export const baseSize = (label: string) => label.replace(/\s*\([^)]*\)$/, '').replace(LENGTH_WORD, '').trim();
+// A letter size followed by its number equivalent, as Lands' End writes "XS 2-4" and "XL 18".
+const LETTER_THEN_NUMBERS = /^(\S+)\s+\d{1,2}(-\d{1,2})?$/;
+
+/** The size without a length word or an equivalent: Alo's "XS (2-4)" and Lands' End's "XS 2-4" are XS. */
+export function baseSize(label: string): string {
+  // Princess Polly writes "US 4". Other countries' prefixes stay: AU and UK numbers are different sizes.
+  const size = label.replace(/^US\s+/i, '').replace(/\s*\([^)]*\)$/, '').replace(LENGTH_WORD, '').replace(INCH, '').trim();
+  const letter = LETTER_THEN_NUMBERS.exec(size)?.[1];
+  return letter && LETTER_SIZE.test(letter) ? letter : size;
+}
 
 function excluded(el: Element): boolean {
   for (let p: Element | null = el; p; p = p.parentElement) {
@@ -85,8 +103,14 @@ function labelOf(el: Element): string {
 export function readPageSizes(doc: Document): string[] {
   // Every size-like label, with the size-marked elements around it, innermost first.
   const found: { label: string; marked: Element[] }[] = [];
-  for (const el of doc.querySelectorAll('button, label, option, li, a, span, div, input[type="radio"]')) {
-    if (el.children.length) continue;
+  // Any element can hold the label (Ralph Lauren uses <bdi>); only non-content tags are skipped.
+  for (const el of doc.querySelectorAll('body *:not(script, style, noscript, template)')) {
+    if (el.matches('input:not([type="radio"])')) continue;
+    // A radio inside a visible label is read from that label's text instead (lululemon's
+    // radios are valued "Small" beside a visible "S").
+    if (el.matches('input') && textOf(el.closest('label') ?? el)) continue;
+    // The innermost element holding the text; an empty icon beside it (Lee) doesn't count.
+    if ([...el.children].some((child) => textOf(child))) continue;
     const label = labelOf(el);
     if (label.length > 12 || !sizeKind(label) || excluded(el)) continue;
     const marked: Element[] = [];
@@ -97,7 +121,8 @@ export function readPageSizes(doc: Document): string[] {
   }
   const labelsIn = new Map<Element, Set<string>>();
   for (const { label, marked } of found) {
-    for (const p of marked) labelsIn.set(p, (labelsIn.get(p) ?? new Set()).add(label));
+    // Spellings of one size count once: a lululemon tile holds "S" and a radio valued "Small".
+    for (const p of marked) labelsIn.set(p, (labelsIn.get(p) ?? new Set()).add(normalizeSize(label)));
   }
   // Each label belongs to the innermost marked element holding at least two sizes. Sites mark
   // the picker (PacSun's #size-1), and some also mark each option (adidas's "Size: XS" buttons).
@@ -107,7 +132,8 @@ export function readPageSizes(doc: Document): string[] {
     const picker = marked.find((p) => labelsIn.get(p)!.size >= 2);
     if (!picker) continue;
     const group = groups.get(picker) ?? [];
-    if (!group.includes(label)) group.push(label);
+    // Stüssy repeats each size in lower case ("xs" beside "XS").
+    if (!group.some((l) => l.toLowerCase() === label.toLowerCase())) group.push(label);
     groups.set(picker, group);
   }
   return groups.values().next().value ?? [];
