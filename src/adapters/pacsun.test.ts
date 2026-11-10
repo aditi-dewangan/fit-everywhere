@@ -13,6 +13,7 @@ describe('PacSun adapter', () => {
       productName: 'Eco Medium Blue Dad Jeans',
       cut: 'relaxed', // "Dad" in the name wins over "slightly oversized" in the description
       url: url.href,
+      pageSizes: ['22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32'],
     });
   });
 

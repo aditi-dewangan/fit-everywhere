@@ -61,6 +61,10 @@ export interface ProductContext {
   productName: string;
   cut: Cut;
   url: string;
+  /** The size options shown on the page, such as ["XS", "SML", "MED"]. Absent if none were found. */
+  pageSizes?: string[];
+  /** True on a men's or kids' department page. Only women's sizing is supported. */
+  otherDepartment?: boolean;
 }
 
 export interface RecommendationResult {

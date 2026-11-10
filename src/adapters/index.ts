@@ -4,7 +4,8 @@ import { adidas } from './adidas';
 import { annTaylor, loft } from './ann-inc';
 import { aritzia } from './aritzia';
 import { americanEagle } from './american-eagle';
-import { defaultDescription, detectCut } from './common';
+import { defaultDescription, detectCut, isOtherDepartment } from './common';
+import { readPageSizes } from './page-sizes';
 import { express } from './express';
 import { forever21 } from './forever-21';
 import { garage } from './garage';
@@ -60,6 +61,7 @@ export function extractProductContext(
   const adapter = findAdapter(url.hostname, list);
   if (!adapter || !adapter.isProductPage(url, doc)) return null;
   const productName = adapter.getProductName(doc);
+  const pageSizes = readPageSizes(doc);
   const description = adapter.getDescription ? adapter.getDescription(doc) : defaultDescription(doc);
   return {
     brandId: adapter.getBrandId?.(url) ?? adapter.brandId,
@@ -67,5 +69,7 @@ export function extractProductContext(
     productName: productName ?? '',
     cut: detectCut(productName, description),
     url: url.href,
+    ...(pageSizes.length ? { pageSizes } : {}),
+    ...(isOtherDepartment(url, doc) ? { otherDepartment: true } : {}),
   };
 }
