@@ -3,9 +3,23 @@
   "name": "Fit Everywhere",
   "version": "0.5.0",
   "description": "Recommends the best size for women's clothing on supported brand sites. Your measurements never leave your device.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
   "action": {
     "default_title": "Fit Everywhere",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
   },
-  "permissions": ["storage", "activeTab", "scripting"]
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ]
 }
